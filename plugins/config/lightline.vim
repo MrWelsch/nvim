@@ -1,6 +1,6 @@
 " let s:colors = OneDark#GetColors()
 "{{{ LightLine configuration (bufline additions have different indentations)
-  let g:lightline = { 'colorscheme': 'nord' }
+  let g:lightline = { 'colorscheme': 'dracula_pro' }
   let g:lightline.component_expand = {
             \  'buffercurrent': 'lightline#buffer#buffercurrent',
             \  'bufferbefore': 'lightline#buffer#bufferbefore',
