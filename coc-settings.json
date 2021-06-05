@@ -1,0 +1,55 @@
+{   // THIS FILE IS FOR THE CONFIGURATION OF LANGUAGE SERVERS, AUTOFORMATING, SNIPPET LOCATIONS.
+
+    // "coc.preferences.formatOnSaveFiletypes": ["java", "markdown"],
+
+    // EXPLORER settings
+    "explorer.width": 30,
+    "explorer.icon.enableVimDevicons": true,
+    "explorer.previewAction.onHover": false,
+    "explorer.keyMappings": {
+        "<cr>": ["expandable?", "expand", "open"],
+        "v": "open:vsplit"
+    },
+
+    // JAVA SETTINGS
+    "java.autobuild.enabled": true,                 // build on write
+    "java.format.onType.enabled": true,             // format on type, triggered by ;, } or <return>
+    "java.completion.guessMethodArguments": true,   // method arguments are guessed when imported from code actions
+    "java.foldingRange.enabled": true,              // enable smart folding
+    "java.referencesCodeLens.enabled": true,        // reference code lenses
+    "java.implementationsCodeLens.enabled": true,   // implementation code lenses
+    "java.codeGeneration.useBlocks": true,          // use blocks in if statements when generating methods
+    "java.codeGeneration.generateComments": true,   // generate comments when generating methods
+
+//    "java.configuration.maven.userSettings": Absolute Path to Maven Settings,
+//    "java.import.maven.enabled": Maven Importer,
+//    "java.maven.downloadSources": Eager Download of Maven source artifacts,
+
+//    "java.import.gradle.version": Gradle Importer,
+//    "java.import.gradle.wrapper.enabled": true,
+
+    //CCLS-SERVER
+    "languageserver": {
+        "ccls": {
+            "command": "ccls",
+            "filetypes": [
+                "c",
+                "cpp",
+                "objc",
+                "objcpp"
+            ],
+            "rootPatterns": [
+                ".ccls",
+                "compile_commands.json",
+                ".vim/",
+                ".git/",
+                ".hg/"
+            ],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        }
+    }
+}
