@@ -27,6 +27,9 @@ Plug 'mhinz/vim-signify'
 " Plug 'junegunn/gv.vim'
 " Code Completion, Linter, References, ...
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+" Latex
+Plug 'lervag/vimtex'
+
 
 " Initialize plugin system
 call plug#end()

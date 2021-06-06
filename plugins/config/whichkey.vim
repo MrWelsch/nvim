@@ -120,5 +120,16 @@ let g:which_key_map.c = {
 "     \ 'g' : [':FloatermNew lazygit'       , 'git'],
       \ }
 
+" l is for latex
+let g:which_key_map['l'] = {
+      \ 'name' : '+latex' ,
+      \ 'i' : [':VimtexInfo'      , 'info'],
+      \ 't' : [':VimtexTocToggle' , 'toc'],
+      \ 'c' : [':VimtexCompile'   , 'compile'],
+      \ 's' : [':VimtexStop'      , 'stop'],
+      \ 'v' : [':VimtexView'      , 'preview'],
+      \ 'C' : [':VimtexClean'     , 'clean'],
+      \ }
+
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

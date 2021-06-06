@@ -8,6 +8,7 @@ source $HOME/.config/nvim/plugins/config/floaterm.vim       " FLOATERM settings
 source $HOME/.config/nvim/plugins/config/whichkey.vim       " WHICHKEY settings
 source $HOME/.config/nvim/plugins/config/coc.vim            " COC settings
 source $HOME/.config/nvim/plugins/config/signify.vim        " SIGNIFY settings
+source $HOME/.config/nvim/plugins/config/vimtex.vim         " VIMTEX settings
 source $VIMRUNTIME/mswin.vim                                " Enable CopyPaste
 packadd! dracula_pro                                        " Theme
 
