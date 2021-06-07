@@ -29,6 +29,10 @@ Plug 'mhinz/vim-signify'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 " Latex
 Plug 'lervag/vimtex'
+" Colorizer
+Plug 'norcalli/nvim-colorizer.lua'
+" Live-Server
+Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
 
 " Initialize plugin system

@@ -1,4 +1,5 @@
 " SOURCES
+packadd! dracula_pro                                        " Theme
 source $HOME/.config/nvim/general/settings.vim              " General
 source $HOME/.config/nvim/keybinds/mappings.vim             " Keybinds
 source $HOME/.config/nvim/plugins/plugins.vim               " Plugins
@@ -10,7 +11,8 @@ source $HOME/.config/nvim/plugins/config/coc.vim            " COC settings
 source $HOME/.config/nvim/plugins/config/signify.vim        " SIGNIFY settings
 source $HOME/.config/nvim/plugins/config/vimtex.vim         " VIMTEX settings
 source $VIMRUNTIME/mswin.vim                                " Enable CopyPaste
-packadd! dracula_pro                                        " Theme
+" SOURCE LUA
+lua require'plug-colorizer'
 
 " SYNTAX HIGHLIGHTING
 " Java Guide Lines : style

@@ -23,11 +23,11 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " Single mappings
-let g:which_key_map['e'] = [ ':CocCommand explorer' , 'EXPLORER' ]
-let g:which_key_map['h'] = [ ':Startify'            , 'HOME' ]
+let g:which_key_map.e = [ ':CocCommand explorer' , 'EXPLORER' ]
+let g:which_key_map.h = [ ':Startify'            , 'HOME' ]
 
 " w is for window
-let g:which_key_map['w'] = {
+let g:which_key_map.w = {
       \ 'name' : '+windows' ,
       \ 'w' : ['<C-W>w'     , 'other-window']          ,
       \ 'd' : ['<C-W>c'     , 'delete-window']         ,
@@ -121,7 +121,7 @@ let g:which_key_map.c = {
       \ }
 
 " l is for latex
-let g:which_key_map['l'] = {
+let g:which_key_map.l = {
       \ 'name' : '+latex' ,
       \ 'i' : [':VimtexInfo'      , 'info'],
       \ 't' : [':VimtexTocToggle' , 'toc'],
@@ -129,6 +129,14 @@ let g:which_key_map['l'] = {
       \ 's' : [':VimtexStop'      , 'stop'],
       \ 'v' : [':VimtexView'      , 'preview'],
       \ 'C' : [':VimtexClean'     , 'clean'],
+      \ }
+
+" j is for javascript
+let g:which_key_map.j = {
+      \ 'name' : '+js' ,
+      \ 'v' : [':Bracey'        , 'preview'],
+      \ 's' : [':BraceyStop'    , 'stop'],
+      \ 'r' : [':BraceyReload'  , 'reload'],
       \ }
 
 " Register which key map
