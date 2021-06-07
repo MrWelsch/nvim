@@ -34,6 +34,11 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Live-Server
 Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'}
 
+" Find Files (Requires at least Nvim Nightly 0.5)
+"Plug 'nvim-lua/popup.nvim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-telescope/telescope.nvim'
+
 
 " Initialize plugin system
 call plug#end()

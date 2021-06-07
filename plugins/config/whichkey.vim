@@ -12,8 +12,8 @@ let g:which_key_use_floating_win = 0
 let g:which_key_vertical = 1
 
 " Change the colors if you want
-highlight default link WhichKey          Operator
-highlight default link WhichKeySeperator DiffAdded
+highlight default link WhichKey          Number
+highlight default link WhichKeySeperator Operator
 highlight default link WhichKeyGroup     Identifier
 highlight default link WhichKeyDesc      Function
 
@@ -28,87 +28,85 @@ let g:which_key_map.h = [ ':Startify'            , 'HOME' ]
 
 " w is for window
 let g:which_key_map.w = {
-      \ 'name' : '+windows' ,
-      \ 'w' : ['<C-W>w'     , 'other-window']          ,
-      \ 'd' : ['<C-W>c'     , 'delete-window']         ,
-      \ '-' : ['<C-W>s'     , 'split-window-below']    ,
-      \ '|' : ['<C-W>v'     , 'split-window-right']    ,
-      \ '2' : ['<C-W>v'     , 'layout-double-columns'] ,
-      \ 'h' : ['<C-W>h'     , 'window-left']           ,
-      \ 'j' : ['<C-W>j'     , 'window-below']          ,
-      \ 'l' : ['<C-W>l'     , 'window-right']          ,
-      \ 'k' : ['<C-W>k'     , 'window-up']             ,
-      \ 'H' : ['<C-W>5<'    , 'expand-window-left']    ,
-      \ 'J' : ['resize +5'  , 'expand-window-below']   ,
-      \ 'L' : ['<C-W>5>'    , 'expand-window-right']   ,
-      \ 'K' : ['resize -5'  , 'expand-window-up']      ,
-      \ '=' : ['<C-W>='     , 'balance-window']        ,
-      \ 's' : ['<C-W>s'     , 'split-window-below']    ,
-      \ 'v' : ['<C-W>v'     , 'split-window-below']    ,
+      \ 'name' : '+WINDOWS' ,
+      \ 'w' : ['<C-W>w'     , 'OTHER']          ,
+      \ 'd' : ['<C-W>c'     , 'DELETE']         ,
+      \ '-' : ['<C-W>s'     , 'SPLIT BELOW']    ,
+      \ '|' : ['<C-W>v'     , 'SPLIT RIGHT']    ,
+      \ '2' : ['<C-W>v'     , 'DOUBLE COLUMNS'] ,
+      \ 'h' : ['<C-W>h'     , 'LEFT']           ,
+      \ 'j' : ['<C-W>j'     , 'BELOW']          ,
+      \ 'l' : ['<C-W>l'     , 'RIGHT']          ,
+      \ 'k' : ['<C-W>k'     , 'UP']             ,
+      \ 'H' : ['<C-W>5<'    , 'EXPAND LEFT']    ,
+      \ 'J' : ['resize +5'  , 'EXPAND BELOW']   ,
+      \ 'L' : ['<C-W>5>'    , 'EXPAND RIGHT']   ,
+      \ 'K' : ['resize -5'  , 'EXPAND UP']      ,
+      \ '=' : ['<C-W>='     , 'BALANCE']        ,
       \ }
 
 " b is for buffer
 let g:which_key_map.b = {
-      \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1']        ,
-      \ '2' : ['b2'        , 'buffer 2']        ,
-      \ 'd' : ['bd'        , 'delete-buffer']   ,
-      \ 'f' : ['bfirst'    , 'first-buffer']    ,
-      \ 'h' : ['Startify'  , 'home-buffer']     ,
-      \ 'l' : ['blast'     , 'last-buffer']     ,
-      \ 'n' : ['bnext'     , 'next-buffer']     ,
-      \ 'p' : ['bprevious' , 'previous-buffer'] ,
+      \ 'name' : '+BUFFERS' ,
+      \ '1' : ['b1'        , 'BUFFER 1']        ,
+      \ '2' : ['b2'        , 'BUFFER 1']        ,
+      \ 'd' : ['bd'        , 'DELETE']          ,
+      \ 'h' : ['Startify'  , 'HOME']            ,
+      \ 'f' : ['bfirst'    , 'FIRST BUFFER']    ,
+      \ 'l' : ['blast'     , 'LAST BUFFER']     ,
+      \ 'n' : ['bnext'     , 'NEXT']            ,
+      \ 'p' : ['bprevious' , 'PREVIOUS']        ,
       \ }
 
 " s is for search
 let g:which_key_map.s = {
-      \ 'name' : '+search' ,
-      \ '/' : [':History/'     , 'history'],
-      \ ';' : [':Commands'     , 'commands'],
-      \ 'a' : [':Ag'           , 'text Ag'],
-      \ 'b' : [':BLines'       , 'current buffer'],
-      \ 'B' : [':Buffers'      , 'open buffers'],
-      \ 'c' : [':Commits'      , 'commits'],
-      \ 'C' : [':BCommits'     , 'buffer commits'],
-      \ 'f' : [':Files'        , 'files'],
-      \ 'g' : [':GFiles'       , 'git files'],
-      \ 'G' : [':GFiles?'      , 'modified git files'],
-      \ 'h' : [':History'      , 'file history'],
-      \ 'H' : [':History:'     , 'command history'],
-      \ 'l' : [':Lines'        , 'lines'] ,
-      \ 'm' : [':Marks'        , 'marks'] ,
-      \ 'M' : [':Maps'         , 'normal maps'] ,
-      \ 'p' : [':Helptags'     , 'help tags'] ,
-      \ 'P' : [':Tags'         , 'project tags'],
-      \ 's' : [':Snippets'     , 'snippets'],
-      \ 'S' : [':Colors'       , 'color schemes'],
-      \ 't' : [':Rg'           , 'text Rg'],
-      \ 'T' : [':BTags'        , 'buffer tags'],
-      \ 'w' : [':Windows'      , 'search windows'],
-      \ 'y' : [':Filetypes'    , 'file types'],
+      \ 'name' : '+SEARCH' ,
+      \ '/' : [':History/'     , 'HISTORY'],
+      \ ';' : [':Commands'     , 'COMMANDS'],
+      \ 'a' : [':Ag'           , 'TEXT Ag'],
+      \ 'b' : [':BLines'       , 'CURRENT BUFFER'],
+      \ 'B' : [':Buffers'      , 'ALL BUFFERS'],
+      \ 'c' : [':Commits'      , 'COMMITS'],
+      \ 'C' : [':BCommits'     , 'BUFFER COMMITS'],
+      \ 'f' : [':Files'        , 'FILES'],
+      \ 'g' : [':GFiles'       , 'GIT FILES'],
+      \ 'G' : [':GFiles?'      , 'MODIFIED GIT FILES'],
+      \ 'h' : [':History'      , 'FILE HISTORY'],
+      \ 'H' : [':History:'     , 'COMMAND HISTORY'],
+      \ 'l' : [':Lines'        , 'LINES'] ,
+      \ 'm' : [':Marks'        , 'MARKS'] ,
+      \ 'M' : [':Maps'         , 'NORMAL MAPS'] ,
+      \ 'p' : [':Helptags'     , 'HELP TAGS'] ,
+      \ 'P' : [':Tags'         , 'PROJECT TAGS'],
+      \ 's' : [':Snippets'     , 'SNIPPETS'],
+      \ 'S' : [':Colors'       , 'COLOR THEMES'],
+      \ 't' : [':Rg'           , 'TEXT Rg'],
+      \ 'T' : [':BTags'        , 'BUFFER TAGS'],
+      \ 'w' : [':Windows'      , 'WINDOWS'],
+      \ 'y' : [':Filetypes'    , 'FILETYPES'],
       \ }
 
 " t is for terminal (Things to be opened in a floating window)
 let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew'           , 'terminal'],
-      \ 't' : [':FloatermToggle'        , 'toggle'],
+      \ 'name' : '+TERMINAL' ,
+      \ ';' : [':FloatermNew'           , 'OPEN'],
+      \ 't' : [':FloatermToggle'        , 'TOGGLE'],
       \ }
 
 " c is for COC
 let g:which_key_map.c = {
-      \ 'name' : '+coc' ,
-      \ 'a' : [':CocAction'                     , 'action'],
-      \ 'f' : ['<Plug>(coc-fix-current)'        , 'fix'],
-      \ 'F' : [':Format'                        , 'format'],
-      \ 'e' : [':CocList diagnostics'           , 'errors'],
-      \ 'c' : [':CocList commands'              , 'commands'],
-      \ 'j' : ['<Plug>(coc-diagnostic-prev)'    , 'errPrev'],
-      \ 'k' : ['<Plug>(coc-diagnostic-next)'    , 'errNext'],
-      \ 'i' : ['<Plug>(coc-implementation)'     , 'implementation'],
-      \ 'r' : ['<Plug>(coc-references)'         , 'references'],
-      \ 'd' : ['<Plug>(coc-definition)'         , 'definition'],
-      \ 't' : ['<Plug>(coc-type-definition)'    , 'type definition'],
+      \ 'name' : '+COC' ,
+      \ 'a' : [':CocAction'                     , 'ACTION'],
+      \ 'f' : ['<Plug>(coc-fix-current)'        , 'FIX'],
+      \ 'F' : [':Format'                        , 'FORMAT'],
+      \ 'e' : [':CocList diagnostics'           , 'ERRORS'],
+      \ 'c' : [':CocList commands'              , 'COMMANDS'],
+      \ 'j' : ['<Plug>(coc-diagnostic-prev)'    , 'ERRPREV'],
+      \ 'k' : ['<Plug>(coc-diagnostic-next)'    , 'ERRNEXT'],
+      \ 'i' : ['<Plug>(coc-implementation)'     , 'IMPLEMENTATION'],
+      \ 'r' : ['<Plug>(coc-references)'         , 'REFERENCES'],
+      \ 'd' : ['<Plug>(coc-definition)'         , 'DEFINITION'],
+      \ 't' : ['<Plug>(coc-type-definition)'    , 'TYPEDEF'],
       \ }
 
 " g is for git
@@ -122,21 +120,21 @@ let g:which_key_map.c = {
 
 " l is for latex
 let g:which_key_map.l = {
-      \ 'name' : '+latex' ,
-      \ 'i' : [':VimtexInfo'      , 'info'],
-      \ 't' : [':VimtexTocToggle' , 'toc'],
-      \ 'c' : [':VimtexCompile'   , 'compile'],
-      \ 's' : [':VimtexStop'      , 'stop'],
-      \ 'v' : [':VimtexView'      , 'preview'],
-      \ 'C' : [':VimtexClean'     , 'clean'],
+      \ 'name' : '+LATEX' ,
+      \ 'i' : [':VimtexInfo'      , 'INFO'],
+      \ 't' : [':VimtexTocToggle' , 'TOC'],
+      \ 'c' : [':VimtexCompile'   , 'COMPILE'],
+      \ 's' : [':VimtexStop'      , 'STOP'],
+      \ 'v' : [':VimtexView'      , 'PREVIEW'],
+      \ 'C' : [':VimtexClean'     , 'CLEAN'],
       \ }
 
 " j is for javascript
 let g:which_key_map.j = {
-      \ 'name' : '+js' ,
-      \ 'v' : [':Bracey'        , 'preview'],
-      \ 's' : [':BraceyStop'    , 'stop'],
-      \ 'r' : [':BraceyReload'  , 'reload'],
+      \ 'name' : '+JS' ,
+      \ 'v' : [':Bracey'        , 'PREVIEW'],
+      \ 's' : [':BraceyStop'    , 'STOP'],
+      \ 'r' : [':BraceyReload'  , 'RELOAD'],
       \ }
 
 " Register which key map
