@@ -72,6 +72,15 @@ function! QuickFixToggle()
     endif
 endfunction
 
+function! AdjustDracula()
+     hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+endfunction
+
+augroup dracula_colors
+    autocmd!
+    autocmd ColorScheme dracula_pro call AdjustDracula()
+augroup END
+
 " Dashboard Custom Colors
 highlight default link DashboardHeader      Number
 highlight default link DashboardCenter      Operator
@@ -79,9 +88,10 @@ highlight default link DashboardShortcut    Identifier
 highlight default link DashboardFooter      Function
 
 " DISABLE COLOR SCHEME BACKGROUND COLORS (TRANSLUCENT)
-highlight Normal ctermbg=none guibg=none
-highlight SignColumn ctermbg=none guibg=none
-highlight LineNr ctermbg=none guibg=none
+"highlight Normal ctermbg=none guibg=none
+"highlight SignColumn ctermbg=none guibg=none
+"highlight LineNr ctermbg=none guibg=none
+highlight EndOfBuffer guifg=bg guibg=bg ctermfg=bg ctermbg=bg
 
 " Auto resize panes
 autocmd VimResized * wincmd =
