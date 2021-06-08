@@ -26,12 +26,11 @@ require('lv-zen')
 
 -- extras
 if O.extras then
-    --require('lv-fterm')
+    require('lv-toggleterm')
     require('lv-numb')
     require('lv-hop')
     require('lv-colorizer')
     require('lv-symbols-outline')
-    --require('lv-dial')
 end
 
 

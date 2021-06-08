@@ -120,8 +120,6 @@ return require("packer").startup(function(use)
     if O.extras then
         use {'metakirby5/codi.vim', opt = true}
         require_plugin('codi.vim')
-        use {'numToStr/FTerm.nvim', opt = true}
-        require_plugin('numToStr/FTerm.nvim')
         use {'nacro90/numb.nvim', opt = true}
         require_plugin('numb.nvim')
         use {'turbio/bracey.vim', run = 'npm install --prefix server', opt = true}
@@ -130,8 +128,10 @@ return require("packer").startup(function(use)
         require_plugin('nvim-colorizer.lua')
         use {'lervag/vimtex', opt = true}
         require_plugin('vimtex')
-        use {'voldikss/vim-floaterm'}
-        require_plugin('vim-floaterm')
+        use {'akinsho/nvim-toggleterm.lua'}
+        require_plugin('nvim-toggleterm.lua')
+        --use {'kdheepak/lazygit.nvim'}
+        --require_plugin('lazygit.nvim')
 
         --use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true}
         --require_plugin('markdown-preview.nvim')
