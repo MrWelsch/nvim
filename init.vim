@@ -14,6 +14,9 @@ source $VIMRUNTIME/mswin.vim                                " Enable CopyPaste
 " SOURCE LUA
 lua require'plug-colorizer'
 
+" COC EXTENSIONS WILL BE LOADED AFTER coc.nvim SERVICE STARTED
+let g:coc_global_extensions = ['coc-explorer', 'coc-html', 'coc-css', 'coc-tsserver', 'coc-python', 'coc-texlab']
+
 " SYNTAX HIGHLIGHTING
 " Java Guide Lines : style
 " Indenting        : indent
