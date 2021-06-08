@@ -37,9 +37,9 @@ vim.o.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.g.nvim_tree_disable_netrw = O.nvim_tree_disable_netrw -- enable netrw for remote gx gf support (must be set before plugin's packadd)
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.cmd('filetype plugin on') -- filetype detection
--- vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h18"
+vim.o.guifont = "JetBrainsMono\\ Nerd\\ Font\\ Mono:h16"
 -- vim.o.guifont = "Hack\\ Nerd\\ Font\\ Mono"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
-vim.o.guifont = "FiraCode Nerd Font:h17"
---vim.g.vimtex_view_method = 'zathura'
+-- vim.o.guifont = "FiraCode Nerd Font:h17"
+vim.g.vimtex_view_method = 'zathura'
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
