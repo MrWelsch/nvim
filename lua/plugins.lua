@@ -128,6 +128,10 @@ return require("packer").startup(function(use)
         require_plugin('bracey.vim')
         use {'norcalli/nvim-colorizer.lua', opt = true}
         require_plugin('nvim-colorizer.lua')
+        use {'lervag/vimtex', opt = true}
+        require_plugin('vimtex')
+        use {'voldikss/vim-floaterm'}
+        require_plugin('vim-floaterm')
 
         --use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true}
         --require_plugin('markdown-preview.nvim')

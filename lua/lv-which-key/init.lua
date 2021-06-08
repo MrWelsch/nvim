@@ -54,6 +54,7 @@ vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true,
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- terminal
+vim.api.nvim_set_keymap('n', '<Leader>t', ':FloatermToggle<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<Leader>`', '<CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 --vim.api.nvim_set_keymap('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', {noremap = true, silent = true})
 
@@ -79,6 +80,7 @@ local mappings = {
     ["/"] = "COMMENT",
     ["c"] = "Close Buffer",
     ["e"] = "Explorer",
+    ["t"] = "Terminal",
     ["f"] = "Find File",
     ["h"] = "No Highlight",
     ["p"] = "Projects",
@@ -153,6 +155,18 @@ local mappings = {
         s = {"<cmd>TZBottom<cr>", "toggle status line"},
         t = {"<cmd>TZTop<cr>", "toggle tab bar"},
         z = {"<cmd>TZAtaraxis<cr>", "toggle zen"},
+    },
+    L = {
+        name = "+LATEX",
+        c = {"<cmd>VimtexCompile<cr>", "compile"},
+        s = {"<cmd>VimtexStop<cr>", "stop"},
+        p = {"<cmd>VimtexView<cr>", "preview"},
+    },
+    w = {
+        name = "+WEB",
+        p = {"<cmd>Bracey<cr>", "preview"},
+        s = {"<cmd>BraceyStop<cr>", "stop"},
+        r = {"<cmd>BracyReload<cr>", "reload"},
     }
 }
 

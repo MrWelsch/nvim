@@ -6,6 +6,10 @@ vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
 vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
+-- undo & redo
+vim.api.nvim_set_keymap('n', '<C-z>', ':undo<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<S-z>', ':redo<CR>', {noremap = true, silent = true})
+
 -- TODO fix this
 -- Terminal window navigation
 vim.cmd([[

@@ -77,3 +77,13 @@ highlight default link DashboardHeader      Number
 highlight default link DashboardCenter      Operator
 highlight default link DashboardShortcut    Identifier
 highlight default link DashboardFooter      Function
+
+" DISABLE COLOR SCHEME BACKGROUND COLORS (TRANSLUCENT)
+highlight Normal ctermbg=none guibg=none
+highlight SignColumn ctermbg=none guibg=none
+highlight LineNr ctermbg=none guibg=none
+
+" Auto resize panes
+autocmd VimResized * wincmd =
+" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
