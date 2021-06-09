@@ -88,16 +88,3 @@ highlight EndOfBuffer guifg=bg guibg=bg ctermfg=bg ctermbg=bg
 autocmd VimResized * wincmd =
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
-
-
-" EXPERIMENTAL
-"packadd! dracula_pro
-"syntax enable
-"let g:dracula_colorterm = 0
-
-" Italics
-"let &t_ZH="\e[3m"
-"let &t_ZR="\e[23m"
-" set t_ZH=^[[3m
-" set t_ZR=^[[23m
-hi! Comment gui=italic
