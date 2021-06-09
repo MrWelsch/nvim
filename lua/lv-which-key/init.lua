@@ -181,7 +181,6 @@ local mappings = {
     L = {
         name = "+LATEX",
         c = {"<cmd>VimtexCompile<cr>", "compile"},
-        s = {"<cmd>VimtexStop<cr>", "stop"},
         p = {"<cmd>VimtexView<cr>", "preview"},
     },
     w = {

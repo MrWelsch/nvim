@@ -1,4 +1,4 @@
---[[ " 
+--[[ "
 --let g:nvim_tree_auto_ignore_ft = 'startify' "empty by default, don't auto open tree on specific filetypes.
 let g:nvim_tree_hide_dotfiles = 1 "0 by default, this option hides files and folders starting with a dot `.`
 let g:nvim_tree_git_hl = 1 "0 by default, will enable file highlight for git attributes (can be used without the icons).
@@ -62,4 +62,28 @@ vim.g.nvim_tree_icons = {
     symlink = '',
     git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
     folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
+}
+
+-- Exclude from file tree
+vim.g.nvim_tree_ignore = {
+    '.git',
+    '*.aux',
+    '*.bbl',
+    '*.bcf',
+    '*.blg',
+    '*.fdb_latexmk',
+    '*.fls',
+    '*.gz',
+    '*.ilg',
+    '*.lof',
+    '*.lol',
+    '*.lot',
+    '*.nav',
+    '*.out',
+    '*.snm',
+    '*.toc',
+    '*.vrb',
+    '*.xdv',
+    'node_modules', 
+    '.cache'
 }

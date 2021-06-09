@@ -130,8 +130,6 @@ return require("packer").startup(function(use)
         require_plugin('vimtex')
         use {'akinsho/nvim-toggleterm.lua'}
         require_plugin('nvim-toggleterm.lua')
-        --use {'kdheepak/lazygit.nvim'}
-        --require_plugin('lazygit.nvim')
 
         --use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true}
         --require_plugin('markdown-preview.nvim')

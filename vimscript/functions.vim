@@ -88,3 +88,8 @@ highlight EndOfBuffer guifg=bg guibg=bg ctermfg=bg ctermbg=bg
 autocmd VimResized * wincmd =
 " Remove trailing whitespace on save
 autocmd BufWritePre * %s/\s\+$//e
+
+" Latex
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \}

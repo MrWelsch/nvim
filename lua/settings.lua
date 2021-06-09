@@ -42,4 +42,4 @@ vim.cmd('filetype plugin on') -- filetype detection
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 -- vim.o.guifont = "FiraCode Nerd Font:h17"
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
-
+-- vim.g.vimtex_view_method = 'zathura'
