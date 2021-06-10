@@ -26,8 +26,8 @@ local function require_plugin(plugin)
     return ok, err, code
 end
 
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile" -- Auto compile when there are changes in plugins.lua
-
+-- Auto compile if there are changes in plugins.lua
+vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
 return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
@@ -38,53 +38,61 @@ return require("packer").startup(function(use)
     use {"kabouzeid/nvim-lspinstall", opt = true}
     use {"folke/trouble.nvim", opt = true}
 
-    -- Telescope
+    -- TELESCOPE
     use {"nvim-lua/popup.nvim", opt = true}
     use {"nvim-lua/plenary.nvim", opt = true}
     use {"nvim-telescope/telescope.nvim", opt = true}
     use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
     use {"nvim-telescope/telescope-project.nvim", opt = true}
 
-    -- Debugging
+    -- DEBUGGING
     use {"mfussenegger/nvim-dap", opt = true}
 
-    -- Autocomplete
+    -- AUTOCOMPLETE
     use {"hrsh7th/nvim-compe", opt = true}
-    use {"hrsh7th/vim-vsnip", opt = true}
-    use {"rafamadriz/friendly-snippets", opt = true}
+    -- use {"hrsh7th/vim-vsnip", opt = true}
+    -- use {"rafamadriz/friendly-snippets", opt = true}
 
-    -- Treesitter
+    -- TREESITTER
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
     use {"windwp/nvim-ts-autotag", opt = true}
     use {'andymass/vim-matchup', opt = true}
 
-    -- Explorer
+    -- EXPLORER
     use {"kyazdani42/nvim-tree.lua", opt = true}
-    use {"ahmedkhalf/lsp-rooter.nvim", opt = true} -- with this nvim-tree will follow you
-    -- TODO remove when open on dir is supported by nvimtree
-    use "kevinhwang91/rnvimr"
+    -- This puts nvim-tree in curdir
+    use {"ahmedkhalf/lsp-rooter.nvim", opt = true}
 
-    -- use {'lukas-reineke/indent-blankline.nvim', opt=true, branch = 'lua'}
+    -- TERMINAL
+    use {'akinsho/nvim-toggleterm.lua'}
+
+    -- GIT
     use {"lewis6991/gitsigns.nvim", opt = true}
     use {'f-person/git-blame.nvim', opt = true}
+
+    -- KEYBINDS
     use {"folke/which-key.nvim", opt = true}
+
+    -- MISCELLANIOUS
     use {"glepnir/dashboard-nvim", opt = true}
+    use {"kyazdani42/nvim-web-devicons", opt = true}
     use {"windwp/nvim-autopairs", opt = true}
     use {"kevinhwang91/nvim-bqf", opt = true}
+    use {'norcalli/nvim-colorizer.lua', opt = true}
 
-    -- Comments
+    -- LATEX
+    use {'lervag/vimtex', opt = true}
+
+    -- COMMENTING
     use {"terrortylor/nvim-comment", opt = true}
     use {'JoosepAlviste/nvim-ts-context-commentstring', opt = true}
 
-    -- Icons
-    use {"kyazdani42/nvim-web-devicons", opt = true}
-
-    -- Status Line and Bufferline
+    -- STATUS & BUFFERLINE
     use {"glepnir/galaxyline.nvim", opt = true}
     use {"romgrk/barbar.nvim", opt = true}
 
-    -- Zen Mode
-    use {"Pocco81/TrueZen.nvim", opt = true}
+    -- LIVE SERVER
+    use {'turbio/bracey.vim', run = 'npm install --prefix server', opt = true}
 
     require_plugin("nvim-lspconfig")
     require_plugin("lspsaga.nvim")
@@ -115,48 +123,9 @@ return require("packer").startup(function(use)
     require_plugin('lsp-rooter.nvim')
     require_plugin("TrueZen.nvim")
     require_plugin("nvim-ts-context-commentstring")
-
-    -- Extras
-    if O.extras then
-        use {'metakirby5/codi.vim', opt = true}
-        require_plugin('codi.vim')
-        use {'nacro90/numb.nvim', opt = true}
-        require_plugin('numb.nvim')
-        use {'turbio/bracey.vim', run = 'npm install --prefix server', opt = true}
-        require_plugin('bracey.vim')
-        use {'norcalli/nvim-colorizer.lua', opt = true}
-        require_plugin('nvim-colorizer.lua')
-        use {'lervag/vimtex', opt = true}
-        require_plugin('vimtex')
-        use {'akinsho/nvim-toggleterm.lua'}
-        require_plugin('nvim-toggleterm.lua')
-
-        --use {'iamcco/markdown-preview.nvim', run = 'cd app && npm install', opt = true}
-        --require_plugin('markdown-preview.nvim')
-        --use {'monaqa/dial.nvim', opt = true}
-        --require_plugin('dial.nvim')
-        --use {'phaazon/hop.nvim', opt = true}
-        --require_plugin('hop.nvim')
-        --use {'windwp/nvim-spectre', opt = true}
-        --require_plugin('windwp/nvim-spectre')
-        --use {'simrat39/symbols-outline.nvim', opt = true}
-        --require_plugin('symbols-outline.nvim')
-        --use {'nvim-treesitter/playground', opt = true}
-        --require_plugin('playground')
-        -- folke/todo-comments.nvim
-        -- gennaro-tedesco/nvim-jqx
-        -- TimUntersberger/neogit
-        -- folke/lsp-colors.nvim
-        -- simrat39/symbols-outline.nvim
-
-        -- Git
-        -- use {'tpope/vim-fugitive', opt = true}
-        -- use {'tpope/vim-rhubarb', opt = true}
-        -- pwntester/octo.nvim
-
-        -- Easily Create Gists
-        -- use {'mattn/vim-gist', opt = true}
-        -- use {'mattn/webapi-vim', opt = true}
-    end
+    require_plugin('bracey.vim')
+    require_plugin('nvim-colorizer.lua')
+    require_plugin('vimtex')
+    require_plugin('nvim-toggleterm.lua')
 
 end)

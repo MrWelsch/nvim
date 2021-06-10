@@ -43,10 +43,11 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
+-- Set up a seperate terminal instance exclusively for lazygit
 local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ 
-    cmd = "lazygit", 
-    hidden = true, 
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
     direction = 'float',
     float_opts = {
         -- The border key is *almost* the same as 'nvim_win_open'
@@ -69,9 +70,6 @@ end
 -- Set leader
 vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
-
--- no hl
-vim.api.nvim_set_keymap('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 
 -- explorer
 vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
@@ -103,7 +101,6 @@ local mappings = {
     ["e"] = "Explorer",
     ["t"] = "Terminal",
     ["f"] = "Find File",
-    ["h"] = "No Highlight",
     ["p"] = "Projects",
     d = {
         name = "+DIAGNOSTICS",
@@ -172,12 +169,6 @@ local mappings = {
     S = {name = "+SESSION", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
 
     -- extras
-    z = {
-        name = "+ZEN",
-        s = {"<cmd>TZBottom<cr>", "toggle status line"},
-        t = {"<cmd>TZTop<cr>", "toggle tab bar"},
-        z = {"<cmd>TZAtaraxis<cr>", "toggle zen"},
-    },
     L = {
         name = "+LATEX",
         c = {"<cmd>VimtexCompile<cr>", "compile"},

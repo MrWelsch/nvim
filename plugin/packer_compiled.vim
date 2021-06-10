@@ -72,11 +72,6 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
-  ["TrueZen.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/TrueZen.nvim"
-  },
   ["barbar.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -87,20 +82,10 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/bracey.vim"
   },
-  ["codi.vim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/codi.vim"
-  },
   ["dashboard-nvim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/dashboard-nvim"
-  },
-  ["friendly-snippets"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/friendly-snippets"
   },
   ["galaxyline.nvim"] = {
     loaded = false,
@@ -126,11 +111,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
-  },
-  ["numb.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/numb.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = false,
@@ -215,10 +195,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/popup.nvim"
   },
-  rnvimr = {
-    loaded = true,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/rnvimr"
-  },
   ["telescope-fzy-native.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -244,11 +220,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-matchup"
-  },
-  ["vim-vsnip"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
   },
   vimtex = {
     loaded = false,

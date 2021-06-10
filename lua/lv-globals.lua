@@ -5,15 +5,14 @@ CACHE_PATH = vim.fn.stdpath('cache')
 O = {
     auto_close_tree = 0,
     auto_complete = true,
-    colorscheme = 'dracula_pro',
+    colorscheme = '',
     hidden_files = true,
     wrap_lines = false,
     number = true,
     relative_number = true,
-    shell = 'bash',
+    shell = 'zsh',
 	timeoutlen = 100,
     nvim_tree_disable_netrw = 0,
-    extras = true,
 
     -- @usage pass a table with your desired languages
     treesitter = {

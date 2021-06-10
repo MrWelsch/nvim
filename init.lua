@@ -3,6 +3,8 @@ vim.cmd('luafile '..CONFIG_PATH..'/lv-settings.lua')
 require('settings')
 require('lv-gitblame')
 require('plugins')
+
+-- OUTSOURCED PLUGIN CONFIGS
 require('lv-utils')
 require('lv-autocommands')
 require('keymappings')
@@ -22,18 +24,8 @@ require('lv-autopairs')
 require('lv-rnvimr')
 require('lv-which-key')
 require('lv-lsp-rooter')
-require('lv-zen')
-
--- extras
-if O.extras then
-    require('lv-toggleterm')
-    require('lv-numb')
-    require('lv-hop')
-    require('lv-colorizer')
-    require('lv-symbols-outline')
-end
-
-
+require('lv-toggleterm')
+require('lv-colorizer')
 
 -- TODO is there a way to do this without vimscript
 vim.cmd('source '..CONFIG_PATH..'/vimscript/functions.vim')
@@ -64,7 +56,6 @@ require('lsp.ruby-ls')
 require('lsp.rust-ls')
 require('lsp.svelte-ls')
 require('lsp.terraform-ls')
--- require('lsp.tailwindcss-ls')
 require('lsp.vim-ls')
 require('lsp.vue-ls')
 require('lsp.yaml-ls')
