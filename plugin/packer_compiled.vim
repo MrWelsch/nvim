@@ -117,10 +117,6 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
-  ["lazygit.nvim"] = {
-    loaded = true,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
-  },
   ["lsp-rooter.nvim"] = {
     loaded = false,
     needs_bufread = false,

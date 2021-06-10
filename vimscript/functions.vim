@@ -37,10 +37,10 @@ command! DebugGetSession lua require'dap'.session()
 
 " Available Debug Adapters:
 "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
-" 
+"
 " Adapter configuration and installation instructions:
 "   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-" 
+"
 " Debug Adapter protocol:
 "   https://microsoft.github.io/debug-adapter-protocol/
 
@@ -58,7 +58,7 @@ command! DebugGetSession lua require'dap'.session()
 autocmd! User GoyoEnter lua require('gitsigns').toggle_signs()
 autocmd! User GoyoLeave lua require('gitsigns').toggle_signs()
 
-autocmd User GoyoEnter set laststatus=0 
+autocmd User GoyoEnter set laststatus=0
 autocmd User GoyoLeave set laststatus=2
 
 " autocmd! User GoyoEnter lua require('galaxyline').disable_galaxyline()
@@ -93,3 +93,5 @@ autocmd BufWritePre * %s/\s\+$//e
 let g:vimtex_compiler_latexmk_engines = {
     \ '_'                : '-xelatex',
     \}
+
+set textwidth=79

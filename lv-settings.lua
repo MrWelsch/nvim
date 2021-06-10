@@ -9,9 +9,9 @@ an executable
 
 -- general
 O.auto_complete = true
-O.colorscheme = 'dracula_pro'
+O.colorscheme = 'dracula_pro_van_helsing'
 O.auto_close_tree = 0
-O.wrap_lines = false
+O.wrap_lines = true
 O.timeoutlen = 100
 O.document_highlight = true
 O.extras = true
@@ -35,7 +35,7 @@ O.clang.diagnostics.underline = false
 -- add things like O.python.linter.flake8.exec_path
 -- add things like O.python.formatter.isort.exec_path
 O.python.formatter = 'yapf'
--- O.python.linter = 'flake8'
+O.python.linter = 'flake8'
 O.python.isort = true
 O.python.autoformat = true
 O.python.diagnostics.virtual_text = true

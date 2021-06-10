@@ -84,6 +84,7 @@ vim.g.nvim_tree_ignore = {
     '*.toc',
     '*.vrb',
     '*.xdv',
-    'node_modules', 
+    '*.pyg',
+    'node_modules',
     '.cache'
 }
