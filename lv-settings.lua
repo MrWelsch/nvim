@@ -11,7 +11,7 @@ an executable
 O.auto_complete = true
 O.colorscheme = 'dracula_pro_van_helsing'
 O.auto_close_tree = 0
-O.wrap_lines = true
+O.wrap_lines = false
 O.timeoutlen = 100
 O.document_highlight = true
 O.extras = true
