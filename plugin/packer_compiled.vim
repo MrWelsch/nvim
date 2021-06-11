@@ -215,6 +215,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/trouble.nvim"
   },
+  undotree = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/undotree"
+  },
   ["vim-matchup"] = {
     after_files = { "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     loaded = false,

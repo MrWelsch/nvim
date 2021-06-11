@@ -32,7 +32,6 @@ return require("packer").startup(function(use)
     -- Packer can manage itself as an optional plugin
     use "wbthomason/packer.nvim"
 
-    -- TODO refactor all of this (for now it works, but yes I know it could be wrapped in a simpler function)
     use {"neovim/nvim-lspconfig", opt = true}
     use {"glepnir/lspsaga.nvim", opt = true}
     use {"kabouzeid/nvim-lspinstall", opt = true}
@@ -50,8 +49,6 @@ return require("packer").startup(function(use)
 
     -- AUTOCOMPLETE
     use {"hrsh7th/nvim-compe", opt = true}
-    -- use {"hrsh7th/vim-vsnip", opt = true}
-    -- use {"rafamadriz/friendly-snippets", opt = true}
 
     -- TREESITTER
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
