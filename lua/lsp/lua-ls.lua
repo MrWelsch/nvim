@@ -15,7 +15,11 @@ require'lspconfig'.sumneko_lua.setup {
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global
-                globals = {'vim'}
+                globals = {'vim'},
+		-- Added while refactoring
+		virtual_text = {spacing = 0, prefix = ""},
+		signs = true, 
+		underline = true
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files

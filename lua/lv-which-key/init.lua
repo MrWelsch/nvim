@@ -17,7 +17,7 @@ require("which-key").setup {
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "+" -- symbol prepended to a group
+        group = "" -- symbol prepended to a group
     },
     window = {
         border = "single", -- none, single, double, shadow
@@ -43,67 +43,50 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
--- Set up a seperate terminal instance exclusively for lazygit
-local Terminal = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({
-    cmd = "lazygit",
-    hidden = true,
-    direction = 'float',
-    float_opts = {
-        -- The border key is *almost* the same as 'nvim_win_open'
-        -- see :h nvim_win_open for details on borders however
-        -- the 'curved' border is a custom border type
-        -- not natively supported but implemented in this plugin.
-        border = 'double',
-        winblend = 3,
-        highlights = {
-          border = "Normal",
-          background = "Normal",
-        }
-    }
-})
+-- Save Keymapping command in a variable
+local bind = vim.api.nvim_set_keymap
 
-function _lazygit_toggle()
-    lazygit:toggle()
-end
-
--- Set leader
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+-- LEADER
+bind('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
--- explorer
-vim.api.nvim_set_keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+-- EXPLORER
+bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
--- terminal
-vim.api.nvim_set_keymap('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
+-- TERMINAL
+bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
 
--- telescope
-vim.api.nvim_set_keymap('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
+-- LAZYGIT
+bind('n', '<Leader>g', ':lua_lazygit_toggle()<CR>', {noremap = true, silent = true})
 
--- dashboard
-vim.api.nvim_set_keymap('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
+-- TELESCOPE
+bind('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
--- Comments
-vim.api.nvim_set_keymap("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+-- DASHBOARD
+bind('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
 
--- close buffer
-vim.api.nvim_set_keymap("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
+-- COMMENTS
+bind("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+bind("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 
--- open projects
-vim.api.nvim_set_keymap('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
+-- CLOSE BUFFER
+bind("n", "<leader>c", ":BufferClose<CR>", {noremap = true, silent = true})
+
+-- PROJECTS
+bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
                         {noremap = true, silent = true})
--- TODO create entire treesitter section
 
 local mappings = {
     ["/"] = "COMMENT",
     ["c"] = "Close Buffer",
     ["e"] = "Explorer",
+    ["f"] = "Find File",
+    ["g"] = "Lazygit",
     ["t"] = "Terminal",
     ["f"] = "Find File",
     ["p"] = "Projects",
     d = {
-        name = "+DIAGNOSTICS",
+        name = "+ diagnostics",
         t = {"<cmd>TroubleToggle<cr>", "trouble"},
         w = {"<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace"},
         d = {"<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document"},
@@ -112,7 +95,7 @@ local mappings = {
         r = {"<cmd>TroubleToggle lsp_references<cr>", "references"},
     },
     D = {
-        name = "+DEBUG",
+        name = "+ debug",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
         c = {"<cmd>DebugContinue<cr>", "Continue"},
         i = {"<cmd>DebugStepInto<cr>", "Step Into"},
@@ -120,23 +103,8 @@ local mappings = {
         r = {"<cmd>DebugToggleRepl<cr>", "Toggle Repl"},
         s = {"<cmd>DebugStart<cr>", "Start"}
     },
-    g = {
-        name = "+GIT",
-        l = {"<cmd>lua_lazygit_toggle()<cr>", "LazyGit"},
-        j = {"<cmd>NextHunk<cr>", "Next Hunk"},
-        k = {"<cmd>PrevHunk<cr>", "Prev Hunk"},
-        p = {"<cmd>PreviewHunk<cr>", "Preview Hunk"},
-        r = {"<cmd>ResetHunk<cr>", "Reset Hunk"},
-        R = {"<cmd>ResetBuffer<cr>", "Reset Buffer"},
-        s = {"<cmd>StageHunk<cr>", "Stage Hunk"},
-        u = {"<cmd>UndoStageHunk<cr>", "Undo Stage Hunk"},
-        o = {"<cmd>Telescope git_status<cr>", "Open changed file"},
-        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-        c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
-        C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
-    },
     l = {
-        name = "+LSP",
+        name = "+ lsp",
         a = {"<cmd>Lspsaga code_action<cr>", "Code Action"},
         A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
@@ -154,7 +122,7 @@ local mappings = {
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
     s = {
-        name = "+SEARCH",
+        name = "+ search",
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
@@ -166,16 +134,19 @@ local mappings = {
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
-    S = {name = "+SESSION", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}},
-
+    S = {
+	name = "+ session", 
+    	s = {"<cmd>SessionSave<cr>", "Save Session"}, 
+	l = {"<cmd>SessionLoad<cr>", "Load Session"}
+    },
     -- extras
     L = {
-        name = "+LATEX",
+        name = "+ latex",
         c = {"<cmd>VimtexCompile<cr>", "compile"},
         p = {"<cmd>VimtexView<cr>", "preview"},
     },
     w = {
-        name = "+WEB",
+        name = "+ web",
         p = {"<cmd>Bracey<cr>", "preview"},
         s = {"<cmd>BraceyStop<cr>", "stop"},
         r = {"<cmd>BracyReload<cr>", "reload"},

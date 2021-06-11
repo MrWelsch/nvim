@@ -1,10 +1,8 @@
-vim.cmd('colorscheme ' .. O.colorscheme)
-
 -- DRACULA PRO
 vim.cmd('packadd! dracula_pro')
 vim.cmd('syntax enable')
-vim.cmd('let g:dracula_colorterm = 0')
-
+vim.g.dracula_colorterm = 0
+vim.cmd('colorscheme dracula_pro_van_helsing')
 -- COMMENTS
 -- vim.cmd('hi! Comment gui=italic')
 
@@ -12,10 +10,9 @@ vim.cmd('let g:dracula_colorterm = 0')
 -- highlight Normal ctermbg=none guibg=none
 -- highlight SignColumn ctermbg=none guibg=none
 -- highlight LineNr ctermbg=none guibg=none
-vim.cmd('hi! EndOfBuffer guifg=bg guibg=bg ctermfg=bg ctermbg=bg')
-
+--vim.cmd('hi! default link EndOfBuffer guifg=bg guibg=bg ctermfg=bg ctermbg=bg')
 -- DASHBOARD COLORS
 vim.cmd('hi! default link DashboardHeader Number')
-vim.cmd('highlight default link DashboardCenter Operator')
-vim.cmd('highlight default link DashboardShortcut Identifier')
-vim.cmd('highlight default link DashboardFooter Function')
+vim.cmd('hi! default link DashboardCenter Operator')
+vim.cmd('hi! default link DashboardShortcut Identifier')
+vim.cmd('hi! default link DashboardFooter Function')

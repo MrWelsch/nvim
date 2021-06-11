@@ -12,5 +12,12 @@ require'lspconfig'.jsonls.setup {
                 vim.lsp.buf.range_formatting({}, {0, 0}, {vim.fn.line("$"), 0})
             end
         }
+    },
+    handlers = {
+        ["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+            virtual_text = {spacing = 0, prefix = ""},
+            signs = true,
+            underline = true
+        })
     }
 }

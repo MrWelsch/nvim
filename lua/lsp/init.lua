@@ -100,11 +100,11 @@ local function documentHighlight(client, bufnr)
 end
 local lsp_config = {}
 
-if O.document_highlight then
-    function lsp_config.common_on_attach(client, bufnr)
-        documentHighlight(client, bufnr)
-    end
+
+function lsp_config.common_on_attach(client, bufnr)
+	documentHighlight(client, bufnr)
 end
+
 
 function lsp_config.tsserver_on_attach(client, bufnr)
     lsp_config.common_on_attach(client, bufnr)

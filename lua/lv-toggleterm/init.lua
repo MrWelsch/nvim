@@ -23,4 +23,27 @@ require("toggleterm").setup{
       }
     }
 }
-  
+
+-- Set up a seperate terminal instance exclusively for lazygit
+local Terminal = require('toggleterm.terminal').Terminal
+local lazygit = Terminal:new({
+    cmd = "lazygit",
+    hidden = true,
+    direction = 'float',
+    float_opts = {
+        -- The border key is *almost* the same as 'nvim_win_open'
+        -- see :h nvim_win_open for details on borders however
+        -- the 'curved' border is a custom border type
+        -- not natively supported but implemented in this plugin.
+        border = 'double',
+        winblend = 3,
+        highlights = {
+          border = "Normal",
+          background = "Normal",
+        }
+    }
+})
+
+function _lazygit_toggle()
+    lazygit:toggle()
+end
