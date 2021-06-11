@@ -70,6 +70,9 @@ return require("packer").startup(function(use)
     use {"lewis6991/gitsigns.nvim", opt = true}
     use {'f-person/git-blame.nvim', opt = true}
 
+    -- UNDOTREE
+    use {"mbbill/undotree", opt=true}
+
     -- KEYBINDS
     use {"folke/which-key.nvim", opt = true}
 
@@ -127,5 +130,6 @@ return require("packer").startup(function(use)
     require_plugin('nvim-colorizer.lua')
     require_plugin('vimtex')
     require_plugin('nvim-toggleterm.lua')
+    require_plugin('undotree')
 
 end)

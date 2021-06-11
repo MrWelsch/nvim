@@ -59,6 +59,9 @@ bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
 -- LAZYGIT
 bind('n', '<Leader>g', ':lua_lazygit_toggle()<CR>', {noremap = true, silent = true})
 
+-- UNDOTREE
+bind('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true, silent = true})
+
 -- TELESCOPE
 bind('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
@@ -82,8 +85,8 @@ local mappings = {
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["g"] = "Lazygit",
+    ["u"] = "Undotree",
     ["t"] = "Terminal",
-    ["f"] = "Find File",
     ["p"] = "Projects",
     d = {
         name = "+ diagnostics",
@@ -135,8 +138,8 @@ local mappings = {
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
     S = {
-	name = "+ session", 
-    	s = {"<cmd>SessionSave<cr>", "Save Session"}, 
+	name = "+ session",
+    	s = {"<cmd>SessionSave<cr>", "Save Session"},
 	l = {"<cmd>SessionLoad<cr>", "Load Session"}
     },
     -- extras
