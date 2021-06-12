@@ -1,3 +1,5 @@
+-- TODO: Check out formatter
+
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
