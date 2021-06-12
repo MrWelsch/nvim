@@ -1,6 +1,4 @@
 -- DRACULA PRO
-vim.cmd('packadd! dracula_pro')
-vim.cmd('syntax enable')
 vim.g.dracula_colorterm = 0
 vim.cmd('colorscheme dracula_pro_van_helsing')
 
