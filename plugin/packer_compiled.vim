@@ -102,6 +102,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
   },
+  ["lir.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/lir.nvim"
+  },
   ["lsp-rooter.nvim"] = {
     loaded = false,
     needs_bufread = false,
@@ -156,11 +161,6 @@ _G.packer_plugins = {
   ["nvim-toggleterm.lua"] = {
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/nvim-toggleterm.lua"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,

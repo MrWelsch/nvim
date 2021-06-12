@@ -40,9 +40,9 @@ require'lir'.setup {
 
     -- -- If you want to use `shadow`, set `shadow` to `true`.
     -- -- Also, if you set shadow to true, the value of `borderchars` will be ignored.
-    -- shadow = false,
+    -- shadow = true,
   },
-  hide_cursor = true,
+  hide_cursor = false,
 }
 
 -- custom folder icon
