@@ -140,7 +140,6 @@ return require("packer").startup(function(use)
     -- MISCELLANIOUS
     use {
 	    "glepnir/dashboard-nvim", 
-	    after = "vim-dracula-pro"
     }
     use {
 	    "kevinhwang91/nvim-bqf", 
