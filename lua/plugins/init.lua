@@ -3,36 +3,25 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
     execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
-    execute "packadd packer.nvim"
 end
 
---- Check if a file or directory exists in this path
-local function require_plugin(plugin)
-    local plugin_prefix = fn.stdpath("data") .. "/site/pack/packer/opt/"
-
-    local plugin_path = plugin_prefix .. plugin .. "/"
-    --	print("test "..plugin_path)
-    local ok, err, code = os.rename(plugin_path, plugin_path)
-    if not ok then
-        if code == 13 then
-            -- Permission denied, but it exists
-            return true
-        end
-    end
-    --	print(ok, err, code)
-    if ok then vim.cmd("packadd " .. plugin) end
-    return ok, err, code
-end
+execute "packadd packer.nvim"
 
 -- Auto compile if there are changes in plugins.lua
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
+
 return require("packer").startup(function(use)
     use {
-	    "wbthomason/packer.nvim"
+	    "wbthomason/packer.nvim",
+        opt = true
+    }
+    use {
+        "charlief0x/vim-dracula-pro",
+        opt = true
     }
     use {
 	    "kyazdani42/nvim-web-devicons",
@@ -42,38 +31,38 @@ return require("packer").startup(function(use)
     use {
 	    "nvim-treesitter/nvim-treesitter",
 	    run = "TSUpdate",
-	    opt = true
+        after = "vim-dracula-pro"
     }
     use {
 	    "windwp/nvim-ts-autotag", 
-	    after = "nvim-treesitter",
+	    after = "vim-dracula-pro",
     }
     use {
 	    "andymass/vim-matchup", 
-	    after = "nvim-treesitter",
+	    after = "vim-dracula-pro",
     }
     use {
-            "windwp/nvim-autopairs", 
-	    after = "nvim-treesitter",
+        "windwp/nvim-autopairs", 
+	    after = "vim-dracula-pro",
     }
     -- LINTER
     use {
 	    "neovim/nvim-lspconfig", 
-	    opt = true
+        after = "vim-dracula-pro"
     }
     use {
 	    "glepnir/lspsaga.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "kabouzeid/nvim-lspinstall", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- ERRORS
     use {
 	    "folke/trouble.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- TELESCOPE
@@ -87,147 +76,111 @@ return require("packer").startup(function(use)
     }
     use {
 	    "nvim-telescope/telescope-fzy-native.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "nvim-telescope/telescope-project.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- DEBUGGING
     use {
 	    "mfussenegger/nvim-dap", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- AUTOCOMPLETE
     use {
 	    "hrsh7th/nvim-compe", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
-    
-
     -- EXPLORER
-    --use {"kyazdani42/nvim-tree.lua", opt = true}
+    --use {"kyazdani42/nvim-tree.lua", after = "vim-dracula-pro"}
     use {
 	    "tamago324/lir.nvim", 
 	    requires = "nvim-web-devicons",
+        after = "vim-dracula-pro"
     }
     -- This puts nvim-tree in curdir
     use {
 	    "ahmedkhalf/lsp-rooter.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- TERMINAL
     use {
-	    "akinsho/nvim-toggleterm.lua"
+	    "akinsho/nvim-toggleterm.lua",
+        after = "vim-dracula-pro"
     }
 
     -- GIT
     use {
 	    "lewis6991/gitsigns.nvim", 
 	    requires = "nvim-lua/plenary.nvim",
+        after = "vim-dracula-pro"
     }
     use {
 	    "f-person/git-blame.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- UNDOTREE
     use {
 	    "mbbill/undotree", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- KEYBINDS
     use {
 	    "folke/which-key.nvim", 
-	    opt = true
+        event = "BufEnter",
     }
 
     -- MISCELLANIOUS
     use {
 	    "glepnir/dashboard-nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "kevinhwang91/nvim-bqf", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "norcalli/nvim-colorizer.lua", 
-	    opt = true
     }
 
     -- LATEX
     use {
 	    "lervag/vimtex", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- COMMENTING
     use {
 	    "terrortylor/nvim-comment", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "JoosepAlviste/nvim-ts-context-commentstring", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- STATUS & BUFFERLINE
     use {
 	    "glepnir/galaxyline.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
     use {
 	    "romgrk/barbar.nvim", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
 
     -- LIVE SERVER
     use {
 	    "turbio/bracey.vim", 
 	    run = "npm install --prefix server", 
-	    opt = true
+	    after = "vim-dracula-pro"
     }
-
-    require_plugin("nvim-lspconfig")
-    require_plugin("lspsaga.nvim")
-    require_plugin("nvim-lspinstall")
-    require_plugin("trouble.nvim")
-    require_plugin("friendly-snippets")
-    require_plugin("popup.nvim")
-    require_plugin("plenary.nvim")
-    require_plugin("telescope.nvim")
-    require_plugin("telescope-project.nvim")
-    require_plugin("nvim-dap")
-    require_plugin("nvim-compe")
-    require_plugin("vim-vsnip")
-    require_plugin("nvim-treesitter")
-    require_plugin("nvim-ts-autotag")
-    require_plugin("vim-matchup")
-    require_plugin("nvim-tree.lua")
-    require_plugin("gitsigns.nvim")
-    require_plugin("git-blame.nvim")
-    require_plugin("which-key.nvim")
-    require_plugin("dashboard-nvim")
-    require_plugin("nvim-autopairs")
-    require_plugin("nvim-comment")
-    require_plugin("nvim-bqf")
-    require_plugin("nvim-web-devicons")
-    require_plugin("galaxyline.nvim")
-    require_plugin("barbar.nvim")
-    require_plugin("lsp-rooter.nvim")
-    require_plugin("TrueZen.nvim")
-    require_plugin("nvim-ts-context-commentstring")
-    require_plugin("bracey.vim")
-    require_plugin("nvim-colorizer.lua")
-    require_plugin("vimtex")
-    require_plugin("nvim-toggleterm.lua")
-    require_plugin("undotree")
-    require_plugin("lir.nvim")
 
 end)

@@ -1,27 +1,26 @@
---vim.cmd [[
---	syntax off
---	filetype off
---	filetype plugin indent off
---]]
-
---vim.opt.shadafile = "NONE"
---vim.g.loaded_gzip = false
---vim.g.loaded_matchit = false
---vim.g.loaded_netrwPlugin = false
---vim.g.loaded_tarPlugin = false
---vim.g.loaded_zipPlugin = false
---vim.g.loaded_man = false
---vim.g.loaded_2html_plugin = false
---vim.g.loaded_remote_plugins = false
+vim.g.loaded_gzip = false
+vim.g.loaded_matchit = false
+vim.g.loaded_netrwPlugin = false
+vim.g.loaded_tarPlugin = false
+vim.g.loaded_zipPlugin = false
+vim.g.loaded_man = false
+vim.g.loaded_2html_plugin = false
+vim.g.loaded_remote_plugins = false
 
 CONFIG_PATH = vim.fn.stdpath('config')
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
---vim.defer_fn(vim.schedule_wrap(function()
+
+vim.cmd [[ autocmd InsertEnter * ++once silent! LspStart ]]
+
+vim.defer_fn(vim.schedule_wrap(function()
 	require('options')
 	require('keybinds')
 	require('plugins')
+        vim.cmd [[
+            PackerLoad vim-dracula-pro
+        ]]
 		require('plugins.config.autopairs')
 		require('plugins.config.barbar')
 		require('plugins.config.colorizer')
@@ -45,7 +44,6 @@ CACHE_PATH = vim.fn.stdpath('cache')
 		require('plugins.config.which-key')
 	require('colors')
 
-
 	-- LSP
 	require('lsp')
 	require('lsp.bash-ls')
@@ -61,13 +59,6 @@ CACHE_PATH = vim.fn.stdpath('cache')
 	require('lsp.vim-ls')
 	require('lsp.yaml-ls')
 
---	vim.opt.shadafile = ""
---	vim.cmd [[
---		rshada!
---		doautocmd BufRead
---		syntax on
---		filetype on
---		filetype plugin indent on
---		PackerLoad nvim-treesitter
---	]]
---end), 0)
+end), 0)
+
+
