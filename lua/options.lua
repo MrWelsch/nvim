@@ -7,7 +7,7 @@ local o = vim.opt
 -- GENERAL
 o.hidden = true
 o.undofile = true
-o.undodir = "$HOME/.vim/undodir"
+o.undodir = "~/.vim/undodir"
 o.mouse = "n"
 o.fileencoding = "utf-8"
 o.clipboard = "unnamedplus"
