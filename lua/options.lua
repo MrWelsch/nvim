@@ -1,73 +1,66 @@
 -- VIM BASE CONFIG
--- For information of each function use
+-- For information on each function use
 -- :h <functionname>
 
-local opt = vim.opt
+local o = vim.opt
 
-opt.titlestring="%<%F%=%l/%L - nvim"
-opt.hlsearch = false
-opt.incsearch = true
-opt.hidden = true
-opt.title = true
-opt.pumheight = 10
-opt.fileencoding = "utf-8"
-opt.cmdheight = 2
-opt.mouse = "n"
-opt.splitbelow = true
-opt.termguicolors = true
-opt.splitright = true
-opt.conceallevel = 0
-opt.showtabline = 2
-opt.showmode = false
-opt.backup = false
-opt.writebackup = false
-opt.updatetime = 1000
-opt.timeoutlen = 100
-opt.clipboard = "unnamedplus"
-opt.colorcolumn = '80'
--- Tabs
---opt.autoindent = false
---opt.cindent = false
-opt.wrap = false
+-- GENERAL
+o.hidden = true
+o.undofile = true
+o.undodir = '$HOME/.vim/undodir'
+o.mouse = "n"
+o.fileencoding = "utf-8"
+o.clipboard = "unnamedplus"
+o.inccommand = "split"
+o.signcolumn = "yes"
+o.belloff = "all"
 
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.softtabstop = 4
-opt.expandtab = true
+-- PERFORMANCE
+o.updatetime = 1000
+o.timeoutlen = 100
 
---opt.breakindent = true
---opt.showbreak = string.rep(" ", 3)
---opt.linebreak = true
 
-opt.inccommand = "split"
+-- VISUAL
+o.termguicolors = true
+o.cmdheight = 2
+o.showmode = false
+o.number = true
+o.relativenumber = true
+o.cursorline = false
+o.fillchars = { eob = " " }
 
-opt.number = true
-opt.relativenumber = true
-opt.cursorline = false
-opt.signcolumn = "yes"
-opt.smartindent = true
--- opt.showmatch = true -- shows matching brackets
-opt.scrolloff = 10
-opt.belloff = "all"
-opt.fillchars = { eob = " " }
+-- EDITOR
+o.splitbelow = true
+o.splitright = true
+
+o.tabstop = 4
+o.shiftwidth = 4
+o.softtabstop = 4
+o.expandtab = true
+
+o.smartindent = true
+
+o.hlsearch = false
+o.incsearch = true
+
+o.wrap = false
+o.textwidth = 80
+o.colorcolumn = '80'
+
+o.scrolloff = 10
+-- o.showmatch = true -- shows matching brackets
 
 -- VIM COMMAND
-TERMINAL = vim.fn.expand('$TERMINAL')
-
-vim.cmd('let &titleold="'..TERMINAL..'"')
 vim.cmd('set iskeyword+=-')
 vim.cmd('set shortmess+=c')
 vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd('set colorcolumn=99999')
 vim.cmd('filetype plugin on')
 
 -- GLOBAL
-vim.g.nvim_tree_disable_netrw = 'O' -- enable netrw for remote gx gf support (must be set before plugin's packadd)
+--vim.g.nvim_tree_disable_netrw = 'O' -- enable netrw for remote gx gf support (must be set before plugin's packadd)
 vim.g.loaded_netrwPlugin = 1 -- needed for netrw gx command to open remote links in browser
 vim.g.nvim_tree_disable_netrw = 0
 vim.g.auto_close_tree = 0
 vim.g.auto_complete = true
-vim.g.undodir = '$HOME/.vim/undodir'
-vim.g.undofile = true
 vim.g.noswapfile = true
 vim.g.nobackup = true
