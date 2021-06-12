@@ -11,8 +11,9 @@ CONFIG_PATH = vim.fn.stdpath('config')
 DATA_PATH = vim.fn.stdpath('data')
 CACHE_PATH = vim.fn.stdpath('cache')
 
-
+-- Start LSP when necessary and also initialize the dashboard configuration
 vim.cmd [[ autocmd InsertEnter * ++once silent! LspStart ]]
+require('plugins.config.dashboard')
 
 vim.defer_fn(vim.schedule_wrap(function()
 	require('options')
@@ -26,7 +27,6 @@ vim.defer_fn(vim.schedule_wrap(function()
 		require('plugins.config.colorizer')
 		require('plugins.config.comment')
 		require('plugins.config.compe')
-		require('plugins.config.dashboard')
 		require('plugins.config.galaxyline')
 		require('plugins.config.dashboard')
 		require('plugins.config.gitblame')
@@ -60,5 +60,3 @@ vim.defer_fn(vim.schedule_wrap(function()
 	require('lsp.yaml-ls')
 
 end), 0)
-
-

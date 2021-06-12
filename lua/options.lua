@@ -9,7 +9,6 @@ o.hidden = true
 o.undofile = true
 o.undodir = "~/.vim/undodir"
 o.mouse = "n"
-o.fileencoding = "utf-8"
 o.clipboard = "unnamedplus"
 o.inccommand = "split"
 o.signcolumn = "yes"
@@ -19,7 +18,6 @@ o.completeopt = "menuone,noselect"
 -- PERFORMANCE
 o.updatetime = 300
 o.timeoutlen = 100
-
 
 -- VISUAL
 o.termguicolors = true
@@ -55,7 +53,6 @@ o.scrolloff = 10
 vim.cmd('set iskeyword+=-')
 vim.cmd('set shortmess+=c')
 vim.cmd('set whichwrap+=<,>,[,],h,l')
-vim.cmd('filetype plugin on')
 
 -- GLOBAL
 --vim.g.nvim_tree_disable_netrw = 'O' -- enable netrw for remote gx gf support (must be set before plugin's packadd)
