@@ -81,6 +81,3 @@ autocmd BufWritePre * %s/\s\+$//e
 let g:vimtex_compiler_latexmk_engines = {
     \ '_'                : '-xelatex',
     \}
-
-" Replace EndOfBuffer ~ with whitespaces to make it invisible
-let &fcs='eob: '

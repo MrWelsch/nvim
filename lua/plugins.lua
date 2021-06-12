@@ -56,7 +56,8 @@ return require("packer").startup(function(use)
     use {'andymass/vim-matchup', opt = true}
 
     -- EXPLORER
-    use {"kyazdani42/nvim-tree.lua", opt = true}
+    --use {"kyazdani42/nvim-tree.lua", opt = true}
+    use {"tamago324/lir.nvim", opt = true}
     -- This puts nvim-tree in curdir
     use {"ahmedkhalf/lsp-rooter.nvim", opt = true}
 
@@ -128,5 +129,6 @@ return require("packer").startup(function(use)
     require_plugin('vimtex')
     require_plugin('nvim-toggleterm.lua')
     require_plugin('undotree')
+    require_plugin('lir.nvim')
 
 end)

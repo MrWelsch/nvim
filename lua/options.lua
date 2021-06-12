@@ -11,7 +11,7 @@ opt.hidden = true
 opt.title = true
 opt.pumheight = 10
 opt.fileencoding = "utf-8"
-opt.cmdheight = 1
+opt.cmdheight = 2
 opt.mouse = "n"
 opt.splitbelow = true
 opt.termguicolors = true
@@ -49,6 +49,7 @@ opt.smartindent = true
 -- opt.showmatch = true -- shows matching brackets
 opt.scrolloff = 10
 opt.belloff = "all"
+opt.fillchars = { eob = " " }
 
 -- VIM COMMAND
 TERMINAL = vim.fn.expand('$TERMINAL')

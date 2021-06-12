@@ -51,7 +51,8 @@ bind('n', '<Space>', '<NOP>', {noremap = true, silent = true})
 vim.g.mapleader = ' '
 
 -- EXPLORER
-bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+-- bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+bind('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>", {noremap = true, silent = true})
 
 -- TERMINAL
 bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
