@@ -38,7 +38,7 @@ vim.g.dashboard_custom_section = {
     b = {description = {'  Recently Used Files'}, command = 'Telescope oldfiles'},
     c = {description = {'  Load Last Session  '}, command = 'SessionLoad'},
     d = {description = {'  Find Word          '}, command = 'Telescope live_grep'},
-    e = {description = {'  Settings           '}, command = ':e '..CONFIG_PATH..'/lv-settings.lua'}
+    e = {description = {'  Settings           '}, command = ':e '..CONFIG_PATH..'/options.lua'}
     -- e = {description = {'  Marks              '}, command = 'Telescope marks'}
 }
 

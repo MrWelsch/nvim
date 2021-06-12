@@ -7,7 +7,7 @@ local o = vim.opt
 -- GENERAL
 o.hidden = true
 o.undofile = true
-o.undodir = '$HOME/.vim/undodir'
+o.undodir = "$HOME/.vim/undodir"
 o.mouse = "n"
 o.fileencoding = "utf-8"
 o.clipboard = "unnamedplus"
@@ -16,7 +16,7 @@ o.signcolumn = "yes"
 o.belloff = "all"
 
 -- PERFORMANCE
-o.updatetime = 1000
+o.updatetime = 300
 o.timeoutlen = 100
 
 
@@ -64,3 +64,10 @@ vim.g.auto_close_tree = 0
 vim.g.auto_complete = true
 vim.g.noswapfile = true
 vim.g.nobackup = true
+
+vim.g.vimtex_compiler_latexmk_engines = {
+	['_'] = '-xelatex',
+}
+
+-- Remove trailing whitespace on save
+-- autocmd BufWritePre * %s/\s\+$//e
