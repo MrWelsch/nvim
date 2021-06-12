@@ -1,6 +1,6 @@
 require('gitsigns').setup {
   signs = {
-    -- TODO add hl to colorscheme
+    -- TODO: Refactor this to colorscheme
     add          = {hl = 'GitSignsAdd'   , text = '▎', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
     change       = {hl = 'GitSignsChange', text = '▎', numhl='GitSignsChangeNr', linehl='GitSignsChangeLn'},
     delete       = {hl = 'GitSignsDelete', text = '契', numhl='GitSignsDeleteNr', linehl='GitSignsDeleteLn'},
@@ -19,6 +19,6 @@ require('gitsigns').setup {
   },
   sign_priority = 6,
   update_debounce = 200,
-  status_formatter = nil, -- Use default
+  status_formatter = nil,
   use_decoration_api = false
 }

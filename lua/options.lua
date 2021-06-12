@@ -14,6 +14,7 @@ o.clipboard = "unnamedplus"
 o.inccommand = "split"
 o.signcolumn = "yes"
 o.belloff = "all"
+o.completeopt = "menuone,noselect"
 
 -- PERFORMANCE
 o.updatetime = 300

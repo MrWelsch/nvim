@@ -32,7 +32,10 @@ return require("packer").startup(function(use)
     use {
 	    "wbthomason/packer.nvim"
     }
-
+    use {
+	    "kyazdani42/nvim-web-devicons",
+	    module = "nvim-web-devicons"
+    }
     -- TREESITTER
     use {
 	    "nvim-treesitter/nvim-treesitter",
@@ -72,17 +75,13 @@ return require("packer").startup(function(use)
     }
 
     -- TELESCOPE
-    use {
-	    "nvim-lua/popup.nvim", 
-	    opt = true
-    }
-    use {
-	    "nvim-lua/plenary.nvim", 
-	    opt = true
-    }
+
     use {
 	    "nvim-telescope/telescope.nvim", 
-	    opt = true
+	    cmd = "Telescope",
+	    module = "telescope",
+	    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" }
+
     }
     use {
 	    "nvim-telescope/telescope-fzy-native.nvim", 
@@ -111,7 +110,7 @@ return require("packer").startup(function(use)
     --use {"kyazdani42/nvim-tree.lua", opt = true}
     use {
 	    "tamago324/lir.nvim", 
-	    opt = true
+	    requires = "nvim-web-devicons",
     }
     -- This puts nvim-tree in curdir
     use {
@@ -127,7 +126,7 @@ return require("packer").startup(function(use)
     -- GIT
     use {
 	    "lewis6991/gitsigns.nvim", 
-	    opt = true
+	    requires = "nvim-lua/plenary.nvim",
     }
     use {
 	    "f-person/git-blame.nvim", 
@@ -149,10 +148,6 @@ return require("packer").startup(function(use)
     -- MISCELLANIOUS
     use {
 	    "glepnir/dashboard-nvim", 
-	    opt = true
-    }
-    use {
-	    "kyazdani42/nvim-web-devicons", 
 	    opt = true
     }
     use {

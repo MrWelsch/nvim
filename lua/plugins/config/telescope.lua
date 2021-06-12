@@ -1,18 +1,14 @@
 local actions = require('telescope.actions')
 local trouble = require("trouble.providers.telescope")
--- Global remapping
-------------------------------
--- '--color=never',
+
 require('telescope').setup {
     defaults = {
         find_command = {'rg', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case'},
         prompt_position = "bottom",
-        -- prompt_prefix = " ",
         prompt_prefix = " ",
         selection_caret = " ",
         entry_prefix = "  ",
         initial_mode = "insert",
-        -- initial_mode = "insert",
         selection_strategy = "reset",
         sorting_strategy = "descending",
         layout_strategy = "horizontal",
@@ -35,7 +31,6 @@ require('telescope').setup {
         grep_previewer = require'telescope.previewers'.vim_buffer_vimgrep.new,
         qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
-        -- Developer configurations: Not meant for general override
         buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
         mappings = {
             i = {
@@ -63,7 +58,6 @@ require('telescope').setup {
                 ["<C-k>"] = actions.move_selection_previous,
                 ["<c-t>"] = trouble.open_with_trouble,
                 ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist
-                -- ["<C-i>"] = my_cool_custom_action,
             }
         }
     },

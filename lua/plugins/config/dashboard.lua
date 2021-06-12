@@ -1,5 +1,3 @@
--- Custom Color Settings are defined in functions.vim
--- Custom Header and Footer are defined in lv-globals.lua
 vim.g.dashboard_custom_header = {
 	' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
 	' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
@@ -41,17 +39,4 @@ vim.g.dashboard_custom_section = {
     e = {description = {'  Settings           '}, command = ':e '..CONFIG_PATH..'/options.lua'}
     -- e = {description = {'  Marks              '}, command = 'Telescope marks'}
 }
-
--- file_browser = {description = {' File Browser'}, command = 'Telescope find_files'},
-
--- vim.g.dashboard_custom_shortcut = {
---     a = 'f',
---     find_word = 'SPC f a',
---     last_session = 'SPC s l',
---     new_file = 'SPC c n',
---     book_marks = 'SPC f b'
--- }
--- find_history = 'SPC f h',
-
--- vim.g.dashboard_session_directory = CACHE_PATH..'/session'
 

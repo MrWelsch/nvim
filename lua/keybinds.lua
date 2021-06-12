@@ -24,8 +24,9 @@ bind('v', '<', '<gv', {noremap = true, silent = true})
 bind('v', '>', '>gv', {noremap = true, silent = true})
 
 -- TABS
-bind('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
-bind('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+bind('n', '<TAB>', ':BufferNext<CR>', { noremap = true, silent = true })
+bind('n', '<S-TAB>', ':BufferPrevious<CR>', { noremap = true, silent = true })
+bind('n', '<S-x>', ':BufferClose<CR>', { noremap = true, silent = true })
 
 -- MOVE LINES (VISUAL)
 bind('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
@@ -63,4 +64,10 @@ bind('n', "<leader>c", ':BufferClose<CR>', {noremap = true, silent = true})
 
 -- PROJECTS
 bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
-                        {noremap = true, silent = true})
+        {noremap = true, silent = true})
+
+-- COMPE
+bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+bind("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+bind("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+bind("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
