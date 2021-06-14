@@ -7,7 +7,7 @@ local o = vim.opt
 -- GENERAL
 o.hidden = true
 o.undofile = true
-o.undodir = "~/.vim/undodir"
+o.undodir = "~/.cache/nvim/undodir"
 o.mouse = "n"
 o.clipboard = "unnamedplus"
 o.inccommand = "split"

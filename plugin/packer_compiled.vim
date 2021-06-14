@@ -165,7 +165,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-dap"
   },
   ["nvim-lspconfig"] = {
-    after = { "nvim-compe", "nvim-lspinstall", "lspsaga.nvim" },
+    after = { "lspsaga.nvim", "nvim-compe", "nvim-lspinstall" },
     config = { "\27LJ\2\nÍ\2\0\0\3\0\14\0(6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0016\0\0\0'\2\5\0B\0\2\0016\0\0\0'\2\6\0B\0\2\0016\0\0\0'\2\a\0B\0\2\0016\0\0\0'\2\b\0B\0\2\0016\0\0\0'\2\t\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0016\0\0\0'\2\v\0B\0\2\0016\0\0\0'\2\f\0B\0\2\0016\0\0\0'\2\r\0B\0\2\1K\0\1\0\16lsp.yaml-ls\15lsp.vim-ls\18lsp.python-ls\15lsp.lua-ls\17lsp.latex-ls\17lsp.js-ts-ls\16lsp.json-ls\16lsp.html-ls\23lsp.efm-general-ls\18lsp.docker-ls\15lsp.css-ls\16lsp.bash-ls\blsp\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -336,9 +336,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-lspconfig', 'vim-dracula-pro', 'nvim-treesitter', 'barbar.nvim', 'galaxyline.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'vim-dracula-pro', 'barbar.nvim', 'nvim-lspconfig', 'which-key.nvim', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'vimtex', 'gitsigns.nvim', 'lir.nvim', 'bracey.vim', 'git-blame.nvim', 'nvim-dap', 'lsp-rooter.nvim', 'which-key.nvim', 'nvim-toggleterm.lua', 'undotree', 'nvim-comment', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'undotree', 'git-blame.nvim', 'gitsigns.nvim', 'lir.nvim', 'vimtex', 'lsp-rooter.nvim', 'bracey.vim', 'nvim-bqf', 'nvim-comment', 'nvim-dap', 'nvim-toggleterm.lua'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

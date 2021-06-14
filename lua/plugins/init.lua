@@ -164,7 +164,7 @@ require("packer").startup(function(use)
     use {
 	    "folke/which-key.nvim",
 	    config = function() require('plugins.config.which-key') end,
-        event = "ColorScheme",
+        event = "BufEnter",
     }
 
     -- MISCELLANIOUS
