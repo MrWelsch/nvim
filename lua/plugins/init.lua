@@ -102,6 +102,7 @@ require("packer").startup(function(use)
     }
     use {
 	    "nvim-telescope/telescope-project.nvim",
+	    config = function() require('telescope').load_extension('project') end,
 	    after = "telescope.nvim"
     }
 
