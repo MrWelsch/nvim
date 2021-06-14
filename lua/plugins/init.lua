@@ -14,14 +14,15 @@ execute "packadd packer.nvim"
 -- Auto compile if there are changes in plugins.lua
 vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
 
-return require("packer").startup(function(use)
+require("packer").startup(function(use)
     use {
 	    "wbthomason/packer.nvim",
         opt = true
     }
     use {
         "charlief0x/vim-dracula-pro",
-        opt = true
+        config = function() require('colors') end,
+        event = "BufEnter",
     }
     use {
 	    "kyazdani42/nvim-web-devicons",
@@ -30,156 +31,190 @@ return require("packer").startup(function(use)
     -- TREESITTER
     use {
 	    "nvim-treesitter/nvim-treesitter",
+	    config = function() require('plugins.config.treesitter') end,
 	    run = "TSUpdate",
-        after = "vim-dracula-pro"
+        event = "BufEnter",
+        module = "nvim-treesitter"
     }
     use {
-	    "windwp/nvim-ts-autotag", 
-	    after = "vim-dracula-pro",
+	    "windwp/nvim-ts-autotag",
+	    after = "nvim-treesitter",
     }
     use {
-	    "andymass/vim-matchup", 
-	    after = "vim-dracula-pro",
+	    "andymass/vim-matchup",
+	    config = function() require('plugins.config.matchup') end,
+	    after = "nvim-treesitter",
     }
     use {
-        "windwp/nvim-autopairs", 
-	    after = "vim-dracula-pro",
+        "windwp/nvim-autopairs",
+        config = function() require('plugins.config.autopairs') end,
+        event = "InsertEnter"
     }
     -- LINTER
     use {
-	    "neovim/nvim-lspconfig", 
-        after = "vim-dracula-pro"
+	    "neovim/nvim-lspconfig",
+	    config = function()
+			-- LSP
+			require('lsp')
+			require('lsp.bash-ls')
+			require('lsp.css-ls')
+			require('lsp.docker-ls')
+			require('lsp.efm-general-ls')
+			require('lsp.html-ls')
+			require('lsp.json-ls')
+			require('lsp.js-ts-ls')
+			require('lsp.latex-ls')
+			require('lsp.lua-ls')
+			require('lsp.python-ls')
+			require('lsp.vim-ls')
+			require('lsp.yaml-ls')
+	    end,
+        event = "BufEnter"
     }
     use {
-	    "glepnir/lspsaga.nvim", 
-	    after = "vim-dracula-pro"
+	    "glepnir/lspsaga.nvim",
+	    after = "nvim-lspconfig"
     }
     use {
-	    "kabouzeid/nvim-lspinstall", 
-	    after = "vim-dracula-pro"
+	    "kabouzeid/nvim-lspinstall",
+	    config = function() require('plugins.config.lspinstall') end,
+	    after = "nvim-lspconfig"
     }
 
-    -- ERRORS
     use {
-	    "folke/trouble.nvim", 
-	    after = "vim-dracula-pro"
+	    "folke/trouble.nvim",
+        module = "trouble"
     }
 
     -- TELESCOPE
 
     use {
-	    "nvim-telescope/telescope.nvim", 
+	    "nvim-telescope/telescope.nvim",
+	    config = function() require('plugins.config.telescope') end,
 	    cmd = "Telescope",
 	    module = "telescope",
 	    requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim" }
 
     }
     use {
-	    "nvim-telescope/telescope-fzy-native.nvim", 
-	    after = "vim-dracula-pro"
+	    "nvim-telescope/telescope-fzy-native.nvim",
+	    after = "telescope.nvim"
     }
     use {
-	    "nvim-telescope/telescope-project.nvim", 
-	    after = "vim-dracula-pro"
+	    "nvim-telescope/telescope-project.nvim",
+	    after = "telescope.nvim"
     }
 
     -- DEBUGGING
     use {
-	    "mfussenegger/nvim-dap", 
-	    after = "vim-dracula-pro"
+	    "mfussenegger/nvim-dap",
+	    config = function() require('plugins.config.nvim-dap') end,
+	    event = "ColorScheme"
     }
 
     -- AUTOCOMPLETE
     use {
-	    "hrsh7th/nvim-compe", 
-	    after = "vim-dracula-pro"
+	    "hrsh7th/nvim-compe",
+	    config = function() require('plugins.config.compe') end,
+        after = "nvim-lspconfig"
     }
 
     -- EXPLORER
     --use {"kyazdani42/nvim-tree.lua", after = "vim-dracula-pro"}
     use {
-	    "tamago324/lir.nvim", 
+	    "tamago324/lir.nvim",
+	    config = function() require('plugins.config.lvr') end,
 	    requires = "nvim-web-devicons",
-        after = "vim-dracula-pro"
+        event = "ColorScheme"
     }
     -- This puts nvim-tree in curdir
     use {
-	    "ahmedkhalf/lsp-rooter.nvim", 
-	    after = "vim-dracula-pro"
+	    "ahmedkhalf/lsp-rooter.nvim",
+	    config = function() require('plugins.config.lsp-rooter') end,
+        event = "ColorScheme"
     }
 
     -- TERMINAL
     use {
 	    "akinsho/nvim-toggleterm.lua",
-        after = "vim-dracula-pro"
+	    config = function() require('plugins.config.toggleterm') end,
+        event = "ColorScheme"
     }
 
     -- GIT
     use {
-	    "lewis6991/gitsigns.nvim", 
+	    "lewis6991/gitsigns.nvim",
+	    config = function() require('plugins.config.gitsigns') end,
 	    requires = "nvim-lua/plenary.nvim",
-        after = "vim-dracula-pro"
+        event = "ColorScheme"
     }
     use {
-	    "f-person/git-blame.nvim", 
-	    after = "vim-dracula-pro"
+	    "f-person/git-blame.nvim",
+	    config = function() require('plugins.config.gitblame') end,
+	    event = "ColorScheme"
     }
 
     -- UNDOTREE
     use {
-	    "mbbill/undotree", 
-	    after = "vim-dracula-pro"
+	    "mbbill/undotree",
+	    event = "ColorScheme"
     }
 
     -- KEYBINDS
     use {
-	    "folke/which-key.nvim", 
-        event = "BufEnter",
+	    "folke/which-key.nvim",
+	    config = function() require('plugins.config.which-key') end,
+        event = "ColorScheme",
     }
 
     -- MISCELLANIOUS
     use {
-	    "glepnir/dashboard-nvim", 
+	    "glepnir/dashboard-nvim",
+	    config = function() require('plugins.config.dashboard') end,
     }
     use {
-	    "kevinhwang91/nvim-bqf", 
-	    after = "vim-dracula-pro"
+	    "kevinhwang91/nvim-bqf",
+	    event = "ColorScheme"
     }
     use {
-	    "norcalli/nvim-colorizer.lua", 
+	    "norcalli/nvim-colorizer.lua",
+	    config = function() require('plugins.config.colorizer') end,
     }
 
     -- LATEX
     use {
-	    "lervag/vimtex", 
-	    after = "vim-dracula-pro"
+	    "lervag/vimtex",
+	    config = function() require('plugins.config.vimtex') end,
+	    event = "ColorScheme"
     }
 
     -- COMMENTING
     use {
-	    "terrortylor/nvim-comment", 
-	    after = "vim-dracula-pro"
+	    "terrortylor/nvim-comment",
+	    config = function() require('plugins.config.comment') end,
+	    event = "ColorScheme"
     }
     use {
-	    "JoosepAlviste/nvim-ts-context-commentstring", 
-	    after = "vim-dracula-pro"
+	    "JoosepAlviste/nvim-ts-context-commentstring",
+	    after = "nvim-treesitter"
     }
 
     -- STATUS & BUFFERLINE
     use {
-	    "glepnir/galaxyline.nvim", 
-	    after = "vim-dracula-pro"
+	    "glepnir/galaxyline.nvim",
+	    config = function() require('plugins.config.galaxyline') end,
+	    event = "BufEnter"
     }
     use {
-	    "romgrk/barbar.nvim", 
-	    after = "vim-dracula-pro"
+	    "romgrk/barbar.nvim",
+	    config = function() require('plugins.config.barbar') end,
+	    event = "BufEnter"
     }
 
     -- LIVE SERVER
     use {
-	    "turbio/bracey.vim", 
-	    run = "npm install --prefix server", 
-	    after = "vim-dracula-pro"
+	    "turbio/bracey.vim",
+	    run = "npm install --prefix server",
+	    event = "ColorScheme"
     }
-
 end)
