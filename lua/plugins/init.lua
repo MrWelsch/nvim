@@ -58,6 +58,7 @@ require("packer").startup(function(use)
 			require('lsp')
 			require('lsp.bash-ls')
 			require('lsp.css-ls')
+            require('lsp.clangd')
 			require('lsp.docker-ls')
 			require('lsp.efm-general-ls')
 			require('lsp.html-ls')
@@ -126,7 +127,7 @@ require("packer").startup(function(use)
 	    "tamago324/lir.nvim",
 	    config = function() require('plugins.config.lvr') end,
 	    requires = "nvim-web-devicons",
-        event = "ColorScheme"
+        event = "BufEnter"
     }
     -- This puts nvim-tree in curdir
     use {

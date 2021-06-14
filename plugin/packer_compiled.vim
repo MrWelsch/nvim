@@ -166,7 +166,7 @@ _G.packer_plugins = {
   },
   ["nvim-lspconfig"] = {
     after = { "lspsaga.nvim", "nvim-compe", "nvim-lspinstall" },
-    config = { "\27LJ\2\nÍ\2\0\0\3\0\14\0(6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0016\0\0\0'\2\5\0B\0\2\0016\0\0\0'\2\6\0B\0\2\0016\0\0\0'\2\a\0B\0\2\0016\0\0\0'\2\b\0B\0\2\0016\0\0\0'\2\t\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0016\0\0\0'\2\v\0B\0\2\0016\0\0\0'\2\f\0B\0\2\0016\0\0\0'\2\r\0B\0\2\1K\0\1\0\16lsp.yaml-ls\15lsp.vim-ls\18lsp.python-ls\15lsp.lua-ls\17lsp.latex-ls\17lsp.js-ts-ls\16lsp.json-ls\16lsp.html-ls\23lsp.efm-general-ls\18lsp.docker-ls\15lsp.css-ls\16lsp.bash-ls\blsp\frequire\0" },
+    config = { "\27LJ\2\nä\2\0\0\3\0\15\0+6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0016\0\0\0'\2\5\0B\0\2\0016\0\0\0'\2\6\0B\0\2\0016\0\0\0'\2\a\0B\0\2\0016\0\0\0'\2\b\0B\0\2\0016\0\0\0'\2\t\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0016\0\0\0'\2\v\0B\0\2\0016\0\0\0'\2\f\0B\0\2\0016\0\0\0'\2\r\0B\0\2\0016\0\0\0'\2\14\0B\0\2\1K\0\1\0\16lsp.yaml-ls\15lsp.vim-ls\18lsp.python-ls\15lsp.lua-ls\17lsp.latex-ls\17lsp.js-ts-ls\16lsp.json-ls\16lsp.html-ls\23lsp.efm-general-ls\18lsp.docker-ls\15lsp.clangd\15lsp.css-ls\16lsp.bash-ls\blsp\frequire\0" },
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
@@ -187,7 +187,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-ts-autotag", "nvim-ts-context-commentstring", "vim-matchup" },
+    after = { "nvim-ts-autotag", "vim-matchup", "nvim-ts-context-commentstring" },
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
@@ -236,6 +236,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/telescope-fzy-native.nvim"
   },
   ["telescope-project.nvim"] = {
+    config = { "\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\fproject\19load_extension\14telescope\frequire\0" },
     load_after = {
       ["telescope.nvim"] = true
     },
@@ -244,7 +245,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
-    after = { "telescope-fzy-native.nvim", "telescope-project.nvim" },
+    after = { "telescope-project.nvim", "telescope-fzy-native.nvim" },
     commands = { "Telescope" },
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.telescope\frequire\0" },
     loaded = false,
@@ -336,9 +337,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'vim-dracula-pro', 'barbar.nvim', 'nvim-lspconfig', 'which-key.nvim', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'vim-dracula-pro', 'lir.nvim', 'nvim-lspconfig', 'which-key.nvim', 'barbar.nvim', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'git-blame.nvim', 'gitsigns.nvim', 'lsp-rooter.nvim', 'nvim-bqf', 'nvim-comment', 'nvim-dap', 'nvim-toggleterm.lua', 'undotree', 'bracey.vim', 'vimtex'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'undotree', 'git-blame.nvim', 'gitsigns.nvim', 'lir.nvim', 'vimtex', 'lsp-rooter.nvim', 'bracey.vim', 'nvim-bqf', 'nvim-comment', 'nvim-dap', 'nvim-toggleterm.lua'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
