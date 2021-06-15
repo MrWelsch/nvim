@@ -4,23 +4,43 @@ local colors = {
     -- Dracula_Pro
     -- bg = '#22212C',
     -- Dracula_Pro_Helsing
-    bg = '#0B0D0F',
-    yellow = '#FFFF80',
-    dark_yellow = '#FFFF80',
-    cyan = '#80FFEA',
-    green = '#8AFF80',
-    light_green = '#8AFF80',
-    string_orange = '#FFCA80',
-    orange = '#FFCA80',
-    purple = '#9580FF',
-    magenta = '#FF80BF',
+    --bg = '#0B0D0F',
+    --yellow = '#FFFF80',
+    --dark_yellow = '#FFFF80',
+    --cyan = '#80FFEA',
+    --green = '#8AFF80',
+    --light_green = '#8AFF80',
+    --string_orange = '#FFCA80',
+    --orange = '#FFCA80',
+    --purple = '#9580FF',
+    --magenta = '#FF80BF',
+    --grey = '7970A9',
+    --blue = '#80FFEA',
+    --vivid_blue = '#80FFEA',
+    --light_blue = '#80FFEA',
+    --red = '#FF9580',
+    --error_red = '#FF9580',
+    --info_yellow = '#FFFF80'
+
+	-- GRUVBOX-FLAT
+	bg =  #1d2021
+    yellow = #d8a657,
+    dark_yellow = #d8a657,
+    cyan = '#89b482',
+    green = '#a9b665',
+    light_green = '#a9b665',
+    string_orange = '#d8a657',
+    orange = '#d8a657',
+    purple = '#7daea3',
+    magenta = '#d3869b',
     grey = '7970A9',
-    blue = '#80FFEA',
-    vivid_blue = '#80FFEA',
-    light_blue = '#80FFEA',
-    red = '#FF9580',
-    error_red = '#FF9580',
-    info_yellow = '#FFFF80'
+    blue = '#7daea3',
+    vivid_blue = '#7daea3',
+    light_blue = '#7daea3',
+    red = '#ea6962',
+    error_red = '#ea6962',
+    info_yellow = '#d8a657'
+
 }
 local condition = require('galaxyline.condition')
 local gls = gl.section

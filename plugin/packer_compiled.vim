@@ -72,18 +72,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["DAPInstall.nvim"] = {
-    config = { "\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$plugins.config.nvim-dap-install\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/DAPInstall.nvim"
-  },
-  ["barbar.nvim"] = {
-    config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.config.barbar\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
-  },
   ["bracey.vim"] = {
     loaded = false,
     needs_bufread = false,
@@ -93,12 +81,6 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.dashboard\frequire\0" },
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/dashboard-nvim"
-  },
-  ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.galaxyline\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
   },
   ["git-blame.nvim"] = {
     config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins.config.gitblame\frequire\0" },
@@ -111,6 +93,12 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
+  },
+  ["gruvbox-flat.nvim"] = {
+    config = { "\27LJ\2\n&\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\vcolors\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gruvbox-flat.nvim"
   },
   kommentary = {
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.kommentary\frequire\0" },
@@ -138,6 +126,12 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/lspsaga.nvim"
   },
+  ["lualine.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins.config.lualine\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/lualine.nvim"
+  },
   ["nvim-autopairs"] = {
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.autopairs\frequire\0" },
     loaded = false,
@@ -148,6 +142,12 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-bqf"
+  },
+  ["nvim-bufferline.lua"] = {
+    config = { "\27LJ\2\n>\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0#plugins.config.nvim-bufferline\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-bufferline.lua"
   },
   ["nvim-colorizer.lua"] = {
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.colorizer\frequire\0" },
@@ -164,14 +164,8 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-compe"
   },
-  ["nvim-dap"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\28plugins.config.nvim-dap\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-dap"
-  },
   ["nvim-lspconfig"] = {
-    after = { "lspsaga.nvim", "nvim-compe", "nvim-lspinstall" },
+    after = { "nvim-lspinstall", "lspsaga.nvim", "nvim-compe" },
     config = { "\27LJ\2\nä\2\0\0\3\0\15\0+6\0\0\0'\2\1\0B\0\2\0016\0\0\0'\2\2\0B\0\2\0016\0\0\0'\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0016\0\0\0'\2\5\0B\0\2\0016\0\0\0'\2\6\0B\0\2\0016\0\0\0'\2\a\0B\0\2\0016\0\0\0'\2\b\0B\0\2\0016\0\0\0'\2\t\0B\0\2\0016\0\0\0'\2\n\0B\0\2\0016\0\0\0'\2\v\0B\0\2\0016\0\0\0'\2\f\0B\0\2\0016\0\0\0'\2\r\0B\0\2\0016\0\0\0'\2\14\0B\0\2\1K\0\1\0\16lsp.yaml-ls\15lsp.vim-ls\18lsp.python-ls\15lsp.lua-ls\17lsp.latex-ls\17lsp.js-ts-ls\16lsp.json-ls\16lsp.html-ls\23lsp.efm-general-ls\18lsp.docker-ls\15lsp.clangd\15lsp.css-ls\16lsp.bash-ls\blsp\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -193,7 +187,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "vim-matchup", "nvim-ts-context-commentstring", "nvim-ts-autotag" },
+    after = { "nvim-ts-context-commentstring", "vim-matchup", "nvim-ts-autotag" },
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
@@ -251,7 +245,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
-    after = { "telescope-fzy-native.nvim", "telescope-project.nvim" },
+    after = { "telescope-project.nvim", "telescope-fzy-native.nvim" },
     commands = { "Telescope" },
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.telescope\frequire\0" },
     loaded = false,
@@ -267,13 +261,6 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/undotree"
-  },
-  ["vim-dracula-pro"] = {
-    after_files = { "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-dracula-pro/after/plugin/dracula_pro.vim" },
-    config = { "\27LJ\2\n&\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\vcolors\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-dracula-pro"
   },
   ["vim-matchup"] = {
     after_files = { "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
@@ -325,14 +312,14 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: dashboard-nvim
-time([[Config for dashboard-nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.dashboard\frequire\0", "config", "dashboard-nvim")
-time([[Config for dashboard-nvim]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: dashboard-nvim
+time([[Config for dashboard-nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.dashboard\frequire\0", "config", "dashboard-nvim")
+time([[Config for dashboard-nvim]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -344,8 +331,8 @@ vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'which-key.nvim', 'galaxyline.nvim', 'vim-dracula-pro', 'barbar.nvim', 'nvim-treesitter', 'kommentary', 'lir.nvim', 'nvim-lspconfig'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'lsp-rooter.nvim', 'nvim-dap', 'nvim-toggleterm.lua', 'DAPInstall.nvim', 'bracey.vim', 'git-blame.nvim', 'vimtex', 'undotree', 'gitsigns.nvim', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'bracey.vim', 'git-blame.nvim', 'gitsigns.nvim', 'undotree', 'vimtex', 'lsp-rooter.nvim', 'lualine.nvim', 'nvim-bqf', 'nvim-bufferline.lua'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-toggleterm.lua', 'nvim-lspconfig', 'gruvbox-flat.nvim', 'lir.nvim', 'which-key.nvim', 'kommentary', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

@@ -19,8 +19,13 @@ require("packer").startup(function(use)
 	    "wbthomason/packer.nvim",
         opt = true
     }
-    use {
-        "charlief0x/vim-dracula-pro",
+--    use {
+--        "charlief0x/vim-dracula-pro",
+--        config = function() require('colors') end,
+--        event = "BufEnter",
+--    }
+	use {
+        "eddyekofo94/gruvbox-flat.nvim",
         config = function() require('colors') end,
         event = "BufEnter",
     }
@@ -108,17 +113,22 @@ require("packer").startup(function(use)
     }
 
     -- DEBUGGING
-    use {
-	    "mfussenegger/nvim-dap",
-	    config = function() require('plugins.config.nvim-dap') end,
-	    event = "ColorScheme"
-    }
-	-- TODO: Not working
-    use {
-		"Pocco81/DAPInstall.nvim",
-		config = function() require('plugins.config.nvim-dap-install') end,
-		event = "ColorScheme"	
-	}
+	-- TODO: Check if this is fixed by the developer
+    --use {
+	--	"mfussenegger/nvim-dap",
+	--	module = "dap"
+	--}
+	--use {
+	--	"rcarriga/nvim-dap-ui",
+	--	after = "nvim-dap"
+	--}
+	--use {
+	--	"Pocco81/DAPInstall.nvim",
+	--	config = function() require('plugins.config.nvim-dap-install') end,
+	--	cmd = { "DIInstall", "DIUninstall", "DIList" },
+	--	event = "ColorScheme",
+	--}
+	
     -- AUTOCOMPLETE
     use {
 	    "hrsh7th/nvim-compe",
@@ -145,7 +155,7 @@ require("packer").startup(function(use)
     use {
 	    "akinsho/nvim-toggleterm.lua",
 	    config = function() require('plugins.config.toggleterm') end,
-        event = "ColorScheme"
+        event = "BufEnter"
     }
 
     -- GIT
@@ -207,16 +217,23 @@ require("packer").startup(function(use)
     }
 
     -- STATUS & BUFFERLINE
-    use {
-	    "glepnir/galaxyline.nvim",
-	    config = function() require('plugins.config.galaxyline') end,
-	    event = "BufEnter"
-    }
-    use {
-	    "romgrk/barbar.nvim",
-	    config = function() require('plugins.config.barbar') end,
-	    event = "BufEnter"
-    }
+    --use {
+	--    "glepnir/galaxyline.nvim",
+	--    config = function() require('plugins.config.galaxyline') end,
+	--    event = "BufEnter"
+    --}
+	use {
+		"hoob3rt/lualine.nvim",
+		--requires = "kyazdani42/nvim-web-devicons",
+		config = function() require('plugins.config.lualine') end,
+		event = "ColorScheme",
+
+	}
+	use {
+		"akinsho/nvim-bufferline.lua",
+		config = function() require('plugins.config.nvim-bufferline') end,
+		event = "ColorScheme",
+	}
 
     -- LIVE SERVER
     use {

@@ -2,8 +2,9 @@
 
 local cmd = vim.cmd
 
-vim.g.dracula_colorterm = 0
-cmd('colorscheme dracula_pro_van_helsing')
+--vim.g.dracula_colorterm = 0
+--cmd('colorscheme dracula_pro_van_helsing')
+vim.cmd[[colorscheme gruvbox-flat]]
 
 -- DISABLE COLOR SCHEME BACKGROUND COLORS (TRANSLUCENT)
 --highlight Normal ctermbg=none guibg=none
