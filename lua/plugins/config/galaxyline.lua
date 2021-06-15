@@ -23,9 +23,9 @@ local colors = {
     --info_yellow = '#FFFF80'
 
 	-- GRUVBOX-FLAT
-	bg =  #1d2021
-    yellow = #d8a657,
-    dark_yellow = #d8a657,
+	bg =  '#32302f',
+    yellow = '#d8a657',
+    dark_yellow = '#d8a657',
     cyan = '#89b482',
     green = '#a9b665',
     light_green = '#a9b665',

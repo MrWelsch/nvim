@@ -23,10 +23,11 @@ bind('n', '<S-z>', ':redo<CR>', {noremap = true, silent = true})
 bind('v', '<', '<gv', {noremap = true, silent = true})
 bind('v', '>', '>gv', {noremap = true, silent = true})
 
--- TABS
-bind('n', '<TAB>', ':BufferNext<CR>', { noremap = true, silent = true })
-bind('n', '<S-TAB>', ':BufferPrevious<CR>', { noremap = true, silent = true })
-bind('n', '<S-x>', ':BufferClose<CR>', { noremap = true, silent = true })
+-- BUFFER
+-- TODO: Make this work
+bind('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+bind('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+--bind('n', '<S-x>', ':lua require('bufferline').handle_close_buffer(vim.api.nvim_get_current_buf())<CR>', { noremap = true, silent = true })
 
 -- MOVE LINES (VISUAL)
 bind('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
@@ -36,8 +37,8 @@ bind('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 bind('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
 
 -- EXPLORER
--- bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-bind('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>", {noremap = true, silent = true})
+bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+--bind('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>", {noremap = true, silent = true})
 bind('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
 
 -- TERMINAL
@@ -56,9 +57,6 @@ bind('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = tr
 bind('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
 
 -- COMMENTS
---bind('n', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
---bind('v', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
-
 bind("n", "<Leader>/", "<Plug>kommentary_line_default", {})
 bind("v", "<Leader>/", "<Plug>kommentary_visual_default", {})
 

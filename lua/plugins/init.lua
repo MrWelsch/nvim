@@ -33,6 +33,7 @@ require("packer").startup(function(use)
 	    "kyazdani42/nvim-web-devicons",
 	    module = "nvim-web-devicons"
     }
+	
     -- TREESITTER
     use {
 	    "nvim-treesitter/nvim-treesitter",
@@ -55,6 +56,7 @@ require("packer").startup(function(use)
         config = function() require('plugins.config.autopairs') end,
         event = "InsertEnter"
     }
+
     -- LINTER
     use {
 	    "neovim/nvim-lspconfig",
@@ -93,7 +95,6 @@ require("packer").startup(function(use)
     }
 
     -- TELESCOPE
-
     use {
 	    "nvim-telescope/telescope.nvim",
 	    config = function() require('plugins.config.telescope') end,
@@ -128,7 +129,7 @@ require("packer").startup(function(use)
 	--	cmd = { "DIInstall", "DIUninstall", "DIList" },
 	--	event = "ColorScheme",
 	--}
-	
+
     -- AUTOCOMPLETE
     use {
 	    "hrsh7th/nvim-compe",
@@ -137,13 +138,17 @@ require("packer").startup(function(use)
     }
 	
     -- EXPLORER
-    --use {"kyazdani42/nvim-tree.lua", after = "vim-dracula-pro"}
     use {
-	    "tamago324/lir.nvim",
-	    config = function() require('plugins.config.lvr') end,
-	    requires = "nvim-web-devicons",
-        event = "BufEnter"
-    }
+		"kyazdani42/nvim-tree.lua",
+		requires = "nvim-web-devicons",
+		cmd = { "NvimTreeClipboard", "NvimTreeClose", "NvimTreeFindFile", "NvimTreeOpen", "NvimTreeRefresh", "NvimTreeToggle" },
+	}
+	--use {
+	--    "tamago324/lir.nvim",
+	--    config = function() require('plugins.config.lvr') end,
+	--    requires = "nvim-web-devicons",
+    --    event = "BufEnter"
+    --}
     -- This puts nvim-tree in curdir
     use {
 	    "ahmedkhalf/lsp-rooter.nvim",
@@ -217,18 +222,11 @@ require("packer").startup(function(use)
     }
 
     -- STATUS & BUFFERLINE
-    --use {
-	--    "glepnir/galaxyline.nvim",
-	--    config = function() require('plugins.config.galaxyline') end,
-	--    event = "BufEnter"
-    --}
-	use {
-		"hoob3rt/lualine.nvim",
-		--requires = "kyazdani42/nvim-web-devicons",
-		config = function() require('plugins.config.lualine') end,
-		event = "ColorScheme",
-
-	}
+    use {
+	    "glepnir/galaxyline.nvim",
+	    config = function() require('plugins.config.galaxyline') end,
+	    event = "BufEnter"
+    }
 	use {
 		"akinsho/nvim-bufferline.lua",
 		config = function() require('plugins.config.nvim-bufferline') end,

@@ -1,12 +1,15 @@
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
+vim.defer_fn(require('nvim-tree').refresh, 25)
 
 vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_auto_close = O
-vim.g.nvim_tree_auto_ignore_ft = 'startify'
+vim.g.nvim_tree_auto_ignore_ft = 'dashboard'
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_side = 'right'
+vim.g.nvim_tree_update_cwd = 1
+vim.g.nvim_tree_quit_on_open = 0
 
 vim.g.nvim_tree_bindings = {
 ["<CR>"]           = tree_cb("edit"),
@@ -47,7 +50,6 @@ vim.g.nvim_tree_icons = {
     folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
 
-
 vim.g.nvim_tree_ignore = {
     '.git',
     '*.aux',
@@ -71,5 +73,3 @@ vim.g.nvim_tree_ignore = {
     'node_modules',
     '.cache'
 }
-
-
