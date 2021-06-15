@@ -136,6 +136,13 @@ require("packer").startup(function(use)
 	    config = function() require('plugins.config.compe') end,
         after = "nvim-lspconfig"
     }
+
+	-- FORMAT
+	use {
+		"lukas-reineke/format.nvim",
+		config = function() require('plugins.config.format') end,
+		cmd = { "Format", "FormatWrite" },
+	}
 	
     -- EXPLORER
     use {
