@@ -76,14 +76,12 @@ local mappings = {
         A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
         D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>LspFormatting<cr>", "Format"},
         i = {"<cmd>LspInfo<cr>", "Info"},
         l = {"<cmd>Lspsaga lsp_finder<cr>", "LSP Finder"},
         L = {"<cmd>Lspsaga show_line_diagnostics<cr>", "Line Diagnostics"},
         p = {"<cmd>Lspsaga preview_definition<cr>", "Preview Definition"},
         q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
         r = {"<cmd>Lspsaga rename<cr>", "Rename"},
-        t = {"<cmd>LspTypeDefinition<cr>", "Type Definition"},
         x = {"<cmd>cclose<cr>", "Close Quickfix"},
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
@@ -102,9 +100,9 @@ local mappings = {
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
     S = {
-	name = "+ session",
+		name = "+ session",
     	s = {"<cmd>SessionSave<cr>", "Save Session"},
-	l = {"<cmd>SessionLoad<cr>", "Load Session"}
+		l = {"<cmd>SessionLoad<cr>", "Load Session"}
     },
     -- extras
     L = {

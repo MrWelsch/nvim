@@ -56,8 +56,11 @@ bind('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = tr
 bind('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
 
 -- COMMENTS
-bind('n', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
-bind('v', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
+--bind('n', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
+--bind('v', '<leader>/', ':CommentToggle<CR>', {noremap = true, silent = true})
+
+bind("n", "<Leader>/", "<Plug>kommentary_line_default", {})
+bind("v", "<Leader>/", "<Plug>kommentary_visual_default", {})
 
 -- CLOSE BUFFER
 bind('n', "<leader>c", ':BufferClose<CR>', {noremap = true, silent = true})

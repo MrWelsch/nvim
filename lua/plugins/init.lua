@@ -113,14 +113,19 @@ require("packer").startup(function(use)
 	    config = function() require('plugins.config.nvim-dap') end,
 	    event = "ColorScheme"
     }
-
+	-- TODO: Not working
+    use {
+		"Pocco81/DAPInstall.nvim",
+		config = function() require('plugins.config.nvim-dap-install') end,
+		event = "ColorScheme"	
+	}
     -- AUTOCOMPLETE
     use {
 	    "hrsh7th/nvim-compe",
 	    config = function() require('plugins.config.compe') end,
         after = "nvim-lspconfig"
     }
-
+	
     -- EXPLORER
     --use {"kyazdani42/nvim-tree.lua", after = "vim-dracula-pro"}
     use {
@@ -192,9 +197,9 @@ require("packer").startup(function(use)
 
     -- COMMENTING
     use {
-	    "terrortylor/nvim-comment",
-	    config = function() require('plugins.config.comment') end,
-	    event = "ColorScheme"
+	    "b3nj5m1n/kommentary",
+	    config = function() require('plugins.config.kommentary') end,
+	    event = "BufEnter"
     }
     use {
 	    "JoosepAlviste/nvim-ts-context-commentstring",

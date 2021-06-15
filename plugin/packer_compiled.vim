@@ -72,6 +72,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["DAPInstall.nvim"] = {
+    config = { "\27LJ\2\n?\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0$plugins.config.nvim-dap-install\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/DAPInstall.nvim"
+  },
   ["barbar.nvim"] = {
     config = { "\27LJ\2\n5\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\26plugins.config.barbar\frequire\0" },
     loaded = false,
@@ -105,6 +111,12 @@ _G.packer_plugins = {
     loaded = false,
     needs_bufread = false,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim"
+  },
+  kommentary = {
+    config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.kommentary\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/kommentary"
   },
   ["lir.nvim"] = {
     config = { "\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.config.lvr\frequire\0" },
@@ -141,12 +153,6 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.colorizer\frequire\0" },
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
-  ["nvim-comment"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins.config.comment\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-comment"
   },
   ["nvim-compe"] = {
     after_files = { "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-compe/after/plugin/compe.vim" },
@@ -187,7 +193,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/nvim-toggleterm.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-ts-autotag", "vim-matchup", "nvim-ts-context-commentstring" },
+    after = { "vim-matchup", "nvim-ts-context-commentstring", "nvim-ts-autotag" },
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
@@ -245,7 +251,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
-    after = { "telescope-project.nvim", "telescope-fzy-native.nvim" },
+    after = { "telescope-fzy-native.nvim", "telescope-project.nvim" },
     commands = { "Telescope" },
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.telescope\frequire\0" },
     loaded = false,
@@ -337,9 +343,9 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'galaxyline.nvim', 'vim-dracula-pro', 'lir.nvim', 'nvim-lspconfig', 'which-key.nvim', 'barbar.nvim', 'nvim-treesitter'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'git-blame.nvim', 'gitsigns.nvim', 'lsp-rooter.nvim', 'nvim-bqf', 'nvim-comment', 'nvim-dap', 'nvim-toggleterm.lua', 'undotree', 'bracey.vim', 'vimtex'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'which-key.nvim', 'galaxyline.nvim', 'vim-dracula-pro', 'barbar.nvim', 'nvim-treesitter', 'kommentary', 'lir.nvim', 'nvim-lspconfig'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'lsp-rooter.nvim', 'nvim-dap', 'nvim-toggleterm.lua', 'DAPInstall.nvim', 'bracey.vim', 'git-blame.nvim', 'vimtex', 'undotree', 'gitsigns.nvim', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
