@@ -18,10 +18,8 @@ vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
 --vim.g.dracula_colorterm = 0
 --cmd('colorscheme dracula_pro_van_helsing')
 
--- DISABLE COLOR SCHEME BACKGROUND COLORS (TRANSLUCENT)
---highlight Normal ctermbg=none guibg=none
---highlight SignColumn ctermbg=none guibg=none
---highlight LineNr ctermbg=none guibg=none
+-- BUFFERLINE COLORS
+cmd('hi! link BufferLineSeperator Default')
 
 -- DASHBOARD COLORS
 cmd('hi! default link DashboardHeader Number')

@@ -24,9 +24,9 @@ bind('v', '<', '<gv', {noremap = true, silent = true})
 bind('v', '>', '>gv', {noremap = true, silent = true})
 
 -- BUFFER
--- TODO: Make this work
 bind('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
 bind('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+-- TODO: Make this work
 --bind('n', '<S-x>', ':lua require('bufferline').handle_close_buffer(vim.api.nvim_get_current_buf())<CR>', { noremap = true, silent = true })
 
 -- MOVE LINES (VISUAL)

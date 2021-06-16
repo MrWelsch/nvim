@@ -54,6 +54,7 @@ o.scrolloff = 10
 cmd('set iskeyword+=-')
 cmd('set shortmess+=c')
 cmd('set whichwrap+=<,>,[,],h,l')
+--cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
 
 -- GLOBAL
 vim.g.auto_complete = true
@@ -70,3 +71,32 @@ vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_update_cwd = 1
 vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_side = 'right'
+
+-- AUTOCOMMANDS
+-- Define your autocommands table
+--local my_autocommands = {
+--	my_augroup_name = {
+--	  'BufWritePost', '*', 'FormatWrite'
+--	}
+--}
+-- Set Autocommands
+-- https://github.com/norcalli/nvim_utils
+--function create_augroups(definitions)
+--    for group_name, definition in pairs(definitions) do
+--        vim.api.nvim_command('augroup ' .. group_name)
+--        vim.api.nvim_command('autocmd!')
+--        for _, def in ipairs(definition) do
+--            local command =
+--                table.concat(vim.tbl_flatten({ 'autocmd', def }), ' ')
+--            vim.api.nvim_command(command)
+--        end
+--        vim.api.nvim_command('augroup END')
+--    end
+--end
+
+-- Set autosave
+--table.insert(autocmds['doom_core'], {
+--    'TextChanged,TextChangedI',
+--    '<buffer>',
+--    'silent! write',
+--})

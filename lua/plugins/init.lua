@@ -151,12 +151,6 @@ require("packer").startup(function(use)
 		config = function() require('plugins.config.nvim-tree') end,
 		cmd = { "NvimTreeClipboard", "NvimTreeClose", "NvimTreeFindFile", "NvimTreeOpen", "NvimTreeRefresh", "NvimTreeToggle" },
 	}
-	--use {
-	--    "tamago324/lir.nvim",
-	--    config = function() require('plugins.config.lvr') end,
-	--    requires = "nvim-web-devicons",
-    --    event = "BufEnter"
-    --}
     -- This puts nvim-tree in curdir
     use {
 	    "ahmedkhalf/lsp-rooter.nvim",
@@ -238,7 +232,7 @@ require("packer").startup(function(use)
 	use {
 		"akinsho/nvim-bufferline.lua",
 		config = function() require('plugins.config.nvim-bufferline') end,
-		event = "ColorScheme",
+		event = "BufEnter",
 	}
 
     -- LIVE SERVER
