@@ -60,5 +60,13 @@ vim.g.auto_complete = true
 vim.g.noswapfile = true
 vim.g.nobackup = true
 
--- Remove trailing whitespace on save
--- autocmd BufWritePre * %s/\s\+$//e
+-- NVIM-TREE
+-- Need to be set here, since they need to load before nvim-tree
+vim.g.nvim_tree_hide_dotfiles = 1
+vim.g.nvim_tree_indent_markers = 1
+vim.g.nvim_tree_follow = 1
+vim.g.nvim_tree_auto_ignore_ft = 'dashboard'
+vim.g.nvim_tree_auto_close = 1
+vim.g.nvim_tree_update_cwd = 1
+vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_side = 'right'
