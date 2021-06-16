@@ -148,6 +148,7 @@ require("packer").startup(function(use)
     use {
 		"kyazdani42/nvim-tree.lua",
 		requires = "nvim-web-devicons",
+		config = function() require('plugins.config.nvim-tree') end,
 		cmd = { "NvimTreeClipboard", "NvimTreeClose", "NvimTreeFindFile", "NvimTreeOpen", "NvimTreeRefresh", "NvimTreeToggle" },
 	}
 	--use {

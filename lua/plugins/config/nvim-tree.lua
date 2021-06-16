@@ -5,8 +5,7 @@ vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 1
 vim.g.nvim_tree_follow = 1
 vim.g.nvim_tree_auto_ignore_ft = 'dashboard'
-let g:nvim_tree_auto_close = 1
--- TODO: Why does this not work?
+vim.g.nvim_tree_auto_close = 1
 vim.g.nvim_tree_quit_on_open = 1
 -- TODO: Why does this not work?
 vim.g.nvim_tree_side = 'right'

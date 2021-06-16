@@ -8,7 +8,7 @@ local cmd = vim.cmd
 -- GENERAL
 o.hidden = true
 o.undofile = true
-o.undodir = "~/.cache/nvim/undodir"
+o.undodir = "/Users/nico/.cache/nvim/undodir"
 o.mouse = "n"
 o.clipboard = "unnamedplus"
 o.inccommand = "split"
