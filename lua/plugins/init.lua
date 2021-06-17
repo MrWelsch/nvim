@@ -209,7 +209,7 @@ require("packer").startup(function(use)
     use {
 	    "lervag/vimtex",
 	    config = function() require('plugins.config.vimtex') end,
-	    event = "ColorScheme"
+	    event = "BufEnter"
     }
 
     -- COMMENTING
