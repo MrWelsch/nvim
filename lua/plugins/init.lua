@@ -212,6 +212,13 @@ require("packer").startup(function(use)
 	    event = "BufEnter"
     }
 
+    -- MARKDOWN
+    use {
+        "iamcco/markdown-preview.nvim",
+        ft = "markdown",
+        run = "cd app && yarn install"
+    }
+
     -- COMMENTING
     use {
 	    "b3nj5m1n/kommentary",

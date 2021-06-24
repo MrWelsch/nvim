@@ -110,6 +110,7 @@ local mappings = {
         name = "+ latex",
         c = {"<cmd>VimtexCompile<cr>", "compile"},
         p = {"<cmd>VimtexView<cr>", "preview"},
+        t = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
     },
     w = {
         name = "+ web",
