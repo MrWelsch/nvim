@@ -45,7 +45,7 @@ o.incsearch = true
 
 o.wrap = false
 o.textwidth = 80
-o.colorcolumn = '80'
+-- o.colorcolumn = '80'
 
 o.scrolloff = 10
 -- o.showmatch = true -- shows matching brackets
@@ -60,17 +60,6 @@ cmd('set whichwrap+=<,>,[,],h,l')
 vim.g.auto_complete = true
 vim.g.noswapfile = true
 vim.g.nobackup = true
-
--- NVIM-TREE
--- Need to be set here, since they need to load before nvim-tree
-vim.g.nvim_tree_hide_dotfiles = 1
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_follow = 1
-vim.g.nvim_tree_auto_ignore_ft = 'dashboard'
-vim.g.nvim_tree_auto_close = 1
-vim.g.nvim_tree_update_cwd = 1
-vim.g.nvim_tree_quit_on_open = 1
-vim.g.nvim_tree_side = 'right'
 
 -- AUTOCOMMANDS
 -- Define your autocommands table
