@@ -2,21 +2,32 @@
 local cmd = vim.cmd
 
 -- GRUVBOX-FLAT
-vim.cmd[[colorscheme gruvbox-flat]]
+-- cmd[[colorscheme gruvbox-flat]]
 
-vim.g.gruvbox_italic_functions = false
-vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+-- vim.g.gruvbox_italic_functions = false
+-- vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 
---Enabling this option, will hide inactive statuslines and replace them with a thin border instead.
---Should work with the standard StatusLine and LuaLine.
-gruvbox_hide_inactive_statusline = false
+-- Enabling this option, will hide inactive statuslines and replace them with a thin border instead.
+-- Should work with the standard StatusLine and LuaLine.
+-- gruvbox_hide_inactive_statusline = false
 
 -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
+-- vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
 
 -- DRACULA PRO
---vim.g.dracula_colorterm = 0
---cmd('colorscheme dracula_pro_van_helsing')
+-- vim.g.dracula_colorterm = 0
+-- cmd[[colorscheme dracula_pro]]
+
+vim.g.monokaipro_filter = "spectrum"
+-- vim.g.monokaipro_italic_functions = true
+vim.g.monokaipro_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+vim.g.monokaipro_flat_term = true
+
+-- Change the "hint" color to the "orange" color, and make the "error" color bright red
+vim.g.monokaipro_colors = { hint = "orange", error = "#ff0000" }
+
+
+cmd[[colorscheme monokaipro]]
 
 -- BUFFERLINE COLORS
 cmd('hi! link BufferLineSeperator Default')

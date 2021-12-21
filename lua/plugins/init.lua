@@ -19,13 +19,21 @@ require("packer").startup(function(use)
 	    "wbthomason/packer.nvim",
         opt = true
     }
---    use {
---        "charlief0x/vim-dracula-pro",
---        config = function() require('colors') end,
---        event = "BufEnter",
---    }
-	use {
-        "eddyekofo94/gruvbox-flat.nvim",
+    -- DRACULA PRO
+    -- use {
+    --     "charlief0x/vim-dracula-pro",
+    --     config = function() require('colors') end,
+    --     event = "BufEnter",
+    -- }
+    -- GRUVBOX FLAT
+    -- 	use {
+    --        "eddyekofo94/gruvbox-flat.nvim",
+    --        config = function() require('colors') end,
+    --        event = "BufEnter",
+    --    }
+    --    MONOKAI PRO
+    use {
+        "https://gitlab.com/__tpb/monokai-pro.nvim",
         config = function() require('colors') end,
         event = "BufEnter",
     }
@@ -84,8 +92,8 @@ require("packer").startup(function(use)
 	    after = "nvim-lspconfig"
     }
     use {
-	    "kabouzeid/nvim-lspinstall",
-	    config = function() require('plugins.config.lspinstall') end,
+	    "williamboman/nvim-lsp-installer",
+	    config = function() require('plugins.config.nvim-lsp-installer') end,
 	    after = "nvim-lspconfig"
     }
 
@@ -113,28 +121,15 @@ require("packer").startup(function(use)
 	    after = "telescope.nvim"
     }
 
-    -- DEBUGGING
-	-- TODO: Check if this is fixed by the developer
-    --use {
-	--	"mfussenegger/nvim-dap",
-	--	module = "dap"
-	--}
-	--use {
-	--	"rcarriga/nvim-dap-ui",
-	--	after = "nvim-dap"
-	--}
-	--use {
-	--	"Pocco81/DAPInstall.nvim",
-	--	config = function() require('plugins.config.nvim-dap-install') end,
-	--	cmd = { "DIInstall", "DIUninstall", "DIList" },
-	--	event = "ColorScheme",
-	--}
-
     -- AUTOCOMPLETE
     use {
-	    "hrsh7th/nvim-compe",
-	    config = function() require('plugins.config.compe') end,
+	    "hrsh7th/nvim-cmp",
+	    config = function() require('plugins.config.nvim-cmp') end,
         after = "nvim-lspconfig"
+    }
+    use {
+        "hrsh7th/cmp-nvim-lsp",
+        after = "nvim-cmp"
     }
 
 	-- FORMAT
@@ -171,17 +166,6 @@ require("packer").startup(function(use)
 	    config = function() require('plugins.config.gitsigns') end,
 	    requires = "nvim-lua/plenary.nvim",
         event = "ColorScheme"
-    }
-    use {
-	    "f-person/git-blame.nvim",
-	    config = function() require('plugins.config.gitblame') end,
-	    event = "ColorScheme"
-    }
-
-    -- UNDOTREE
-    use {
-	    "mbbill/undotree",
-	    event = "ColorScheme"
     }
 
     -- KEYBINDS
@@ -241,11 +225,4 @@ require("packer").startup(function(use)
 		config = function() require('plugins.config.nvim-bufferline') end,
 		event = "BufEnter",
 	}
-
-    -- LIVE SERVER
-    use {
-	    "turbio/bracey.vim",
-	    run = "npm install --prefix server",
-	    event = "ColorScheme"
-    }
 end)

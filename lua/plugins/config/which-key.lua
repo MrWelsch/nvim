@@ -49,7 +49,6 @@ local mappings = {
     ["e"] = "Explorer",
     ["f"] = "Find File",
     ["g"] = "Lazygit",
-    ["u"] = "Undotree",
     ["t"] = "Terminal",
     ["p"] = "Projects",
     d = {
@@ -112,12 +111,6 @@ local mappings = {
         p = {"<cmd>VimtexView<cr>", "preview"},
         t = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
     },
-    w = {
-        name = "+ web",
-        p = {"<cmd>Bracey<cr>", "preview"},
-        s = {"<cmd>BraceyStop<cr>", "stop"},
-        r = {"<cmd>BracyReload<cr>", "reload"},
-    }
 }
 
 local wk = require("which-key")
