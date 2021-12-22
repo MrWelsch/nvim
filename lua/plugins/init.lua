@@ -177,8 +177,8 @@ require("packer").startup(function(use)
 
     -- MISCELLANIOUS
     use {
-	    "glepnir/dashboard-nvim",
-	    config = function() require('plugins.config.dashboard') end,
+        'goolord/alpha-nvim',
+        config = function() require('plugins.config.alpha') end,
     }
     use {
 	    "kevinhwang91/nvim-bqf",
