@@ -1,91 +1,67 @@
 -- VIM BASE CONFIG
 -- For information on each function use
 -- :h <functionname>
-
-local o = vim.opt
 local cmd = vim.cmd
 
--- GENERAL
-o.hidden = true
-o.undofile = true
-o.undodir = "/Users/nico/.cache/nvim/undodir"
-o.mouse = "n"
-o.clipboard = "unnamedplus"
-o.inccommand = "split"
-o.signcolumn = "yes"
-o.belloff = "all"
-o.completeopt = "menuone,noselect"
+local options = {
+    -- GENERAL
+    hidden = true,
+    undofile = true,
+    undodir = "/Users/nico/.cache/nvim/undodir",
+    swapfile = false,
+    mouse = "a",
+    clipboard = "unnamedplus",
+    inccommand = "split",
+    signcolumn = "yes",
+    belloff = "all",
+    completeopt = "menuone,noselect",
 
--- PERFORMANCE
-o.updatetime = 300
-o.timeoutlen = 100
+    -- PERFORMANCE
+    updatetime = 300,
+    timeoutlen = 100,
 
--- VISUAL
-o.termguicolors = true
-o.cmdheight = 2
-o.showmode = false
-o.number = true
-o.relativenumber = true
-o.cursorline = false
-o.fillchars = { eob = " " }
+    -- VISUAL
+    termguicolors = true,
+    cmdheight = 2,
+    showmode = false,
+    number = true,
+    relativenumber = true,
+    cursorline = false,
+    fillchars = { eob = " " },
 
--- EDITOR
-o.splitbelow = true
-o.splitright = true
+    -- EDITOR
+    splitbelow = true,
+    splitright = true,
 
-o.tabstop = 4
-o.shiftwidth = 4
-o.softtabstop = 4
-o.expandtab = true
+    tabstop = 4,
+    shiftwidth = 4,
+    softtabstop = 4,
+    expandtab = true,
 
-o.smartindent = true
+    smartindent = true,
 
-o.hlsearch = false
-o.incsearch = true
+    hlsearch = false,
+    incsearch = true,
 
-o.wrap = false
-o.textwidth = 80
--- o.colorcolumn = '80'
+    wrap = false,
+    textwidth = 80,
+    -- colorcolumn = '80',
 
-o.scrolloff = 10
--- o.showmatch = true -- shows matching brackets
+    scrolloff = 10,
+    -- showmatch = true, -- shows matching brackets
+}
+
+-- Loop to iterate over options
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
+
+-- GLOBAL
+vim.g.auto_complete = true
+vim.g.nobackup = true
 
 -- VIM COMMAND
 cmd('set iskeyword+=-')
 cmd('set shortmess+=c')
 cmd('set whichwrap+=<,>,[,],h,l')
 --cmd([[au BufEnter * set fo-=c fo-=r fo-=o]])
-
--- GLOBAL
-vim.g.auto_complete = true
-vim.g.noswapfile = true
-vim.g.nobackup = true
-
--- AUTOCOMMANDS
--- Define your autocommands table
---local my_autocommands = {
---	my_augroup_name = {
---	  'BufWritePost', '*', 'FormatWrite'
---	}
---}
--- Set Autocommands
--- https://github.com/norcalli/nvim_utils
---function create_augroups(definitions)
---    for group_name, definition in pairs(definitions) do
---        vim.api.nvim_command('augroup ' .. group_name)
---        vim.api.nvim_command('autocmd!')
---        for _, def in ipairs(definition) do
---            local command =
---                table.concat(vim.tbl_flatten({ 'autocmd', def }), ' ')
---            vim.api.nvim_command(command)
---        end
---        vim.api.nvim_command('augroup END')
---    end
---end
-
--- Set autosave
---table.insert(autocmds['doom_core'], {
---    'TextChanged,TextChangedI',
---    '<buffer>',
---    'silent! write',
---})

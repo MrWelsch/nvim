@@ -1,20 +1,46 @@
--- TODO: Check out formatter
-
-local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data") .. "/site/pack/packer/opt/packer.nvim"
-
+-- Automatically install packer
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-    execute("!git clone https://github.com/wbthomason/packer.nvim " .. install_path)
+  PACKER_BOOTSTRAP = fn.system {
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  }
+  print "Installing packer close and reopen Neovim..."
+  vim.cmd [[packadd packer.nvim]]
 end
 
-execute "packadd packer.nvim"
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost init.lua source <afile> | PackerSync
+  augroup end
+]]
 
--- Auto compile if there are changes in plugins.lua
-vim.cmd "autocmd BufWritePost plugins.lua PackerCompile"
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+  return
+end
 
-require("packer").startup(function(use)
+-- Have packer use a popup window
+packer.init {
+  display = {
+    open_fn = function()
+      return require("packer.util").float { border = "rounded" }
+    end,
+  },
+}
+
+
+-- return packer.startup(function(use)
+return require('packer').startup(function()
     use {
 	    "wbthomason/packer.nvim",
         opt = true
@@ -36,6 +62,9 @@ require("packer").startup(function(use)
         "https://gitlab.com/__tpb/monokai-pro.nvim",
         config = function() require('colors') end,
         event = "BufEnter",
+        -- Do not update, cause modified under:
+        -- /Users/nico/.local/share/nvim/site/pack/packer/opt/monokai-pro.nvim
+        lock = true,
     }
     use {
 	    "kyazdani42/nvim-web-devicons",
@@ -68,24 +97,8 @@ require("packer").startup(function(use)
     -- LINTER
     use {
 	    "neovim/nvim-lspconfig",
-	    config = function()
-			-- LSP
-			require('lsp')
-			require('lsp.bash-ls')
-			require('lsp.css-ls')
-            require('lsp.clangd')
-			require('lsp.docker-ls')
-			require('lsp.efm-general-ls')
-			require('lsp.html-ls')
-			require('lsp.json-ls')
-			require('lsp.js-ts-ls')
-			require('lsp.latex-ls')
-			require('lsp.lua-ls')
-			require('lsp.python-ls')
-			require('lsp.vim-ls')
-			require('lsp.yaml-ls')
-	    end,
-        event = "BufEnter"
+	    config = function() require('lsp') end,
+        -- event = "BufEnter"
     }
     use {
 	    "glepnir/lspsaga.nvim",
@@ -93,7 +106,7 @@ require("packer").startup(function(use)
     }
     use {
 	    "williamboman/nvim-lsp-installer",
-	    config = function() require('plugins.config.nvim-lsp-installer') end,
+	    -- config = function() require('lsp.lsp-installer') end,
 	    after = "nvim-lspconfig"
     }
 
@@ -124,12 +137,27 @@ require("packer").startup(function(use)
     -- AUTOCOMPLETE
     use {
 	    "hrsh7th/nvim-cmp",
-	    config = function() require('plugins.config.nvim-cmp') end,
+	    config = function() require('plugins.config.cmp') end,
         after = "nvim-lspconfig"
     }
     use {
         "hrsh7th/cmp-nvim-lsp",
+        "hrsh7th/cmp-buffer",
+        "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
         after = "nvim-cmp"
+    }
+
+    -- SNIPPETS
+    use {
+        'L3MON4D3/LuaSnip',
+        -- config = function() require('plugins.config.luasnip') end,
+    }
+    use { 
+        'saadparwaiz1/cmp_luasnip',
+    }
+    use {
+        "rafamadriz/friendly-snippets",
     }
 
 	-- FORMAT
@@ -215,14 +243,25 @@ require("packer").startup(function(use)
     }
 
     -- STATUS & BUFFERLINE
+    -- use {
+	--     "glepnir/galaxyline.nvim",
+	--     config = function() require('plugins.config.galaxyline') end,
+	--     event = "BufEnter"
+    -- }
     use {
-	    "glepnir/galaxyline.nvim",
-	    config = function() require('plugins.config.galaxyline') end,
-	    event = "BufEnter"
+        'nvim-lualine/lualine.nvim',
+        requires = {'kyazdani42/nvim-web-devicons', opt = true},
+        config = function() require('plugins.config.lualine') end,
+        event = "BufEnter"
     }
 	use {
 		"akinsho/nvim-bufferline.lua",
-		config = function() require('plugins.config.nvim-bufferline') end,
+		config = function() require('plugins.config.bufferline') end,
 		event = "BufEnter",
 	}
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
 end)

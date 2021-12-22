@@ -24,8 +24,8 @@ bind('v', '<', '<gv', {noremap = true, silent = true})
 bind('v', '>', '>gv', {noremap = true, silent = true})
 
 -- BUFFER
-bind('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
-bind('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+-- bind('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+-- bind('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
 -- TODO: Make this work
 --bind('n', '<S-x>', ':lua require('bufferline').handle_close_buffer(vim.api.nvim_get_current_buf())<CR>', { noremap = true, silent = true })
 
@@ -47,14 +47,11 @@ bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
 -- LAZYGIT
 bind('n', '<Leader>g', ':lua_lazygit_toggle()<CR>', {noremap = true, silent = true})
 
--- UNDOTREE
-bind('n', '<Leader>u', ':UndotreeToggle<CR>', {noremap = true, silent = true})
-
 -- TELESCOPE
 bind('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
 
 -- DASHBOARD
-bind('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
+bind('n', '<Leader>;', ':Alpha<CR>', {noremap = true, silent = true})
 
 -- COMMENTS
 bind("n", "<Leader>/", "<Plug>kommentary_line_default", {})
@@ -67,7 +64,7 @@ bind('n', "<leader>c", ':BufferClose<CR>', {noremap = true, silent = true})
 bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
         {noremap = true, silent = true})
 
--- COMPE
+-- CMP
 bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
 bind("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
 bind("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})

@@ -20,7 +20,7 @@ require("which-key").setup {
         group = "" -- symbol prepended to a group
     },
     window = {
-        border = "single", -- none, single, double, shadow
+        border = "none", -- none, single, double, shadow
         position = "bottom", -- bottom, top
         margin = {1, 0, 1, 0}, -- extra window margin [top, right, bottom, left]
         padding = {2, 2, 2, 2} -- extra window padding [top, right, bottom, left]
@@ -44,15 +44,16 @@ local opts = {
 }
 
 local mappings = {
+    [";"] = "DASHBOARD",
     ["/"] = "COMMENT",
-    ["c"] = "Close Buffer",
-    ["e"] = "Explorer",
-    ["f"] = "Find File",
-    ["g"] = "Lazygit",
-    ["t"] = "Terminal",
-    ["p"] = "Projects",
+    ["c"] = "CLOSE BUFFER",
+    ["e"] = "EXPLORER",
+    ["f"] = "FIND FILE",
+    ["g"] = "GIT",
+    ["t"] = "TERMINAL",
+    ["p"] = "PROJECTS",
     d = {
-        name = "+ diagnostics",
+        name = "+ DIAGNOSTICS",
         t = {"<cmd>TroubleToggle<cr>", "trouble"},
         w = {"<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace"},
         d = {"<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document"},
@@ -61,7 +62,7 @@ local mappings = {
         r = {"<cmd>TroubleToggle lsp_references<cr>", "references"},
     },
     D = {
-        name = "+ debug",
+        name = "+ DEBUG",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
         c = {"<cmd>DebugContinue<cr>", "Continue"},
         i = {"<cmd>DebugStepInto<cr>", "Step Into"},
@@ -70,7 +71,7 @@ local mappings = {
         s = {"<cmd>DebugStart<cr>", "Start"}
     },
     l = {
-        name = "+ lsp",
+        name = "+ LSP",
         a = {"<cmd>Lspsaga code_action<cr>", "Code Action"},
         A = {"<cmd>Lspsaga range_code_action<cr>", "Selected Action"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
@@ -87,7 +88,7 @@ local mappings = {
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
     s = {
-        name = "+ search",
+        name = "+ SEARCH",
         b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
         c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
         d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
@@ -100,13 +101,13 @@ local mappings = {
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
     S = {
-		name = "+ session",
+		name = "+ SESSION",
     	s = {"<cmd>SessionSave<cr>", "Save Session"},
 		l = {"<cmd>SessionLoad<cr>", "Load Session"}
     },
     -- extras
     L = {
-        name = "+ latex",
+        name = "+ LATEX",
         c = {"<cmd>VimtexCompile<cr>", "compile"},
         p = {"<cmd>VimtexView<cr>", "preview"},
         t = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
