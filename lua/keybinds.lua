@@ -65,7 +65,7 @@ bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>
         {noremap = true, silent = true})
 
 -- CMP
-bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
-bind("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
-bind("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
-bind("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- bind("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
+-- bind("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
+-- bind("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})

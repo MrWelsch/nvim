@@ -98,7 +98,7 @@ return require('packer').startup(function()
     use {
 	    "neovim/nvim-lspconfig",
 	    config = function() require('lsp') end,
-        -- event = "BufEnter"
+        event = "BufEnter"
     }
     use {
 	    "glepnir/lspsaga.nvim",
@@ -109,7 +109,11 @@ return require('packer').startup(function()
 	    -- config = function() require('lsp.lsp-installer') end,
 	    after = "nvim-lspconfig"
     }
-
+    use {
+        "jose-elias-alvarez/null-ls.nvim",
+        requires = "nvim-lua/plenary.nvim",
+        after = "nvim-lspconfig"
+    }
     use {
 	    "folke/trouble.nvim",
         module = "trouble"
@@ -138,7 +142,7 @@ return require('packer').startup(function()
     use {
 	    "hrsh7th/nvim-cmp",
 	    config = function() require('plugins.config.cmp') end,
-        after = "nvim-lspconfig"
+        -- after = "nvim-lspconfig"
     }
     use {
         "hrsh7th/cmp-nvim-lsp",
