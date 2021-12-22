@@ -97,7 +97,6 @@ return require('packer').startup(function()
     -- LINTER
     use {
 	    "neovim/nvim-lspconfig",
-	    config = function() require('lsp') end,
         event = "BufEnter"
     }
     use {
@@ -106,11 +105,12 @@ return require('packer').startup(function()
     }
     use {
 	    "williamboman/nvim-lsp-installer",
-	    -- config = function() require('lsp.lsp-installer') end,
+	    config = function() require('lsp.lsp-installer') end,
 	    after = "nvim-lspconfig"
     }
     use {
         "jose-elias-alvarez/null-ls.nvim",
+        config = function() require('lsp.null-ls') end,
         requires = "nvim-lua/plenary.nvim",
         after = "nvim-lspconfig"
     }

@@ -176,6 +176,7 @@ _G.packer_plugins = {
     url = "https://gitlab.com/__tpb/monokai-pro.nvim"
   },
   ["null-ls.nvim"] = {
+    config = { "\27LJ\2\n+\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\16lsp.null-ls\frequire\0" },
     load_after = {
       ["nvim-lspconfig"] = true
     },
@@ -220,6 +221,7 @@ _G.packer_plugins = {
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lsp-installer"] = {
+    config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22lsp.lsp-installer\frequire\0" },
     load_after = {
       ["nvim-lspconfig"] = true
     },
@@ -229,8 +231,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    after = { "lspsaga.nvim", "null-ls.nvim", "nvim-lsp-installer" },
-    config = { "\27LJ\2\n#\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\blsp\frequire\0" },
+    after = { "null-ls.nvim", "lspsaga.nvim", "nvim-lsp-installer" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -255,7 +256,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "nvim-ts-context-commentstring", "vim-matchup", "nvim-ts-autotag" },
+    after = { "nvim-ts-autotag", "nvim-ts-context-commentstring", "vim-matchup" },
     config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.treesitter\frequire\0" },
     loaded = false,
     needs_bufread = true,
@@ -324,7 +325,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope-project.nvim"
   },
   ["telescope.nvim"] = {
-    after = { "telescope-project.nvim", "telescope-fzy-native.nvim" },
+    after = { "telescope-fzy-native.nvim", "telescope-project.nvim" },
     commands = { "Telescope" },
     config = { "\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.telescope\frequire\0" },
     loaded = false,
@@ -401,10 +402,6 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.config.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25plugins.config.alpha\frequire\0", "config", "alpha-nvim")
@@ -413,6 +410,10 @@ time([[Config for alpha-nvim]], false)
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.config.cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -437,7 +438,7 @@ time([[Defining lazy-load filetype autocommands]], false)
 time([[Defining lazy-load event autocommands]], true)
 vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'gitsigns.nvim', 'lsp-rooter.nvim', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vimtex', 'which-key.nvim', 'lualine.nvim', 'monokai-pro.nvim', 'nvim-lspconfig', 'nvim-bufferline.lua', 'kommentary', 'nvim-treesitter', 'nvim-toggleterm.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'vimtex', 'nvim-bufferline.lua', 'which-key.nvim', 'kommentary', 'nvim-toggleterm.lua', 'nvim-treesitter', 'nvim-lspconfig', 'monokai-pro.nvim', 'lualine.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
