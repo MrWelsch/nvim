@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = 'all',
+    ensure_installed = 'maintained',
     ignore_install = {'haskell'},
     matchup = {
         enable = true,              
@@ -11,7 +11,8 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
         config = {
           css = '// %s'
-        }
+        },
+        additional_vim_regex_highlighting = true,
       },
     indent = {enable = {"javascriptreact"}},
     autotag = {enable = true},

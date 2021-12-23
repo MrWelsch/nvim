@@ -135,14 +135,6 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/kommentary",
     url = "https://github.com/b3nj5m1n/kommentary"
   },
-  ["lsp-rooter.nvim"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\30plugins.config.lsp-rooter\frequire\0" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/lsp-rooter.nvim",
-    url = "https://github.com/ahmedkhalf/lsp-rooter.nvim"
-  },
   ["lspsaga.nvim"] = {
     load_after = {
       ["nvim-lspconfig"] = true
@@ -231,7 +223,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    after = { "lspsaga.nvim", "null-ls.nvim", "nvim-lsp-installer" },
+    after = { "nvim-lsp-installer", "null-ls.nvim", "lspsaga.nvim" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -304,6 +296,14 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  ["project.nvim"] = {
+    config = { "\27LJ\2\n6\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\27plugins.config.project\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/project.nvim",
+    url = "https://github.com/ahmedkhalf/project.nvim"
   },
   ["telescope-fzy-native.nvim"] = {
     load_after = {
@@ -406,14 +406,14 @@ end
 time([[Config for alpha-nvim]], true)
 try_loadstring("\27LJ\2\n4\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\25plugins.config.alpha\frequire\0", "config", "alpha-nvim")
 time([[Config for alpha-nvim]], false)
--- Config for: nvim-cmp
-time([[Config for nvim-cmp]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.config.cmp\frequire\0", "config", "nvim-cmp")
-time([[Config for nvim-cmp]], false)
 -- Config for: nvim-colorizer.lua
 time([[Config for nvim-colorizer.lua]], true)
 try_loadstring("\27LJ\2\n8\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\29plugins.config.colorizer\frequire\0", "config", "nvim-colorizer.lua")
 time([[Config for nvim-colorizer.lua]], false)
+-- Config for: nvim-cmp
+time([[Config for nvim-cmp]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.config.cmp\frequire\0", "config", "nvim-cmp")
+time([[Config for nvim-cmp]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
@@ -436,9 +436,9 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-prev
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'kommentary', 'nvim-lspconfig', 'lualine.nvim', 'nvim-bufferline.lua', 'which-key.nvim', 'nvim-treesitter', 'tex.nvim', 'monokai-pro.nvim', 'nvim-toggleterm.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'lsp-rooter.nvim', 'nvim-bqf', 'gitsigns.nvim'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-treesitter', 'nvim-toggleterm.lua', 'nvim-lspconfig', 'kommentary', 'lualine.nvim', 'monokai-pro.nvim', 'tex.nvim', 'which-key.nvim', 'nvim-bufferline.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'gitsigns.nvim', 'project.nvim', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

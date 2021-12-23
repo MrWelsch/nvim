@@ -178,14 +178,12 @@ return require('packer').startup(function()
 		config = function() require('plugins.config.nvim-tree') end,
 		cmd = { "NvimTreeClipboard", "NvimTreeClose", "NvimTreeFindFile", "NvimTreeOpen", "NvimTreeRefresh", "NvimTreeToggle" },
 	}
-    -- This puts nvim-tree in curdir
+
+    -- PROJECT MANAGEMENT
     use {
-        -- VIMSCRIPT 5.2%
-        -- DEPRECATED
-        -- USE:
-        -- https://github.com/ahmedkhalf/project.nvim
-	    "ahmedkhalf/lsp-rooter.nvim",
-	    config = function() require('plugins.config.lsp-rooter') end,
+        -- NOT YET WORKING!
+        "ahmedkhalf/project.nvim",
+        config = function() require('plugins.config.project') end,
         event = "ColorScheme"
     }
 
