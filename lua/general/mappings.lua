@@ -48,7 +48,7 @@ bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
 bind('n', '<Leader>g', ':lua_lazygit_toggle()<CR>', {noremap = true, silent = true})
 
 -- TELESCOPE
-bind('n', '<Leader>f', ':lua require("telescope.builtin").find_files(require("plugins.config.telescope").custom_theme)<CR>', {noremap = true, silent = true})
+bind('n', '<Leader>f', ':lua require("telescope.builtin").find_files(require("plugins.telescope").custom_theme)<CR>', {noremap = true, silent = true})
 
 -- DASHBOARD
 bind('n', '<Leader>;', ':Alpha<CR>', {noremap = true, silent = true})

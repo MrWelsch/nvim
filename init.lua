@@ -2,6 +2,6 @@
 -- DATA_PATH = vim.fn.stdpath('data')
 -- CACHE_PATH = vim.fn.stdpath('cache')
 
-require('options')
-require('mappings')
-require('plugins')
+require('general.options')
+require('general.mappings')
+require('general.packer')
