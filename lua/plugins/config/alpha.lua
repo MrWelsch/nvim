@@ -12,6 +12,14 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
-dashboard.section.footer.val = {}
+local function footer()
+    string = "loaded in " .. vim.fn.printf(
+        "%.3f",
+        vim.fn.reltimefloat(vim.fn.reltime(vim.g.start_time))
+    ) .. " seconds."
+    return tostring(string)
+end
+
+dashboard.section.footer.val = footer()
 
 alpha.setup(dashboard.opts)

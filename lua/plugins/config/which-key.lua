@@ -108,8 +108,8 @@ local mappings = {
     -- extras
     L = {
         name = "+ LATEX",
-        c = {"<cmd>VimtexCompile<cr>", "compile"},
-        p = {"<cmd>VimtexView<cr>", "preview"},
+        c = {"<cmd>TexCompile<cr>", "compile"},
+        p = {"<cmd>TexViewer<cr>", "preview"},
         t = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
     },
 }

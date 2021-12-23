@@ -223,8 +223,8 @@ return require('packer').startup(function()
 
     -- LATEX
     use {
-	    "lervag/vimtex",
-	    config = function() require('plugins.config.vimtex') end,
+	    'aspeddro/tex.nvim',
+	    config = function() require('plugins.config.tex') end,
 	    event = "BufEnter"
     }
 
