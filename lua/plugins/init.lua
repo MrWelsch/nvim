@@ -43,7 +43,6 @@ packer.init {
 return require('packer').startup(function()
     use {
 	    "wbthomason/packer.nvim",
-        opt = true
     }
     -- DRACULA PRO
     -- use {
@@ -101,11 +100,6 @@ return require('packer').startup(function()
         event = "BufEnter"
     }
     use {
-        -- DO I NEED THIS?
-	    "glepnir/lspsaga.nvim",
-	    after = "nvim-lspconfig"
-    }
-    use {
 	    "williamboman/nvim-lsp-installer",
 	    config = function() require('lsp.lsp-installer') end,
 	    after = "nvim-lspconfig"
@@ -116,11 +110,11 @@ return require('packer').startup(function()
         requires = "nvim-lua/plenary.nvim",
         after = "nvim-lspconfig"
     }
-    use {
-        -- DO I NEED THIS?
-	    "folke/trouble.nvim",
-        module = "trouble"
-    }
+    -- use {
+    --     -- DO I NEED THIS?
+	--     "folke/trouble.nvim",
+    --     module = "trouble"
+    -- }
 
     -- TELESCOPE
     use {
