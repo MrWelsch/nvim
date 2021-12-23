@@ -84,6 +84,7 @@ return require('packer').startup(function()
 	    after = "nvim-treesitter",
     }
     use {
+        -- VIMSCRIPT
 	    "andymass/vim-matchup",
 	    config = function() require('plugins.config.matchup') end,
 	    after = "nvim-treesitter",
@@ -100,6 +101,7 @@ return require('packer').startup(function()
         event = "BufEnter"
     }
     use {
+        -- DO I NEED THIS?
 	    "glepnir/lspsaga.nvim",
 	    after = "nvim-lspconfig"
     }
@@ -115,6 +117,7 @@ return require('packer').startup(function()
         after = "nvim-lspconfig"
     }
     use {
+        -- DO I NEED THIS?
 	    "folke/trouble.nvim",
         module = "trouble"
     }
@@ -155,17 +158,14 @@ return require('packer').startup(function()
     -- SNIPPETS
     use {
         'L3MON4D3/LuaSnip',
-        -- config = function() require('plugins.config.luasnip') end,
-    }
-    use { 
         'saadparwaiz1/cmp_luasnip',
-    }
-    use {
         "rafamadriz/friendly-snippets",
+        -- config = function() require('plugins.config.luasnip') end,
     }
 
 	-- FORMAT
 	use {
+        -- VIMSCRIPT 3.5%
 		"lukas-reineke/format.nvim",
 		config = function() require('plugins.config.format') end,
 		cmd = { "Format", "FormatWrite" },
@@ -180,6 +180,10 @@ return require('packer').startup(function()
 	}
     -- This puts nvim-tree in curdir
     use {
+        -- VIMSCRIPT 5.2%
+        -- DEPRECATED
+        -- USE:
+        -- https://github.com/ahmedkhalf/project.nvim
 	    "ahmedkhalf/lsp-rooter.nvim",
 	    config = function() require('plugins.config.lsp-rooter') end,
         event = "ColorScheme"
@@ -187,6 +191,7 @@ return require('packer').startup(function()
 
     -- TERMINAL
     use {
+        -- VIMSCRIPT 1.4%
 	    "akinsho/nvim-toggleterm.lua",
 	    config = function() require('plugins.config.toggleterm') end,
         event = "BufEnter"
@@ -213,10 +218,13 @@ return require('packer').startup(function()
         config = function() require('plugins.config.alpha') end,
     }
     use {
+        -- DO I NEED THIS?
 	    "kevinhwang91/nvim-bqf",
 	    event = "ColorScheme"
     }
     use {
+        -- VIMSCRIPT 1.4%
+        -- MAYBE LOOK FOR ALTERNATIVE
 	    "norcalli/nvim-colorizer.lua",
 	    config = function() require('plugins.config.colorizer') end,
     }
@@ -230,6 +238,8 @@ return require('packer').startup(function()
 
     -- MARKDOWN
     use {
+        -- MAYBE SWITCH TO:
+        -- https://github.com/ellisonleao/glow.nvim
         "iamcco/markdown-preview.nvim",
         ft = "markdown",
         run = "cd app && yarn install"
@@ -247,11 +257,6 @@ return require('packer').startup(function()
     }
 
     -- STATUS & BUFFERLINE
-    -- use {
-	--     "glepnir/galaxyline.nvim",
-	--     config = function() require('plugins.config.galaxyline') end,
-	--     event = "BufEnter"
-    -- }
     use {
         'nvim-lualine/lualine.nvim',
         requires = {'kyazdani42/nvim-web-devicons', opt = true},
