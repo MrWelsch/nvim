@@ -94,8 +94,6 @@ return require('packer').startup(function()
     use {'goolord/alpha-nvim', config = [[require('plugins.alpha')]]}
     -- DO I NEED THIS?
     use {"kevinhwang91/nvim-bqf", event = "ColorScheme"}
-    -- VIMSCRIPT 1.4%
-    -- MAYBE LOOK FOR ALTERNATIVE
     use {"norcalli/nvim-colorizer.lua", config = [[require('plugins.colorizer')]], event = 'BufReadPre'}
 
     -- LATEX
