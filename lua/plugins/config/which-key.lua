@@ -49,6 +49,7 @@ local mappings = {
     ["c"] = "CLOSE BUFFER",
     ["e"] = "EXPLORER",
     ["f"] = "FIND FILE",
+    -- ["f"] = {"<cmd>:lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<cr>", "Find File"},
     ["g"] = "GIT",
     ["t"] = "TERMINAL",
     ["p"] = "PROJECTS",

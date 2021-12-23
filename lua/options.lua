@@ -1,6 +1,5 @@
 -- VIM BASE CONFIG
--- For information on each function use
--- :h <functionname>
+-- For information on each function use ':h <functionname>'
 local cmd = vim.cmd
 
 local options = {

@@ -3,5 +3,5 @@
 -- CACHE_PATH = vim.fn.stdpath('cache')
 
 require('options')
-require('keybinds')
+require('mappings')
 require('plugins')

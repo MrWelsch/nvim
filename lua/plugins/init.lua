@@ -126,10 +126,6 @@ return require('packer').startup(function()
 
     }
     use {
-	    "nvim-telescope/telescope-fzy-native.nvim",
-	    after = "telescope.nvim"
-    }
-    use {
 	    "nvim-telescope/telescope-project.nvim",
 	    config = function() require('telescope').load_extension('project') end,
 	    after = "telescope.nvim"
@@ -250,9 +246,8 @@ return require('packer').startup(function()
 
     -- STATUS & BUFFERLINE
     use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
-        config = function() require('plugins.config.lualine') end,
+        'tamton-aquib/staline.nvim',
+        config = function() require('plugins.config.staline') end,
         event = "BufEnter"
     }
 	use {
