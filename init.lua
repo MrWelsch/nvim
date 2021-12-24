@@ -6,4 +6,4 @@ require('general.options')
 require('general.mappings')
 require('general.packer')
 
-require('ui.colorschemes').tokyodark(false)
+require('ui.colorschemes').tokyonight(false)

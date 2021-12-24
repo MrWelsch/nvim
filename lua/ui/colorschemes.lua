@@ -31,6 +31,7 @@ function Theme.tokyonight(transparent)
 	cmd [[hi NormalFloat guibg=#1a1b26]]
 	-- vim.cmd [[hi FloatBorder guibg=#2a2b3d]]
 	-- vim.cmd [[hi SignColumn guibg=#1a1b26]]
+    cmd [[hi StatusLine guibg=#1a1b26]]
 end
 
 function Theme.tokyodark(transparent)
@@ -40,6 +41,7 @@ function Theme.tokyodark(transparent)
 	cmd [[colorscheme tokyodark]]
 	cmd("hi Normal guibg="..(transparent and "none" or "#11121d"))
 	cmd [[hi IndentBlanklineChar guifg=#555555]]
+    cmd [[hi StatusLine guibg=#11121d]]
 end
 
 function Theme.nord(transparent)
@@ -56,6 +58,7 @@ function Theme.nord(transparent)
     -- Enables/Disables italics
     vim.g.nord_italic = false
 	cmd [[colorscheme nord]]
+    cmd [[hi StatusLine guibg=#2E3440]]
 end
 
 function Theme.gruvbox(transparent)
@@ -67,6 +70,7 @@ function Theme.gruvbox(transparent)
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
     cmd [[colorscheme gruvbox-flat]]
+    cmd [[hi StatusLine guibg=##32302f]]
 end
 
 function Theme.monokaipro(transparent)
@@ -75,10 +79,11 @@ function Theme.monokaipro(transparent)
     vim.g.monokaipro_sidebars = { "qf", "vista_kind", "terminal", "packer" }
     vim.g.monokaipro_flat_sidebar = true
     vim.g.monokaipro_flat_term = true
-    vig.g.monokaipro_hide_inactive_statusline = true
+    vim.g.monokaipro_hide_inactive_statusline = true
     -- -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     vim.g.monokaipro_colors = { hint = "orange", error = "#ff6188" }
     cmd [[colorscheme monokaipro]]
+    cmd [[hi StatusLine guibg=#222222]]
 end
 
 function Theme.draculapro(transparent)
@@ -91,6 +96,7 @@ function Theme.draculapro(transparent)
     cmd ('hi! default link DashboardCenter Operator')
     cmd ('hi! default link DashboardShortcut Identifier')
     cmd ('hi! default link DashboardFooter Function')
+    cmd [[hi StatusLine guibg=#22212c]]
 end
 
 return Theme

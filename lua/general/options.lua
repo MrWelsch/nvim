@@ -21,7 +21,7 @@ local options = {
 
     -- VISUAL
     termguicolors = true,
-    cmdheight = 2,
+    cmdheight = 1,
     showmode = false,
     number = true,
     relativenumber = true,
