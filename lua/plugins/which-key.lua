@@ -84,11 +84,11 @@ local mappings = {
 		l = {"<cmd>SessionLoad<cr>", "Load Session"}
     },
     -- extras
-    L = {
-        name = "+ LATEX",
-        c = {"<cmd>TexCompile<cr>", "compile"},
-        p = {"<cmd>TexViewer<cr>", "preview"},
-        t = {"<cmd>MarkdownPreviewToggle<cr>", "Markdown Preview"},
+    m = {
+        name = "+ MARKDOWN",
+        c = {"<cmd>TexCompile<cr>", "COMPILE"},
+        l = {"<cmd>TexViewer<cr>", "LATEX PREVIEW"},
+        p = {"<cmd>Glow<cr>", "MARKDOWN PREVIEW"},
     },
 }
 

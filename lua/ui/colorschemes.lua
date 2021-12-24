@@ -26,12 +26,14 @@ function Theme.tokyonight(transparent)
 	-- vim.g.tokyonight_style = "night"
 	-- vim.g.tokyonight_transparent_background = transparent and 1 or 0
 	vim.g.tokyonight_transparent = transparent and 1 or 0
+    vim.g.tokyonight_transparent_sidebar = true
 
 	cmd [[colorscheme tokyonight]]
 	cmd [[hi NormalFloat guibg=#1a1b26]]
 	-- vim.cmd [[hi FloatBorder guibg=#2a2b3d]]
 	-- vim.cmd [[hi SignColumn guibg=#1a1b26]]
     cmd [[hi StatusLine guibg=#1a1b26]]
+    cmd [[hi Staline guibg=#1a1b26]]
 end
 
 function Theme.tokyodark(transparent)
@@ -42,6 +44,7 @@ function Theme.tokyodark(transparent)
 	cmd("hi Normal guibg="..(transparent and "none" or "#11121d"))
 	cmd [[hi IndentBlanklineChar guifg=#555555]]
     cmd [[hi StatusLine guibg=#11121d]]
+    cmd [[hi Staline guibg=#11121d]]
 end
 
 function Theme.nord(transparent)
@@ -59,6 +62,7 @@ function Theme.nord(transparent)
     vim.g.nord_italic = false
 	cmd [[colorscheme nord]]
     cmd [[hi StatusLine guibg=#2E3440]]
+    cmd [[hi Staline guibg=#2E3440]]
 end
 
 function Theme.gruvbox(transparent)
@@ -71,6 +75,7 @@ function Theme.gruvbox(transparent)
     vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
     cmd [[colorscheme gruvbox-flat]]
     cmd [[hi StatusLine guibg=##32302f]]
+    cmd [[hi Staline guibg=##32302f]]
 end
 
 function Theme.monokaipro(transparent)
@@ -84,19 +89,14 @@ function Theme.monokaipro(transparent)
     vim.g.monokaipro_colors = { hint = "orange", error = "#ff6188" }
     cmd [[colorscheme monokaipro]]
     cmd [[hi StatusLine guibg=#222222]]
+    cmd [[hi Staline guibg=#222222]]
 end
 
 function Theme.draculapro(transparent)
     vim.g.dracula_colorterm = 0
     cmd [[colorscheme dracula_pro]]
-    -- BUFFERLINE COLORS
-    cmd ('hi! link BufferLineSeperator Default')
-    -- DASHBOARD COLORS
-    cmd ('hi! default link DashboardHeader Number')
-    cmd ('hi! default link DashboardCenter Operator')
-    cmd ('hi! default link DashboardShortcut Identifier')
-    cmd ('hi! default link DashboardFooter Function')
     cmd [[hi StatusLine guibg=#22212c]]
+    cmd [[hi Staline guibg=#22212c]]
 end
 
 return Theme

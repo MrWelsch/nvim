@@ -82,8 +82,7 @@ return require('packer').startup(function()
     use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
     use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
-    use {"iamcco/markdown-preview.nvim", ft = "markdown", run = "cd app && yarn install"} -- MAYBE SWITCH TO: https://github.com/ellisonleao/glow.nvim
-
+    use {"ellisonleao/glow.nvim", ft = 'markdown'}
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
