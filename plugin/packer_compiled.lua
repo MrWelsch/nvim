@@ -127,6 +127,11 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["gruvbox-flat.nvim"] = {
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/gruvbox-flat.nvim",
+    url = "https://github.com/eddyekofo94/gruvbox-flat.nvim"
+  },
   kommentary = {
     config = { "require('plugins.kommentary')" },
     loaded = false,
@@ -143,12 +148,14 @@ _G.packer_plugins = {
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
   ["monokai-pro.nvim"] = {
-    config = { "require('ui.colors')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/monokai-pro.nvim",
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
     url = "https://gitlab.com/__tpb/monokai-pro.nvim"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["null-ls.nvim"] = {
     config = { "require('lsp.null-ls')" },
@@ -235,7 +242,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    after = { "vim-matchup", "nvim-ts-context-commentstring", "nvim-ts-autotag" },
+    after = { "nvim-ts-autotag", "nvim-ts-context-commentstring", "vim-matchup" },
     config = { "require('plugins.treesitter')" },
     loaded = false,
     needs_bufread = true,
@@ -327,6 +334,21 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/tex.nvim",
     url = "https://github.com/aspeddro/tex.nvim"
   },
+  ["tokyodark.nvim"] = {
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
+    url = "https://github.com/tiagovla/tokyodark.nvim"
+  },
+  ["tokyonight.nvim"] = {
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
+    url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["vim-dracula-pro"] = {
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/vim-dracula-pro",
+    url = "https://github.com/charlief0x/vim-dracula-pro"
+  },
   ["vim-matchup"] = {
     after_files = { "/Users/nico/.local/share/nvim/site/pack/packer/opt/vim-matchup/after/plugin/matchit.vim" },
     config = { "require('plugins.matchup')" },
@@ -395,10 +417,10 @@ time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file FormatWrite lua require("packer.load")({'format.nvim'}, { cmd = "FormatWrite", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Format lua require("packer.load")({'format.nvim'}, { cmd = "Format", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Telescope lua require("packer.load")({'telescope.nvim'}, { cmd = "Telescope", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file FormatWrite lua require("packer.load")({'format.nvim'}, { cmd = "FormatWrite", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file NvimTreeToggle lua require("packer.load")({'nvim-tree.lua'}, { cmd = "NvimTreeToggle", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -409,11 +431,11 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-prev
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'kommentary', 'monokai-pro.nvim', 'staline.nvim', 'nvim-bufferline.lua', 'tex.nvim', 'nvim-toggleterm.lua', 'nvim-lspconfig', 'which-key.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'project.nvim', 'nvim-bqf'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'tex.nvim', 'which-key.nvim', 'kommentary', 'nvim-lspconfig', 'nvim-toggleterm.lua', 'nvim-bufferline.lua', 'staline.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'nvim-bqf', 'project.nvim'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

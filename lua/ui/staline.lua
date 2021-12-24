@@ -13,19 +13,14 @@ require "staline".setup {
 	defaults = {
 		true_colors = true,
 		line_column = " [%l/%L] :%c  ",
-		branch_symbol = " "
+		branch_symbol = " ",
+        bg = '#1a1b26'
 	}
 }
 
--- MONOKAI PRO (SPECTRUM)
--- bg       = '#222222',
--- fg       = '#f7f1ff',
--- yellow   = '#fce566',
--- cyan     = '#5ad4e6',
--- darkblue = '#3399cc',
--- green    = '#7bd88f',
--- orange   = '#fc9867',
--- violet   = '#ab9df2',
--- magenta  = '#ff6188',
--- blue     = '#3399cc',
--- red      = '#ff6188',
+local monokaipro = {
+    i = "#ab9df2",
+	n = "#7bd88f",
+	c = "#5ad4e6",
+	v = "#fc9867",  
+}

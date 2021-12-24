@@ -44,14 +44,16 @@ return require('packer').startup(function()
 
     use {"wbthomason/packer.nvim"}
 
-    -- DRACULA PRO
-    -- use {"charlief0x/vim-dracula-pro", config = [[require('colors')]], event = "BufEnter"}
-
-    -- GRUVBOX FLAT
-    -- 	use {"eddyekofo94/gruvbox-flat.nvim", config = [[require('colors')]], event = "BufEnter"}
-
-    -- MONOKAI PRO
-    use {"https://gitlab.com/__tpb/monokai-pro.nvim", config = [[require('ui.colors')]], event = "BufEnter"}
+    -- THEMES & UI
+    use {
+        'folke/tokyonight.nvim',
+        'tiagovla/tokyodark.nvim',
+        'shaunsingh/nord.nvim',
+        "charlief0x/vim-dracula-pro",
+        "eddyekofo94/gruvbox-flat.nvim",
+        "https://gitlab.com/__tpb/monokai-pro.nvim",
+        event = 'BufEnter'
+    }
     use {"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"}
 	
     -- TREESITTER
