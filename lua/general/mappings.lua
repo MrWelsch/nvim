@@ -61,8 +61,9 @@ bind("v", "<Leader>/", "<Plug>kommentary_visual_default", {})
 bind('n', "<leader>c", ':BufferClose<CR>', {noremap = true, silent = true})
 
 -- PROJECTS
-bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
-        {noremap = true, silent = true})
+-- bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
+--         {noremap = true, silent = true})
+bind('n', '<leader>p', ":Telescope projects <CR>", {noremap = true, silent = true})
 
 -- CMP
 -- bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})

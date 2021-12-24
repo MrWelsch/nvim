@@ -49,19 +49,10 @@ local mappings = {
     ["c"] = "CLOSE BUFFER",
     ["e"] = "EXPLORER",
     ["f"] = "FIND FILE",
-    -- ["f"] = {"<cmd>:lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown())<cr>", "Find File"},
     ["g"] = "GIT",
     ["t"] = "TERMINAL",
     ["p"] = "PROJECTS",
-    -- d = {
-    --     name = "+ DIAGNOSTICS",
-    --     t = {"<cmd>TroubleToggle<cr>", "trouble"},
-    --     w = {"<cmd>TroubleToggle lsp_workspace_diagnostics<cr>", "workspace"},
-    --     d = {"<cmd>TroubleToggle lsp_document_diagnostics<cr>", "document"},
-    --     q = {"<cmd>TroubleToggle quickfix<cr>", "quickfix"},
-    --     l = {"<cmd>TroubleToggle loclist<cr>", "loclist"},
-    --     r = {"<cmd>TroubleToggle lsp_references<cr>", "references"},
-    -- },
+
     l = {
         name = "+ LSP",
         a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>", "Code Actions"},

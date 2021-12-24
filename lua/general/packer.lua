@@ -43,7 +43,7 @@ return require('packer').startup(function()
     use {"wbthomason/packer.nvim"}
 
     --> UI, THEMES, ICONS & SYNTAX HIGHLIGHTING
-    use {'goolord/alpha-nvim', config = [[require('ui.alpha')]]}
+    use {'goolord/alpha-nvim', config = [[require('plugins.alpha')]]}
     use {"kyazdani42/nvim-tree.lua", requires = "nvim-web-devicons", config = [[require('ui.nvim-tree')]], cmd = {"NvimTreeToggle"}}
     use {'tamton-aquib/staline.nvim', config = [[require('ui.staline')]], event = "BufEnter"}
 	use {"akinsho/nvim-bufferline.lua", config = [[require('ui.bufferline')]], event = "BufEnter"}
@@ -69,7 +69,7 @@ return require('packer').startup(function()
 
     --> TELESCOPE
     use {"nvim-telescope/telescope.nvim", config = [[require('plugins.telescope')]], cmd = "Telescope", module = "telescope", requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}}
-    use {"nvim-telescope/telescope-project.nvim", config = [[require('telescope').load_extension('project')]], after = "telescope.nvim"}
+    use {"ahmedkhalf/project.nvim", config = [[require('plugins.project')]], config = [[require('plugins.project')]]}
     
     --> EDITOR
     use {"windwp/nvim-autopairs", config = [[require('plugins.autopairs')]], event = "InsertEnter"}
@@ -79,7 +79,6 @@ return require('packer').startup(function()
     --> GENERAL
     use {"akinsho/nvim-toggleterm.lua", config = [[require('plugins.toggleterm')]], event = "BufEnter"}
     use {"folke/which-key.nvim", config = [[require('plugins.which-key')]], event = "BufEnter"}
-    use {"ahmedkhalf/project.nvim", config = [[require('plugins.project')]], event = "ColorScheme"} -- NOT YET WORKING!
     use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
     use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}

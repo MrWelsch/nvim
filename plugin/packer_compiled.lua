@@ -201,7 +201,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
-    after = { "null-ls.nvim", "nvim-lsp-installer" },
+    after = { "nvim-lsp-installer", "null-ls.nvim" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -267,10 +267,8 @@ _G.packer_plugins = {
   },
   ["project.nvim"] = {
     config = { "require('plugins.project')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/project.nvim",
+    loaded = true,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/start/project.nvim",
     url = "https://github.com/ahmedkhalf/project.nvim"
   },
   ["staline.nvim"] = {
@@ -281,18 +279,7 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/staline.nvim",
     url = "https://github.com/tamton-aquib/staline.nvim"
   },
-  ["telescope-project.nvim"] = {
-    config = { "require('telescope').load_extension('project')" },
-    load_after = {
-      ["telescope.nvim"] = true
-    },
-    loaded = false,
-    needs_bufread = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/telescope-project.nvim",
-    url = "https://github.com/nvim-telescope/telescope-project.nvim"
-  },
   ["telescope.nvim"] = {
-    after = { "telescope-project.nvim" },
     commands = { "Telescope" },
     config = { "require('plugins.telescope')" },
     loaded = false,
@@ -369,6 +356,10 @@ end
 time([[Config for alpha-nvim]], true)
 require('plugins.alpha')
 time([[Config for alpha-nvim]], false)
+-- Config for: project.nvim
+time([[Config for project.nvim]], true)
+require('plugins.project')
+time([[Config for project.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd LuaSnip ]]
@@ -393,11 +384,10 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-prev
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au ColorScheme * ++once lua require("packer.load")({'project.nvim'}, { event = "ColorScheme *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'staline.nvim', 'tex.nvim', 'which-key.nvim', 'nvim-bufferline.lua', 'kommentary', 'nvim-toggleterm.lua', 'nvim-lspconfig'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'which-key.nvim', 'nvim-bufferline.lua', 'staline.nvim', 'nvim-lspconfig', 'tex.nvim', 'kommentary', 'nvim-toggleterm.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

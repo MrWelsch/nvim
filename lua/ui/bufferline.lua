@@ -85,4 +85,13 @@ require('bufferline').setup{
 			end,
 		},
 	},
+    -- Set the bufferline guibg to the same color as StatusLine which is defined in ui.colorschemes
+    highlights = {
+        fill = {
+            guibg = {
+                attribute = 'bg',
+                highlight = 'StatusLine'
+            }
+        }
+    }
 }
