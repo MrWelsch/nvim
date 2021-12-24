@@ -7,15 +7,15 @@ local monokaipro = {
 
 local tokyonight_night = {
     i = "#bb9af7",
-	n = "#9ece6a",
-	c = "#7aa2f7",
+	n = "#7aa2f7",
+	c = "#9ece6a",
 	v = "#ff9e64",  
 }
 
 local tokyodark = {
     i = "#A485DD",
-	n = "#95C561",
-	c = "#7199EE",
+	n = "#7199EE",
+	c = "#95C561",
 	v = "#D7A65F",  
 }
 
@@ -28,15 +28,15 @@ local gruvbox = {
 
 local nord = {
     i = "#B48EAD",
-	n = "#A3BE8C",
-	c = "#88C0D0",
+	n = "#88C0D0",
+	c = "#A3BE8C",
 	v = "#EBCB8B",  
 }
 
 local draculapro = {
     i = "#9580ff",
-	n = "#8aff80",
-	c = "#80ffea",
+	n = "#80ffea",
+	c = "#8aff80",
 	v = "#ff9580",  
 }
 
