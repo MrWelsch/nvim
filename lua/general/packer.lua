@@ -43,7 +43,7 @@ return require('packer').startup(function()
     use {"wbthomason/packer.nvim"}
 
     --> UI, THEMES, ICONS & SYNTAX HIGHLIGHTING
-    use {'goolord/alpha-nvim', config = [[require('plugins.alpha')]]}
+    use {'goolord/alpha-nvim', config = [[require('ui.alpha')]]}
     use {"kyazdani42/nvim-tree.lua", requires = "nvim-web-devicons", config = [[require('ui.nvim-tree')]], cmd = {"NvimTreeToggle"}}
     use {'tamton-aquib/staline.nvim', config = [[require('ui.staline')]], event = "BufEnter"}
 	use {"akinsho/nvim-bufferline.lua", config = [[require('ui.bufferline')]], event = "BufEnter"}
@@ -58,7 +58,6 @@ return require('packer').startup(function()
     }
     use {"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"}
     use {"nvim-treesitter/nvim-treesitter", config = [[require('plugins.treesitter')]], run = "TSUpdate", event = "BufRead", module = "nvim-treesitter"}
-    use {"windwp/nvim-ts-autotag", after = "nvim-treesitter"}
     
     --> LINTER, COMPLETION & SNIPPETS
     use {"neovim/nvim-lspconfig", event = "BufEnter"}
@@ -73,10 +72,9 @@ return require('packer').startup(function()
     use {"nvim-telescope/telescope-project.nvim", config = [[require('telescope').load_extension('project')]], after = "telescope.nvim"}
     
     --> EDITOR
-    use {"andymass/vim-matchup", config = [[require('plugins.matchup')]], after = "nvim-treesitter",}
     use {"windwp/nvim-autopairs", config = [[require('plugins.autopairs')]], event = "InsertEnter"}
+    use {"windwp/nvim-ts-autotag", after = "nvim-treesitter"}
     use {"norcalli/nvim-colorizer.lua", config = [[require('plugins.colorizer')]], event = 'BufReadPre'}
-    use {"lukas-reineke/format.nvim", config = [[require('plugins.format')]], cmd = { "Format", "FormatWrite" }} -- VIMSCRIPT 3.5%
 
     --> GENERAL
     use {"akinsho/nvim-toggleterm.lua", config = [[require('plugins.toggleterm')]], event = "BufEnter"}
@@ -84,7 +82,6 @@ return require('packer').startup(function()
     use {"ahmedkhalf/project.nvim", config = [[require('plugins.project')]], event = "ColorScheme"} -- NOT YET WORKING!
     use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
     use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
-    use {"JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"iamcco/markdown-preview.nvim", ft = "markdown", run = "cd app && yarn install"} -- MAYBE SWITCH TO: https://github.com/ellisonleao/glow.nvim
 
@@ -93,4 +90,5 @@ return require('packer').startup(function()
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end
+
 end)
