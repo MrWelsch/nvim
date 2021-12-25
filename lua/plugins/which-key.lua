@@ -74,7 +74,7 @@ local mappings = {
         p = {"<cmd>Telescope projects<cr>",                                                                             " PROJECTS"},
         r = {"<cmd>Telescope oldfiles<cr>",                                                                             " RECENT FILES"},
         R = {"<cmd>Telescope registers<cr>",                                                                            " REGISTERS"},
-        t = {"<cmd>Telescope live_grep<cr>",                                                                            " TEXT"}
+        t = {"<cmd>Telescope live_grep<cr>",                                                                            " TEXT"},
     },
     c = {
         name = "漣CONFIG",
@@ -97,7 +97,7 @@ local mappings = {
 		name = " DEBUG",
     	b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>",                                                           " BREAKPOINT"},
 		c = {"<cmd>lua require'dap'.continue()<cr>",                                                                    " CONTINUE"},
-        h = {"<cmd>help dap-api<cr>",                                                                                   " HELP"}
+        h = {"<cmd>help dap-api<cr>",                                                                                   " HELP"},
 		i = {"<cmd>lua require'dap'.step_into()<cr>",                                                                   " STEP INTO"},
         k = {"<cmd>help dap-mapping<cr>",                                                                               " KEYBINDS"},
         o = {"<cmd>lua require'dap'.step_over()<cr>",                                                                   " STEP OVER"},
