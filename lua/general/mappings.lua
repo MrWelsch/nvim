@@ -1,72 +1,63 @@
-local bind = vim.api.nvim_set_keymap
+local opts = {noremap=true, silent=true}
+local function map(mode, key, mapping) vim.api.nvim_set_keymap(mode, key, mapping, opts) end
 
--- LEADER
-bind('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+--> LEADER
+map('n', '<Space>', '<NOP>')
 vim.g.mapleader = ' '
 
--- WINDOW NAVIGATION
-bind('n', '<C-h>', '<C-w>h', {silent = true})
-bind('n', '<C-j>', '<C-w>j', {silent = true})
-bind('n', '<C-k>', '<C-w>k', {silent = true})
-bind('n', '<C-l>', '<C-w>l', {silent = true})
+--> WINDOW NAVIGATION
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
 
--- WINDOW RESIZING
-bind('n', '<C-Up>', ':resize -2<CR>', {silent = true})
-bind('n', '<C-Down>', ':resize +2<CR>', {silent = true})
-bind('n', '<C-Left>', ':vertical resize -2<CR>', {silent = true})
-bind('n', '<C-Right>', ':vertical resize +2<CR>', {silent = true})
+--> WINDOW RESIZING
+map('n', '<M-Up>', ':resize -2<CR>')
+map('n', '<M-Down>', ':resize +2<CR>')
+map('n', '<M-Left>', ':vertical resize -2<CR>')
+map('n', '<M-Right>', ':vertical resize +2<CR>')
 
 -- REDO
-bind('n', '<S-z>', ':redo<CR>', {noremap = true, silent = true})
+map('n', '<S-z>', ':redo<CR>')
 
--- INDENTING
-bind('v', '<', '<gv', {noremap = true, silent = true})
-bind('v', '>', '>gv', {noremap = true, silent = true})
+-- LSP
+map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
+map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
+-- map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
+map('n', 'gr', ':NiceReference<CR>')
+map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')
+map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
+map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
+map('n', '<C-z>', ':lua vim.diagnostic.goto_prev()<CR>')
 
--- BUFFER
--- bind('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
--- bind('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
--- TODO: Make this work
---bind('n', '<S-x>', ':lua require('bufferline').handle_close_buffer(vim.api.nvim_get_current_buf())<CR>', { noremap = true, silent = true })
+--> INDENTING
+map('v', '<', '<gv')
+map('v', '>', '>gv')
 
--- MOVE LINES (VISUAL)
-bind('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
-bind('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
+--> BUFFER
+map('n', '<TAB>', ':BufferLineCycleNext<CR>')
+map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>')
+map('n', "<leader>w", ':bd<CR>')                                    -- close buffer
 
--- QUICKFIX TOGGLE
-bind('', '<C-q>', ':call QuickFixToggle()<CR>', {noremap = true, silent = true})
+--> MOVE LINES (VISUAL)
+map('x', 'K', ':move \'<-2<CR>gv-gv')
+map('x', 'J', ':move \'>+1<CR>gv-gv')
 
--- EXPLORER
-bind('n', '<Leader>e', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
---bind('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>", {noremap = true, silent = true})
-bind('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
+--> QUICKFIX TOGGLE
+map('', '<C-q>', ':call QuickFixToggle()<CR>')
 
--- TERMINAL
-bind('n', '<Leader>t', ':ToggleTerm<CR>', {noremap = true, silent = true})
+--> EXPLORER
+map('n', '<Leader>e', ':NvimTreeToggle<CR>')
+--map('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>")
+map('n', '-', ':RnvimrToggle<CR>')
 
--- LAZYGIT
-bind('n', '<Leader>g', ':lua_lazygit_toggle()<CR>', {noremap = true, silent = true})
+--> TERMINAL
+map('n', '<Leader>t', ':ToggleTerm<CR>')
 
--- TELESCOPE
-bind('n', '<Leader>f', ':lua require("telescope.builtin").find_files(require("plugins.telescope").custom_theme)<CR>', {noremap = true, silent = true})
+--> DASHBOARD
+map('n', '<Leader>;', ':Alpha<CR>')
 
--- DASHBOARD
-bind('n', '<Leader>;', ':Alpha<CR>', {noremap = true, silent = true})
+--> COMMENTS
+map("n", "<Leader>/", "<Plug>kommentary_line_default")
+map("v", "<Leader>/", "<Plug>kommentary_visual_default")
 
--- COMMENTS
-bind("n", "<Leader>/", "<Plug>kommentary_line_default", {})
-bind("v", "<Leader>/", "<Plug>kommentary_visual_default", {})
-
--- CLOSE BUFFER
-bind('n', "<leader>c", ':BufferClose<CR>', {noremap = true, silent = true})
-
--- PROJECTS
--- bind('n', '<leader>p', ":lua require'telescope'.extensions.project.project{}<CR>",
---         {noremap = true, silent = true})
-bind('n', '<leader>p', ":Telescope projects <CR>", {noremap = true, silent = true})
-
--- CMP
--- bind("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- bind("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- bind("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- bind("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})

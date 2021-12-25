@@ -69,8 +69,12 @@ return require('packer').startup(function()
 
     --> TELESCOPE
     use {"nvim-telescope/telescope.nvim", config = [[require('plugins.telescope')]], cmd = "Telescope", module = "telescope", requires = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim"}}
-    use {"ahmedkhalf/project.nvim", config = [[require('plugins.project')]], config = [[require('plugins.project')]]}
+    use {"ahmedkhalf/project.nvim", config = [[require('plugins.project')]]}
     
+    --> DEBUGGING
+    use {"mfussenegger/nvim-dap", event = "BufEnter"}
+    use {"Pocco81/DAPInstall.nvim", config = [[require('plugins.dap')]], after = "nvim-dap"}
+
     --> EDITOR
     use {"windwp/nvim-autopairs", config = [[require('plugins.autopairs')]], event = "InsertEnter"}
     use {"windwp/nvim-ts-autotag", after = "nvim-treesitter"}
@@ -83,6 +87,7 @@ return require('packer').startup(function()
     use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"ellisonleao/glow.nvim", ft = 'markdown'}
+    use {'wiliamks/nice-reference.nvim', event = 'BufEnter'}
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

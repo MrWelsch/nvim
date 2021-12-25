@@ -17,7 +17,7 @@ require("which-key").setup {
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "" -- symbol prepended to a group
+        group = "" -- symbol prepended to a group
     },
     window = {
         border = "none", -- none, single, double, shadow
@@ -44,51 +44,64 @@ local opts = {
 }
 
 local mappings = {
-    [";"] = "DASHBOARD",
-    ["/"] = "COMMENT",
-    ["c"] = "CLOSE BUFFER",
-    ["e"] = "EXPLORER",
-    ["f"] = "FIND FILE",
-    ["g"] = "GIT",
-    ["t"] = "TERMINAL",
-    ["p"] = "PROJECTS",
+    [";"] =                                                                                                             " DASHBOARD",
+    ["/"] =                                                                                                             " COMMENT",
+    ["w"] =                                                                                                             " CLOSE BUFFER",
+    ["e"] =                                                                                                             "פּ EXPLORER",
+    ["t"] =                                                                                                             " TERMINAL",
 
     l = {
-        name = "+ LSP",
-        a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>", "Code Actions"},
-        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
-        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-		F = {"<cmd>FormatWrite<cr>", "Format"},
-        i = {"<cmd>LspInfo<cr>", "Info"},
-        q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
-        x = {"<cmd>cclose<cr>", "Close Quickfix"},
-        s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
-        S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
+        name = "ﭧ LSP",
+        a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>",    " CODE ACTIONS"},
+        d = {"<cmd>Telescope diagnostics buffnr=0<cr>",                                                                 " DOCUMENT DIAGNOSTICS"},
+        D = {"<cmd>Telescope diagnostics<cr>",                                                                          " WORKSPACE DIAGNOSTICS"},
+		f = {"<cmd>FormatWrite<cr>",                                                                                    " FORMAT"},
+        i = {"<cmd>LspInfo<cr>",                                                                                        " INFO"},
+        m = {
+            name = " MARKDOWN",
+            c = {"<cmd>TexCompile<cr>",                                                                                 " COMPILE"},
+            l = {"<cmd>TexViewer<cr>",                                                                                  " LATEX PREVIEW"},
+            p = {"<cmd>Glow<cr>",                                                                                       " MARKDOWN PREVIEW"},
+        },                                                                                     
+        -- q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
+        -- x = {"<cmd>cclose<cr>", "Close Quickfix"},
     },
     s = {
-        name = "+ SEARCH",
-        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-        c = {"<cmd>Telescope colorscheme<cr>", "Colorscheme"},
-        d = {"<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics"},
-        D = {"<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics"},
-        f = {"<cmd>Telescope find_files<cr>", "Find File"},
-        m = {"<cmd>Telescope marks<cr>", "Marks"},
-        M = {"<cmd>Telescope man_pages<cr>", "Man Pages"},
-        r = {"<cmd>Telescope oldfiles<cr>", "Open Recent File"},
-        R = {"<cmd>Telescope registers<cr>", "Registers"},
-        t = {"<cmd>Telescope live_grep<cr>", "Text"}
+        name = " SEARCH",
+        f = {"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope').custom_theme)<cr>",         " FIND FILE"},
+        m = {"<cmd>Telescope marks<cr>",                                                                                " MARKS"},
+        M = {"<cmd>Telescope man_pages<cr>",                                                                            " MAN PAGES"},
+        p = {"<cmd>Telescope projects<cr>",                                                                             " PROJECTS"},
+        r = {"<cmd>Telescope oldfiles<cr>",                                                                             " RECENT FILES"},
+        R = {"<cmd>Telescope registers<cr>",                                                                            " REGISTERS"},
+        t = {"<cmd>Telescope live_grep<cr>",                                                                            " TEXT"}
     },
-    S = {
-		name = "+ SESSION",
-    	s = {"<cmd>SessionSave<cr>", "Save Session"},
-		l = {"<cmd>SessionLoad<cr>", "Load Session"}
+    c = {
+        name = "漣CONFIG",
+        c = {"<cmd>PackerCompile<cr>",                                                                                  " COMPILE"},
+        p = {"<cmd>PackerProfile<cr>",                                                                                  " PROFILE"},
+        s = {"<cmd>PackerSync<cr>",                                                                                     "痢 SYNC"},    
+        t = {"<cmd>Telescope colorscheme<cr>",                                                                          " THEME"},
     },
-    -- extras
-    m = {
-        name = "+ MARKDOWN",
-        c = {"<cmd>TexCompile<cr>", "COMPILE"},
-        l = {"<cmd>TexViewer<cr>", "LATEX PREVIEW"},
-        p = {"<cmd>Glow<cr>", "MARKDOWN PREVIEW"},
+    -- S = {
+	-- 	name = "+ SESSION",
+    -- 	s = {"<cmd>SessionSave<cr>", "Save Session"},
+	-- 	l = {"<cmd>SessionLoad<cr>", "Load Session"}
+    -- },
+    g = {
+        name = " GIT",
+        b = {"<cmd>Telescope git_branches<cr>",                                                                         " BRANCHES"},
+        l = {"<cmd>lua_lazygit_toggle()<cr>",                                                                           " LAZYGIT"},    
+    },
+    d = {
+		name = " DEBUG",
+    	b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>",                                                           " BREAKPOINT"},
+		c = {"<cmd>lua require'dap'.continue()<cr>",                                                                    " CONTINUE"},
+        h = {"<cmd>help dap-api<cr>",                                                                                   " HELP"}
+		i = {"<cmd>lua require'dap'.step_into()<cr>",                                                                   " STEP INTO"},
+        k = {"<cmd>help dap-mapping<cr>",                                                                               " KEYBINDS"},
+        o = {"<cmd>lua require'dap'.step_over()<cr>",                                                                   " STEP OVER"},
+        s = {"<cmd>lua require'dap'.repl.open()<cr>",                                                                   " INSPECT STATE"},
     },
 }
 
