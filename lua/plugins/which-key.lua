@@ -46,9 +46,12 @@ local opts = {
 local mappings = {
     [";"] =                                                                                                             " DASHBOARD",
     ["/"] =                                                                                                             " COMMENT",
-    ["w"] =                                                                                                             " CLOSE BUFFER",
     ["e"] =                                                                                                             "פּ EXPLORER",
+    ["q"] =                                                                                                             " QUIT",
+    ["s"] =                                                                                                             " SAVE",
     ["t"] =                                                                                                             " TERMINAL",
+    ["w"] =                                                                                                             " CLOSE BUFFER",
+    
 
     l = {
         name = "ﭧ LSP",
@@ -62,13 +65,14 @@ local mappings = {
             c = {"<cmd>TexCompile<cr>",                                                                                 " COMPILE"},
             l = {"<cmd>TexViewer<cr>",                                                                                  " LATEX PREVIEW"},
             p = {"<cmd>Glow<cr>",                                                                                       " MARKDOWN PREVIEW"},
-        },                                                                                     
-        -- q = {"<cmd>Telescope quickfix<cr>", "Quickfix"},
-        -- x = {"<cmd>cclose<cr>", "Close Quickfix"},
+        },
+        -- QUICKFIX NOT YET WORKING                                                                                    
+        q = {"<cmd>Telescope quickfix<cr>",                                                                             " Quickfix"},
+        x = {"<cmd>cclose<cr>",                                                                                         " Close Quickfix"},
     },
-    s = {
-        name = " SEARCH",
-        f = {"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope').custom_theme)<cr>",         " FIND FILE"},
+    f = {
+        name = " FIND",
+        f = {"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope').custom_theme)<cr>",         " FILE"},
         m = {"<cmd>Telescope marks<cr>",                                                                                " MARKS"},
         M = {"<cmd>Telescope man_pages<cr>",                                                                            " MAN PAGES"},
         p = {"<cmd>Telescope projects<cr>",                                                                             " PROJECTS"},
@@ -83,11 +87,6 @@ local mappings = {
         s = {"<cmd>PackerSync<cr>",                                                                                     "痢 SYNC"},    
         t = {"<cmd>Telescope colorscheme<cr>",                                                                          " THEME"},
     },
-    -- S = {
-	-- 	name = "+ SESSION",
-    -- 	s = {"<cmd>SessionSave<cr>", "Save Session"},
-	-- 	l = {"<cmd>SessionLoad<cr>", "Load Session"}
-    -- },
     g = {
         name = " GIT",
         b = {"<cmd>Telescope git_branches<cr>",                                                                         " BRANCHES"},

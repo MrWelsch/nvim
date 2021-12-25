@@ -1,7 +1,7 @@
--- CONFIG_PATH = vim.fn.stdpath('config')
--- DATA_PATH = vim.fn.stdpath('data')
--- CACHE_PATH = vim.fn.stdpath('cache')
+--> MEASURE START TIME
+vim.g.start_time = vim.fn.reltime()
 
+--> REQUIREMENTS
 require('general.options')
 require('general.mappings')
 require('general.packer')

@@ -17,13 +17,11 @@ map('n', '<M-Down>', ':resize +2<CR>')
 map('n', '<M-Left>', ':vertical resize -2<CR>')
 map('n', '<M-Right>', ':vertical resize +2<CR>')
 
--- REDO
-map('n', '<S-z>', ':redo<CR>')
-
 -- LSP
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
--- map('n', 'gr', ':NiceReference<CR>')
+map('n', 'gr', ':NiceReference<CR>')
+map('n', 'gl', ':lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>')
 map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')
 map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
 map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
@@ -37,18 +35,15 @@ map('v', '>', '>gv')
 map('n', '<TAB>', ':BufferLineCycleNext<CR>')
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>')
 map('n', "<leader>w", ':bd<CR>')                                    -- close buffer
+map('n', "<leader>s", ':w<CR>')                                     -- save buffer
+map('n', "<leader>q", ':q<CR>')                                     -- quit
 
 --> MOVE LINES (VISUAL)
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
 
---> QUICKFIX TOGGLE
-map('', '<C-q>', ':call QuickFixToggle()<CR>')
-
 --> EXPLORER
 map('n', '<Leader>e', ':NvimTreeToggle<CR>')
---map('n', '<Leader>e', ":lua require'lir.float'.toggle()<CR>")
-map('n', '-', ':RnvimrToggle<CR>')
 
 --> TERMINAL
 map('n', '<Leader>t', ':ToggleTerm<CR>')
