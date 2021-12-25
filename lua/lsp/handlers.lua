@@ -45,6 +45,7 @@ M.setup = function()
   vim.lsp.handlers["textDocument/references"] = require 'nice-reference'.reference_handler
 end
 
+-- REPLACES 'nvim-matchup'
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then

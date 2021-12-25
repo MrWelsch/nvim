@@ -36,7 +36,11 @@ map('n', '<TAB>', ':BufferLineCycleNext<CR>')
 map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>')
 map('n', "<leader>w", ':bd<CR>')                                    -- close buffer
 map('n', "<leader>s", ':w<CR>')                                     -- save buffer
-map('n', "<leader>q", ':q<CR>')                                     -- quit
+map('n', "<leader>q", ':q<CR>')                                     -- quit buffer/split
+map('n', '<leader>v', ':vs<CR>')                                    -- vertical split
+map('n', '<leader>h', ':hs<CR>')                                    -- horizontal split
+
+
 
 --> MOVE LINES (VISUAL)
 map('x', 'K', ':move \'<-2<CR>gv-gv')

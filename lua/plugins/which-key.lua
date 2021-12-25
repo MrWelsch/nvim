@@ -47,11 +47,12 @@ local mappings = {
     [";"] =                                                                                                             " DASHBOARD",
     ["/"] =                                                                                                             " COMMENT",
     ["e"] =                                                                                                             "פּ EXPLORER",
+    ["h"] =                                                                                                             "ײַ HORIZONTAL SPLIT",
     ["q"] =                                                                                                             " QUIT",
     ["s"] =                                                                                                             " SAVE",
     ["t"] =                                                                                                             " TERMINAL",
+    ["v"] =                                                                                                             "ﬠ VERTICAL SPLIT",
     ["w"] =                                                                                                             " CLOSE BUFFER",
-    
 
     l = {
         name = "ﭧ LSP",
