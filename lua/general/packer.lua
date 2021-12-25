@@ -58,6 +58,7 @@ return require('packer').startup(function()
     }
     use {"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"}
     use {"nvim-treesitter/nvim-treesitter", config = [[require('plugins.treesitter')]], run = "TSUpdate", event = "BufRead", module = "nvim-treesitter"}
+    use {'wiliamks/nice-reference.nvim', before = "nvim-lspconfig"}
     
     --> LINTER, COMPLETION & SNIPPETS
     use {"neovim/nvim-lspconfig", event = "BufEnter"}
@@ -87,7 +88,7 @@ return require('packer').startup(function()
     use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"ellisonleao/glow.nvim", ft = 'markdown'}
-    use {'wiliamks/nice-reference.nvim', event = 'BufEnter'}
+    
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
