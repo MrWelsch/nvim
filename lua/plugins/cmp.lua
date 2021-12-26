@@ -120,7 +120,8 @@ cmp.setup {
     select = false,
   },
   documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    -- "╭", "─", "╮", "│", "╯", "─", "╰", "│"
+    border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
   },
   experimental = {
     ghost_text = false,

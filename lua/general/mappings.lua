@@ -21,7 +21,7 @@ map('n', '<M-Right>', ':vertical resize +2<CR>')
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
 map('n', 'gr', ':NiceReference<CR>')
-map('n', 'gl', ':lua vim.lsp.diagnostic.show_line_diagnostics({ border = "rounded" })<CR>')
+map('n', 'gl', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
 map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')
 map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
 map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
@@ -40,8 +40,6 @@ map('n', "<leader>q", ':q<CR>')                                     -- quit buff
 map('n', '<leader>v', ':vs<CR>')                                    -- vertical split
 map('n', '<leader>h', ':hs<CR>')                                    -- horizontal split
 
-
-
 --> MOVE LINES (VISUAL)
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
@@ -54,8 +52,4 @@ map('n', '<Leader>t', ':ToggleTerm<CR>')
 
 --> DASHBOARD
 map('n', '<Leader>;', ':Alpha<CR>')
-
---> COMMENTS
-map("n", "<Leader>/", "<Plug>kommentary_line_default")
-map("v", "<Leader>/", "<Plug>kommentary_visual_default")
 

@@ -69,6 +69,14 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    config = { "require('plugins.comments')" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   ["DAPInstall.nvim"] = {
     config = { "require('plugins.dap')" },
     load_after = {
@@ -145,20 +153,13 @@ _G.packer_plugins = {
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/impatient.nvim",
     url = "https://github.com/lewis6991/impatient.nvim"
   },
-  kommentary = {
-    config = { "require('plugins.kommentary')" },
-    loaded = false,
-    needs_bufread = false,
-    only_cond = false,
-    path = "/Users/nico/.local/share/nvim/site/pack/packer/opt/kommentary",
-    url = "https://github.com/b3nj5m1n/kommentary"
-  },
   ["monokai-pro.nvim"] = {
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/monokai-pro.nvim",
     url = "https://gitlab.com/__tpb/monokai-pro.nvim"
   },
   ["nice-reference.nvim"] = {
+    config = { "require('plugins.references')" },
     loaded = true,
     path = "/Users/nico/.local/share/nvim/site/pack/packer/start/nice-reference.nvim",
     url = "https://github.com/wiliamks/nice-reference.nvim"
@@ -384,6 +385,10 @@ end
 time([[Config for project.nvim]], true)
 require('plugins.project')
 time([[Config for project.nvim]], false)
+-- Config for: nice-reference.nvim
+time([[Config for nice-reference.nvim]], true)
+require('plugins.references')
+time([[Config for nice-reference.nvim]], false)
 -- Config for: alpha-nvim
 time([[Config for alpha-nvim]], true)
 require('plugins.alpha')
@@ -412,10 +417,10 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'glow.nvim'}, 
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'which-key.nvim', 'nvim-bufferline.lua', 'nvim-toggleterm.lua', 'nvim-dap', 'staline.nvim', 'tex.nvim', 'kommentary', 'nvim-lspconfig'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-bufferline.lua', 'Comment.nvim', 'staline.nvim', 'nvim-lspconfig', 'tex.nvim', 'which-key.nvim', 'nvim-toggleterm.lua', 'nvim-dap'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end

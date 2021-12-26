@@ -100,3 +100,7 @@ function Theme.draculapro(transparent)
 end
 
 return Theme
+
+-- BORDERS ARE CONFIGURED IN: telescope.lua, which-key.lua, cmp.lua, packer.lua, handlers.lua
+-- local double = "═", "║", "═", "║", "╔", "╗", "╝", "╚"
+-- local rounded = "─", "│", "─", "│", "╭", "╮", "╯", "╰"

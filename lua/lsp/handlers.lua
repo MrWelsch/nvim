@@ -26,7 +26,7 @@ M.setup = function()
     float = {
       focusable = false,
       style = "minimal",
-      border = "rounded",
+      border = "double",
       source = "always",
       header = "",
       prefix = "",
@@ -36,13 +36,12 @@ M.setup = function()
   vim.diagnostic.config(config)
 
   vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
+    border = "double",
   })
 
   vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
+    border = "double",
   })
-  vim.lsp.handlers["textDocument/references"] = require 'nice-reference'.reference_handler
 end
 
 -- REPLACES 'nvim-matchup'

@@ -34,7 +34,7 @@ end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float { border = "rounded" }
+      return require("packer.util").float { border = "double" }
     end,
   },
 }
@@ -59,7 +59,7 @@ return require('packer').startup(function()
     }
     use {"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"}
     use {"nvim-treesitter/nvim-treesitter", config = [[require('plugins.treesitter')]], run = "TSUpdate", event = "BufRead", module = "nvim-treesitter"}
-    use {'wiliamks/nice-reference.nvim', before = "nvim-lspconfig"}
+    use {'wiliamks/nice-reference.nvim', config = [[require('plugins.references')]], before = "nvim-lspconfig"}
     
     --> LINTER, COMPLETION & SNIPPETS
     use {"neovim/nvim-lspconfig", event = "BufEnter"}
@@ -86,7 +86,7 @@ return require('packer').startup(function()
     use {"akinsho/nvim-toggleterm.lua", config = [[require('plugins.toggleterm')]], event = "BufEnter"}
     use {"folke/which-key.nvim", config = [[require('plugins.which-key')]], event = "BufEnter"}
     use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
-    use {"b3nj5m1n/kommentary", config = [[require('plugins.kommentary')]], event = "BufEnter"}
+    use {"numToStr/Comment.nvim", config = [[require('plugins.comments')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"ellisonleao/glow.nvim", ft = 'markdown'}
     use {"lewis6991/impatient.nvim"}

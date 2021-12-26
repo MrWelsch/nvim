@@ -15,6 +15,6 @@ require'nvim-treesitter.configs'.setup {
         additional_vim_regex_highlighting = true,
       },
     indent = {enable = {"javascriptreact"}},
-    autotag = {enable = true},
+    autotag = {enable = true}, -- press ciw then 'esc' after editing a tag to autorename
 }
 
