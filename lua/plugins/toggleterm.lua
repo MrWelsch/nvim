@@ -1,4 +1,9 @@
-require("toggleterm").setup{
+local status_ok, toggleterm = pcall(require, "toggleterm")
+if not status_ok then
+    return
+end
+
+toggleterm.setup{
     --open_mapping = [[<c-\>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers
     shade_filetypes = {},
@@ -24,7 +29,7 @@ require("toggleterm").setup{
     }
 }
 
--- Set up a seperate terminal instance exclusively for lazygit
+--> SEPERATE INSTANCE EXCLUSIVELY FOR LAZYGIT
 local Terminal = require('toggleterm.terminal').Terminal
 local lazygit = Terminal:new({
     cmd = "lazygit",

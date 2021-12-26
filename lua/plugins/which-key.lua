@@ -1,4 +1,9 @@
-require("which-key").setup {
+local status_ok, key = pcall(require, "which-key")
+if not status_ok then
+    return
+end
+
+key.setup {
     plugins = {
         marks = true, -- shows a list of your marks on ' and `
         registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -34,6 +39,7 @@ require("which-key").setup {
     show_help = true -- show help message on the command line when the popup is visible
 }
 
+--> OPTIONS APPLIED TO EACH MAPPING
 local opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
@@ -43,7 +49,9 @@ local opts = {
     nowait = false -- use `nowait` when creating keymaps
 }
 
+--> SET MAPPINGS
 local mappings = {
+    -- STANDARD MAPPINGS
     [";"] =                                                                                                             " DASHBOARD",
     ["/"] =                                                                                                             " COMMENT",
     ["e"] =                                                                                                             "פּ EXPLORER",
@@ -54,6 +62,7 @@ local mappings = {
     ["v"] =                                                                                                             "ﬠ VERTICAL SPLIT",
     ["w"] =                                                                                                             " CLOSE BUFFER",
 
+    -- MENUS
     l = {
         name = "ﭧ LSP",
         a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>",    " CODE ACTIONS"},
@@ -105,5 +114,6 @@ local mappings = {
     },
 }
 
+--> APPLY MAPPINGS AND OPTIONS
 local wk = require("which-key")
 wk.register(mappings, opts)

@@ -4,7 +4,6 @@ if not status_ok then
 end
 
 require('lsp.handlers').setup()
-
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
@@ -12,12 +11,6 @@ lsp_installer.on_server_ready(function(server)
 		on_attach = require("lsp.handlers").on_attach,
 		capabilities = require("lsp.handlers").capabilities,
 	}
-
-    -- THROWS AN ERROR FOR IPAIRS
-	--  if server.name == "jsonls" then
-	--  	local jsonls_opts = require("lsp.settings.jsonls")
-	--  	opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
-	--  end
 
 	 if server.name == "sumneko_lua" then
 	 	local sumneko_opts = require("lsp.settings.sumneko_lua")

@@ -1,5 +1,5 @@
--- "0 by default, will enable folder and file icon highlight for opened files/directories.
-vim.g.nvim_tree_highlight_opened_files = true
+--> SET ADDITIONAL OPTIONS (Before calling require'nvim-tree')
+vim.g.nvim_tree_highlight_opened_files = true -- enable folder and file icon highlight for opened files/directories.
     
 vim.g.nvim_tree_icons = {
     default = '',
@@ -8,7 +8,11 @@ vim.g.nvim_tree_icons = {
     folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
 
-local tree = require'nvim-tree'
+local status_ok, tree = pcall(require, "nvim-tree")
+if not status_ok then
+    return
+end
+
 local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
 tree.setup {

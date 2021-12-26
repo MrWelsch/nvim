@@ -40,7 +40,12 @@ local draculapro = {
 	v = "#ff9580",  
 }
 
-require "staline".setup {
+local status_ok, staline = pcall(require, "staline")
+if not status_ok then
+    return
+end
+
+staline.setup {
 	sections = {
 		left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
 		mid = {},

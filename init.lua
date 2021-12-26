@@ -2,13 +2,15 @@
 vim.g.start_time = vim.fn.reltime()
 
 --> CACHING
-local ok, impatient = pcall(require, 'impatient')
-
-if ok then impatient.enable_profile() end
+local status_ok, impatient = pcall(require, 'impatient')
+if status_ok then 
+    impatient.enable_profile() 
+end
 
 --> REQUIREMENTS
 require('general.options')
 require('general.mappings')
 require('general.packer')
 
+--> SET COLORSCHEME
 require('ui.colorschemes').tokyonight(false)

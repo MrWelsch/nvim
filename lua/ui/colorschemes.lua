@@ -2,6 +2,7 @@ local cmd = vim.cmd
 
 local Theme = {}
 
+--> AVAILABLE COLORSCHEMES FOR THE RANDOM THEME
 local themes = {
     'tokyonight',
     'tokyodark',
@@ -11,6 +12,7 @@ local themes = {
     'nord'
 }
 
+--> DEFINE THEME FUNCTIONS WHICH CAN BE APPLIED IN 'init.lua'
 function Theme.random()
 	math.randomseed(os.clock())
 	local nice = math.random() * #themes
@@ -101,6 +103,6 @@ end
 
 return Theme
 
--- BORDERS ARE CONFIGURED IN: telescope.lua, which-key.lua, cmp.lua, packer.lua, handlers.lua
+-- BORDERS ARE CONFIGURED IN: telescope.lua, which-key.lua, cmp.lua, handlers.lua
 -- local double = "═", "║", "═", "║", "╔", "╗", "╝", "╚"
 -- local rounded = "─", "│", "─", "│", "╭", "╮", "╯", "╰"

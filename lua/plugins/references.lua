@@ -1,4 +1,9 @@
-require 'nice-reference'.setup({
+local status_ok, reference = pcall(require, "nice-reference")
+if not status_ok then
+    return
+end
+
+reference.setup({
     anchor = "NW", -- Popup position anchor
     relative = "cursor", -- Popup relative position
     row = 1, -- Popup x position

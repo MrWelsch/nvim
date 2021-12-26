@@ -1,7 +1,11 @@
+local status_ok, alpha = pcall(require, "alpha")
+if not status_ok then
+    return
+end
 
-local alpha = require'alpha'
 local dashboard = require'alpha.themes.dashboard'
 
+--> DASHBOARD CONTENT
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
@@ -12,6 +16,7 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
+--> DASHBOARD FOOTER
 local function footer()
     string = "loaded in " .. vim.fn.printf(
         "%.3f",
@@ -20,6 +25,6 @@ local function footer()
     return tostring(string)
 end
 
-dashboard.section.footer.val = footer()
+dashboard.section.footer.val = footer() -- apply custom footer
 
-alpha.setup(dashboard.opts)
+alpha.setup(dashboard.opts) -- apply settings

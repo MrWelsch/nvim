@@ -1,5 +1,5 @@
--- VIM BASE CONFIG
--- For information on each function use ':h <functionname>'
+--> VIM BASE CONFIG
+--> For information on each option use ':h <optionname>'
 local cmd = vim.cmd
 
 local options = {
@@ -47,7 +47,6 @@ local options = {
     -- colorcolumn = '80',
 
     scrolloff = 10,
-    -- showmatch = true, -- shows matching brackets
 }
 
 -- Loop to iterate over options
@@ -55,11 +54,11 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
--- GLOBAL
+--> GLOBAL
 vim.g.auto_complete = true
 vim.g.nobackup = true
 
--- VIM COMMAND
+--> VIM COMMAND
 cmd('set iskeyword+=-')
 cmd('set shortmess+=c')
 cmd('set whichwrap+=<,>,[,],h,l')

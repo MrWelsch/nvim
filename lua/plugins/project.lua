@@ -3,8 +3,6 @@ if not status_ok then
 	return
 end
 
--- local project = require'project_nvim'
-
 project.setup({
 	---@usage set to false to disable project.nvim.
 	--- This is on by default since it's currently the expected behavior.
@@ -43,12 +41,10 @@ project.setup({
     datapath = vim.fn.stdpath("data"),
 })
 
+--> TELESCOPE INTEGRATION
 local tele_status_ok, telescope = pcall(require, "telescope")
 if not tele_status_ok then
 	return
 end
 
--- local telescope = require'telescope'
-
--- TELESCOPE INTEGRATION
 telescope.load_extension('projects')
