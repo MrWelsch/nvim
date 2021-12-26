@@ -1,14 +1,11 @@
-```
-                                         ^ ^
-                                        (O,O)
-                                         ( ) minvim
-                                        -'-'------------
-```
+<img width="2560" alt="dashboard-min" src="https://user-images.githubusercontent.com/45096895/147405600-793ab0fe-ad3d-40e2-8582-9738f6522ba7.png">
 
 - [🥂 Introduction](#-introduction)
 - [⚙️ Installation](#️-installation)
+  - [🩺 Check Health](#-check-health)
+    - [Copy/Paste](#copypaste)
+    - [Python & Node Support](#python--node-support)
 - [🃏 Features](#-features)
-  - [🛖 Dashboard](#-dashboard)
   - [🗂 File Explorer](#-file-explorer)
   - [🌐 Git Client](#-git-client)
   - [🔍 Search Engine](#-search-engine)
@@ -19,17 +16,43 @@
 
 ## 🥂 Introduction
 
-Lorem Ipsum
+`minvim` was created to serve as a good entry point for people who are new to neovim.
+
+It has a sane amount of features/plugins for day-to-day programming.
 
 ## ⚙️ Installation
 
-Lorem Ipsum
+If you do not already have a `~/.config/nvim` directory use:
+
+```bash
+git clone https://github.com/MrWelsch/nvim.git ~/.config/nvim
+```
+
+Else move the already existing directory somewhere else and execute above command after.
+
+Next, run `nvim` and wait until the plugins are installed.
+
+### 🩺 Check Health
+
+After launching `nvim` enter:
+
+```
+:checkhealth
+```
+
+There will probably some things you need to setup in order to get healhy:
+
+#### Copy/Paste
+
+-   Mac: `pbcopy` should be builtin
+-   Linux (Debian Based): `sudo apt install xsel`
+
+#### Python & Node Support
+
+-   Python: `pip install pynvim`
+-   Node: `npm i -g neovim`
 
 ## 🃏 Features
-
-### 🛖 Dashboard
-
-<img width="2560" alt="dashboard-min" src="https://user-images.githubusercontent.com/45096895/147405600-793ab0fe-ad3d-40e2-8582-9738f6522ba7.png">
 
 ### 🗂 File Explorer
 
