@@ -19,7 +19,7 @@
 
 <img width="2560" alt="explorer-min" src="https://user-images.githubusercontent.com/45096895/147405620-9804a27b-7b30-4544-89eb-686c5e9b0202.png">
 
-###  Git Client
+### 🌐 Git Client
 
 <img width="2560" alt="git-min" src="https://user-images.githubusercontent.com/45096895/147405793-d63bc6f4-f287-4b63-a101-3777ac79495e.png">
 
