@@ -5,7 +5,22 @@ end
 
 local dashboard = require'alpha.themes.dashboard'
 
---> DASHBOARD CONTENT
+--> HEADER
+dashboard.section.header.val = {
+    "                ",
+    "                ",
+    "                ",
+    "                ",
+    "                ",
+    "                ",
+    " ^ ^            ",
+    "(O,O)           ",
+    "(   ) minvim    ",
+    "-'-'------------",
+    "                ",
+}
+
+--> CONTENT
 dashboard.section.buttons.val = {
 	dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
 	dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
@@ -16,7 +31,8 @@ dashboard.section.buttons.val = {
 	dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
 }
 
---> DASHBOARD FOOTER
+--> FOOTER
+-- Function to return startup time
 local function footer()
     string = "loaded in " .. vim.fn.printf(
         "%.3f",
