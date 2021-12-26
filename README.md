@@ -5,6 +5,18 @@
                                         -'-'------------
 ```
 
+- [🥂 Introduction](#-introduction)
+- [⚙️ Installation](#️-installation)
+- [🃏 Features](#-features)
+  - [🛖 Dashboard](#-dashboard)
+  - [🗂 File Explorer](#-file-explorer)
+  - [🌐 Git Client](#-git-client)
+  - [🔍 Search Engine](#-search-engine)
+  - [🪄 Completion](#-completion)
+  - [🧪 Diagnostics](#-diagnostics)
+  - [💡 Code Actions](#-code-actions)
+  - [⌨️ Keybind Cheat-Sheet](#️-keybind-cheat-sheet)
+
 ## 🥂 Introduction
 
 Lorem Ipsum
