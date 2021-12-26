@@ -30,7 +30,7 @@ function Theme.tokyonight(transparent)
 
 	cmd [[colorscheme tokyonight]]
 	cmd [[hi NormalFloat guibg=#1a1b26]]
-	-- vim.cmd [[hi FloatBorder guibg=#2a2b3d]]
+    cmd [[hi FloatBorder guibg=#1a1b26]]
 	-- vim.cmd [[hi SignColumn guibg=#1a1b26]]
     cmd [[hi StatusLine guibg=#1a1b26]]
     cmd [[hi Staline guibg=#1a1b26]]

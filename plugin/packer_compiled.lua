@@ -381,6 +381,10 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+require('plugins.alpha')
+time([[Config for alpha-nvim]], false)
 -- Config for: project.nvim
 time([[Config for project.nvim]], true)
 require('plugins.project')
@@ -389,10 +393,6 @@ time([[Config for project.nvim]], false)
 time([[Config for nice-reference.nvim]], true)
 require('plugins.references')
 time([[Config for nice-reference.nvim]], false)
--- Config for: alpha-nvim
-time([[Config for alpha-nvim]], true)
-require('plugins.alpha')
-time([[Config for alpha-nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd LuaSnip ]]
@@ -417,10 +417,10 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'glow.nvim'}, 
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-bufferline.lua', 'Comment.nvim', 'staline.nvim', 'nvim-lspconfig', 'tex.nvim', 'which-key.nvim', 'nvim-toggleterm.lua', 'nvim-dap'}, { event = "BufEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-dap', 'nvim-lspconfig', 'which-key.nvim', 'nvim-bufferline.lua', 'staline.nvim', 'tex.nvim', 'Comment.nvim', 'nvim-toggleterm.lua'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
