@@ -125,7 +125,7 @@ cmp.setup {
     },
     -- DOCUMENTATION STYLE
     documentation = {
-        border = { "╔", "═" ,"╗", "║", "╝", "═", "╚", "║" },
+        border = require"general.misc".border,
     },
     -- BETA FEATURES
     experimental = {

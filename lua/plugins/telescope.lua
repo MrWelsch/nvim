@@ -29,7 +29,7 @@ telescope.setup{
 		generic_sorter =  require'telescope.sorters'.get_generic_fuzzy_sorter,
 		winblend = 0,
 		border = {},
-		borderchars = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" },
+		borderchars = require"general.misc".border_telescope,
 
 		color_devicons = true,
 		use_less = true,
@@ -54,9 +54,9 @@ Telescope.custom_theme = {
 	winblend = 30,
 	layout_config = { width = 0.6, height = 0.6 },
 	borderchars = {
-		preview = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" },
-		prompt = { "═", "║", "═", "║", "╔", "╗", "╝", "╚" },
-		results = { "═", " ", " ", " ", "╚", "╝", " ", " " },
+		preview = require"general.misc".border_telescope,
+		prompt = require"general.misc".border_telescope,
+		results = require"general.misc".border_result,
 	},
 }
 
