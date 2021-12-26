@@ -7,7 +7,11 @@
 
 ## 🥂 Introduction
 
+Lorem Ipsum
+
 ## ⚙️ Installation
+
+Lorem Ipsum
 
 ## 🃏 Features
 
