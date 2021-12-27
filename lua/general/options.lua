@@ -31,6 +31,8 @@ local options = {
     relativenumber = true, -- Shows line numbers relative to cursor
     number = true, -- Shows current line number
     fillchars = {eob=' ', fold=' ', foldopen="", foldsep=" ", foldclose=""}, -- remove fillchars
+	-- list = true, -- Enables listchars
+	-- listchars = 'tab:▏ ', -- Changes tab indicator
 
     -- EDITOR
     splitbelow = true, -- Toggle vertical splitting
