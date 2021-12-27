@@ -45,13 +45,14 @@ local kind_icons = {
 }
 
 cmp.setup {
-    -- LUASNIP
+    --> LUASNIP
     snippet = {
         expand = function(args)
             luasnip.lsp_expand(args.body)
         end,
     },
-    -- CUSTOM COMPLETION MAPPINGS
+
+    --> CUSTOM COMPLETION MAPPINGS
     mapping = {
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -65,7 +66,12 @@ cmp.setup {
         },
         -- Accept currently selected item. If none selected, `select` first item.
         -- Set `select` to `false` to only confirm explicitly selected items.
-        ["<CR>"] = cmp.mapping.confirm { select = true },
+        ["<CR>"] = cmp.mapping.confirm({
+			behavior = cmp.ConfirmBehavior.Replace,
+			select = false,
+		}),
+
+		-- Cycle through the completion menu
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
@@ -82,6 +88,7 @@ cmp.setup {
             "i",
             "s",
         }),
+
         ["<S-Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -95,39 +102,43 @@ cmp.setup {
             "s",
         }),
     },
-    -- FORMATTING
+
+    --> FORMATTING THE COMPLETION MENU
     formatting = {
         fields = { "kind", "abbr", "menu" },
-        format = function(entry, vim_item)
-            -- Kind icons
-            vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-            -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-            vim_item.menu = ({
+        format = function(entry, item)
+            -- Set Icons to indicate the kind of the completion item
+            item.kind = string.format("%s", kind_icons[item.kind])
+			-- Show the source of which a completion item originates from
+            item.menu = ({
                 nvim_lsp = "[LSP]",
                 luasnip = "[Snippet]",
                 buffer = "[Buffer]",
                 path = "[Path]",
             })[entry.source.name]
-            return vim_item
+            return item
         end,
     },
-    -- COMPLETION SOURCES
+
+    --> COMPLETION SOURCES
+	-- The order of the sources matter in terms of priority.
+	-- Additionaly you can configure:
+    --    keyword_length
+    --    priority
+    --    max_item_count
     sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "buffer" },
         { name = "path" },
+        { name = "luasnip" },
+        { name = "buffer", keyword_length = 5 },
     },
-    -- CONFIRM BEHAVIOR
-    confirm_opts = {
-        behavior = cmp.ConfirmBehavior.Replace,
-        select = false,
-    },
-    -- DOCUMENTATION STYLE
+
+    --> DOCUMENTATION STYLE
     documentation = {
         border = require"general.misc".border,
     },
-    -- BETA FEATURES
+
+    --> EXPERIMENTAL FEATURES
     experimental = {
         ghost_text = false,
         native_menu = false,

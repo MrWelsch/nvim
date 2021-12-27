@@ -36,7 +36,7 @@ key.setup {
         spacing = 3 -- spacing between columns
     },
     hidden = {"<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
-    show_help = true -- show help message on the command line when the popup is visible
+    show_help = false -- show help message on the command line when the popup is visible
 }
 
 --> OPTIONS APPLIED TO EACH MAPPING
