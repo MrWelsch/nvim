@@ -92,7 +92,6 @@ return require('packer').startup(function()
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"ellisonleao/glow.nvim", ft = 'markdown'}
     use {"lewis6991/impatient.nvim"}
-    
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

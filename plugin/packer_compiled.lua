@@ -385,14 +385,14 @@ end
 time([[Config for alpha-nvim]], true)
 require('ui.alpha')
 time([[Config for alpha-nvim]], false)
--- Config for: nice-reference.nvim
-time([[Config for nice-reference.nvim]], true)
-require('plugins.references')
-time([[Config for nice-reference.nvim]], false)
 -- Config for: project.nvim
 time([[Config for project.nvim]], true)
 require('plugins.project')
 time([[Config for project.nvim]], false)
+-- Config for: nice-reference.nvim
+time([[Config for nice-reference.nvim]], true)
+require('plugins.references')
+time([[Config for nice-reference.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd LuaSnip ]]
@@ -417,10 +417,10 @@ vim.cmd [[au FileType markdown ++once lua require("packer.load")({'glow.nvim'}, 
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-toggleterm.lua', 'nvim-bufferline.lua', 'nvim-dap', 'staline.nvim', 'Comment.nvim', 'nvim-lspconfig', 'which-key.nvim', 'tex.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufReadPre * ++once lua require("packer.load")({'nvim-colorizer.lua'}, { event = "BufReadPre *" }, _G.packer_plugins)]]
-vim.cmd [[au BufEnter * ++once lua require("packer.load")({'nvim-lspconfig', 'which-key.nvim', 'nvim-dap', 'nvim-bufferline.lua', 'staline.nvim', 'Comment.nvim', 'nvim-toggleterm.lua', 'tex.nvim'}, { event = "BufEnter *" }, _G.packer_plugins)]]
-vim.cmd [[au BufRead * ++once lua require("packer.load")({'nvim-treesitter', 'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au BufRead * ++once lua require("packer.load")({'gitsigns.nvim', 'nvim-treesitter'}, { event = "BufRead *" }, _G.packer_plugins)]]
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'nvim-autopairs'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
