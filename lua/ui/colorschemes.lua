@@ -6,6 +6,7 @@ local Theme = {}
 local themes = {
     'tokyonight',
     'tokyodark',
+    'catppuccin',
     'gruvbox-flat',
     'monokaipro',
     'dracula_pro',
@@ -36,6 +37,14 @@ function Theme.tokyonight(transparent)
 	-- vim.cmd [[hi SignColumn guibg=#1a1b26]]
     cmd [[hi StatusLine guibg=#1a1b26]]
     cmd [[hi Staline guibg=#1a1b26]]
+end
+
+function Theme.catppuccin(transparent)
+	cmd [[colorscheme catppuccin]]
+	cmd [[hi NormalFloat guibg=#1E1E2E]]
+    cmd [[hi FloatBorder guibg=#1E1E2E]]
+    cmd [[hi StatusLine guibg=#1E1E2E]]
+    cmd [[hi Staline guibg=#1E1E2E]]
 end
 
 function Theme.tokyodark(transparent)

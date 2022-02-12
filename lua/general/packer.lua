@@ -53,6 +53,7 @@ return require('packer').startup(function()
     use { -- PUT THEMES HERE
         'folke/tokyonight.nvim',
         'tiagovla/tokyodark.nvim',
+        'catppuccin/nvim',
         'shaunsingh/nord.nvim',
         "charlief0x/vim-dracula-pro",
         "eddyekofo94/gruvbox-flat.nvim",

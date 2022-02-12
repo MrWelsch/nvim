@@ -4,34 +4,34 @@ if not status_ok then
 end
 
 tex.setup{
-    engine = 'latexmk', -- tex engine
+    engine = 'lualatex', -- tex engine
     compile = {
         events = { 'BufWritePost' }, -- compile when buffer is saved
         watchlist = true -- enable feature to compile file when any file from watch list is changed
     },
-    viewer = nil,
+    viewer = 'xdg-open', -- open default pdf viewer
     engines = { -- engines config
         tectonic = {},
         latexmk = {
-        args = {
-            '-pdf',
-            ['-interaction'] = 'nonstopmode'
-        }
+            args = {
+                '-pdf',
+                ['-interaction'] = 'nonstopmode',
+            }
         },
         pdflatex = {
-        args = {
-            ['-interaction'] = 'nonstopmode'
-        }
+            args = {
+                ['-interaction'] = 'nonstopmode'
+            }
         },
         xelatex = {
-        args = {
-            ['-interaction'] = 'nonstopmode'
-        }
+            args = {
+                ['-interaction'] = 'nonstopmode'
+            }
         },
         lualatex = {
-        args = {
-            ['-interaction'] = 'nonstopmode'
-        }
+            args = {
+                ['-interaction'] = 'nonstopmode'
+            }
         }
     }
   

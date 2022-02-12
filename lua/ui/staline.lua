@@ -19,6 +19,13 @@ local tokyodark = {
 	v = "#D7A65F",  
 }
 
+local catppuccin = {
+    i = "#F2CDCD",
+	n = "#96CDFB",
+	c = "#ABE9B3",
+	v = "#F8BD96",  
+}
+
 local gruvbox = {
     i = "#7daea3",
 	n = "#a9b665",
@@ -51,7 +58,7 @@ staline.setup {
 		mid = {},
 		right = {'file_name', 'line_column' }
 	},
-	mode_colors = tokyonight_night,
+	mode_colors = catppuccin,
 	defaults = {
 		true_colors = true,
 		line_column = " [%l/%L] :%c  ",
