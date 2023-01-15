@@ -20,14 +20,14 @@ tree.setup {
     hijack_netrw        = true,
     open_on_setup       = false,
     ignore_ft_on_setup  = {'alpha'},
-    auto_close          = true,
+    -- auto_close          = true,
     open_on_tab         = false,
     hijack_cursor       = false,
     update_cwd          = true,
-    update_to_buf_dir   = {
-        enable = true,
-        auto_open = true,
-    },
+    -- update_to_buf_dir   = {
+    --     enable = true,
+    --     auto_open = true,
+    -- },
     diagnostics = {
         enable = true,
         icons = {
@@ -79,10 +79,10 @@ tree.setup {
     },
     view = {
         width = 35,
-        height = 30,
+        -- height = 30,
         hide_root_folder = false,
         side = 'right',
-        auto_resize = false,
+        -- auto_resize = false,
         mappings = {
             custom_only = false,
             list = {
