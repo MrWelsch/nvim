@@ -4,7 +4,7 @@ if not status_ok then
 end
 
 treesitter.setup {
-    ensure_installed = 'maintained',
+    -- ensure_installed = 'maintained',
     ignore_install = {'haskell'},
     matchup = {
         enable = true,              

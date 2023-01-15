@@ -65,7 +65,7 @@ local mappings = {
     -- MENUS
     l = {
         name = "ﭧ LSP",
-        a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>",    " CODE ACTIONS"},
+        a = {"<cmd>lua require('telescope.builtin').lsp_code_actions(require('telescope.themes').get_cursor())<cr>",    " CODE ACTIONS"},
         d = {"<cmd>Telescope diagnostics buffnr=0<cr>",                                                                 " DOCUMENT DIAGNOSTICS"},
         D = {"<cmd>Telescope diagnostics<cr>",                                                                          " WORKSPACE DIAGNOSTICS"},
 		f = {"<cmd>FormatWrite<cr>",                                                                                    " FORMAT"},

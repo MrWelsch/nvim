@@ -6,7 +6,11 @@ end
 bufferline.setup{
 	options = {
 		numbers = 'none',
-		indicator_icon = '▎',
+        indicator = {
+            icon = '▎',
+            style = 'icon',
+        },
+		-- indicator_icon = '▎',
 		buffer_close_icon = '',
 		modified_icon = '●',
 		close_icon = '',
@@ -69,22 +73,22 @@ bufferline.setup{
 
 				if error ~= 0 then
 					result[1] =
-						{ text = '  ' .. error, guifg = '#ff6c6b' }
+						{ text = '  ' .. error, fg = '#ff6c6b' }
 				end
 
 				if warning ~= 0 then
 					result[2] =
-						{ text = '  ' .. warning, guifg = '#ECBE7B' }
+						{ text = '  ' .. warning, fg = '#ECBE7B' }
 				end
 
 				if hint ~= 0 then
 					result[3] =
-						{ text = '  ' .. hint, guifg = '#98be65' }
+						{ text = '  ' .. hint, fg = '#98be65' }
 				end
 
 				if info ~= 0 then
 					result[4] =
-						{ text = '  ' .. info, guifg = '#51afef' }
+						{ text = '  ' .. info, fg = '#51afef' }
 				end
 				return result
 			end,
@@ -93,7 +97,7 @@ bufferline.setup{
     -- Set the bufferline guibg to the same color as StatusLine which is defined in ui.colorschemes
     highlights = {
         fill = {
-            guibg = {
+            bg = {
                 attribute = 'bg',
                 highlight = 'StatusLine'
             }

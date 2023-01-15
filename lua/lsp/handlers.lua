@@ -50,6 +50,7 @@ end
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
     if client.resolved_capabilities.document_highlight then
+    -- if client.server_capabilities.hoverProvider then
         vim.api.nvim_exec(
             [[
             augroup lsp_document_highlight
@@ -66,7 +67,8 @@ end
 --> ATTACH FORMATTING AND MATCHING
 M.on_attach = function(client, bufnr)
     if client.name == "tsserver" then
-        client.resolved_capabilities.document_formatting = false
+        -- client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.documentFormattingProvider = false
     end
     vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
     lsp_highlight_document(client)
@@ -82,6 +84,7 @@ if not status_ok then
 end
 
 -- Apply capabilities
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+-- M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
