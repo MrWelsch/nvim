@@ -13,4 +13,4 @@ require('general.mappings')
 require('general.packer')
 
 --> SET COLORSCHEME
-require('ui.colorschemes').tokyonight(false)
+require('ui.colorschemes').catppuccin(false)

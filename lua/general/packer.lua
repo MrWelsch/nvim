@@ -52,6 +52,7 @@ return require('packer').startup(function()
     use {'tamton-aquib/staline.nvim', config = [[require('ui.staline')]], event = "BufEnter"}
 	use {"akinsho/nvim-bufferline.lua", config = [[require('ui.bufferline')]], event = "BufEnter"}
     use { -- PUT THEMES HERE
+        'catppuccin/nvim',
         'folke/tokyonight.nvim',
         'tiagovla/tokyodark.nvim',
         'shaunsingh/nord.nvim',

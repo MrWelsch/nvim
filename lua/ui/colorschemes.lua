@@ -1,3 +1,50 @@
+local status_ok, catppuccin = pcall(require, "catppuccin")
+if not status_ok then
+	return
+end
+
+catppuccin.setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = false,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.15,
+    },
+    no_italic = false, -- Force no italic
+    no_bold = false, -- Force no bold
+    styles = {
+        comments = { "italic" },
+        conditionals = { "italic" },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        notify = false,
+        mini = false,
+    },
+})
+
 local cmd = vim.cmd
 
 local Theme = {}
@@ -9,7 +56,8 @@ local themes = {
     'gruvbox-flat',
     'monokaipro',
     'dracula_pro',
-    'nord'
+    'nord',
+    'catppuccin'
 }
 
 --> DEFINE THEME FUNCTIONS WHICH CAN BE APPLIED IN 'init.lua'
@@ -99,6 +147,10 @@ function Theme.draculapro(transparent)
     cmd [[colorscheme dracula_pro]]
     cmd [[hi StatusLine guibg=#22212c]]
     cmd [[hi Staline guibg=#22212c]]
+end
+
+function Theme.catppuccin(transparent)
+    cmd [[colorscheme catppuccin]]
 end
 
 return Theme
