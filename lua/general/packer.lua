@@ -46,7 +46,8 @@ return require('packer').startup(function()
     use {"wbthomason/packer.nvim"}
 
     --> UI, THEMES, ICONS & SYNTAX HIGHLIGHTING
-    use {'goolord/alpha-nvim', config = [[require('ui.alpha')]]}
+    -- use {'goolord/alpha-nvim', config = [[require('ui.alpha')]]}
+    use {'echasnovski/mini.starter', branch = 'stable', config = [[require('ui.starter')]]}
     use {"kyazdani42/nvim-tree.lua", requires = "nvim-web-devicons", config = [[require('ui.nvim-tree')]], cmd = {"NvimTreeToggle"}}
     use {'tamton-aquib/staline.nvim', config = [[require('ui.staline')]], event = "BufEnter"}
 	use {"akinsho/nvim-bufferline.lua", config = [[require('ui.bufferline')]], event = "BufEnter"}
