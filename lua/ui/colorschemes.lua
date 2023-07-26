@@ -120,7 +120,7 @@ function Theme.gruvbox(transparent)
     vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
     -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead.
     -- Should work with the standard StatusLine and LuaLine.
-    vig.g.gruvbox_hide_inactive_statusline = false
+    vim.g.gruvbox_hide_inactive_statusline = false
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
     cmd [[colorscheme gruvbox-flat]]

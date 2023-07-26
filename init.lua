@@ -13,4 +13,4 @@ require('general.mappings')
 require('general.packer')
 
 --> SET COLORSCHEME
-require('ui.colorschemes').catppuccin(false)
+require('ui.colorschemes').gruvbox(false)
