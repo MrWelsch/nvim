@@ -64,7 +64,8 @@ treesitter.setup {
             ['<leader>A'] = '@parameter.inner',
         },
         },
-    }
+    },
+}
 --     OLD CONFIG
 --     -- ensure_installed = 'maintained',
 --     ignore_install = {'haskell'},
@@ -89,5 +90,5 @@ treesitter.setup {
 --         enable = true, 
 --         disable = { "yaml" },
 --     },
-}
+
 

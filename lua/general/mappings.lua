@@ -27,12 +27,10 @@ map('n', '<leader>v', ':vs<CR>') -- vertical split
 map('n', '<leader>h', ':hs<CR>') -- horizontal split
 
 -- LSP
-map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
-map('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
-map('n', '<leader>D', ':lua vim.lsp.buf.type_definition()<CR>')
-
-
+map('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
+-- map('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
+map('n', 'gt', ':lua vim.lsp.buf.type_definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
 map('n', 'gr', ':NiceReference<CR>')
 map('n', 'gl', ':lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
@@ -56,5 +54,5 @@ map('n', '<Leader>e', ':NvimTreeToggle<CR>')
 map('n', '<Leader>t', ':ToggleTerm<CR>')
 
 --> DASHBOARD
-map('n', '<Leader>;', ':Alpha<CR>')
+map('n', '<Leader>;', ':lua MiniStarter.open()<CR>')
 
