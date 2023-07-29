@@ -72,7 +72,7 @@ return require('packer').startup(function()
     use {'folke/neodev.nvim', config = [[require('lsp.neodev')]], after = 'mason-lspconfig.nvim'}
     use {"neovim/nvim-lspconfig", after = 'neodev.nvim'}
     
-    use {"jose-elias-alvarez/null-ls.nvim", config = [[require('lsp.null-ls')]], requires = "nvim-lua/plenary.nvim", after = "nvim-lspconfig"}
+    use {"jose-elias-alvarez/null-ls.nvim", config = [[require('lsp.null-ls')]], requires = "nvim-lua/plenary.nvim", after = "nvim-lspconfig"} -- ARCHIVED SOON
     use {'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', "rafamadriz/friendly-snippets"}
     use {"hrsh7th/nvim-cmp", config = [[require('plugins.cmp')]], after = 'LuaSnip'}
     use {"hrsh7th/cmp-nvim-lsp", "hrsh7th/cmp-buffer", "hrsh7th/cmp-path", "hrsh7th/cmp-cmdline", after = "nvim-cmp"}
