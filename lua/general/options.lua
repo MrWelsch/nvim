@@ -15,6 +15,8 @@ local options = {
     signcolumn = "yes",
     belloff = "all",
     completeopt = "menuone,noselect", -- Set when to toggle completion menu
+    ignorecase = true, -- Case-sensitive searching UNLESS \C or capital in search
+    smartcase = true,
 
     -- PERFORMANCE
     updatetime = 300,
@@ -44,6 +46,7 @@ local options = {
     expandtab = false, -- Changes the appropriate number of spaces to a <Tab>
 
     smartindent = true, -- Auto-Indenting while starting a new line
+    breakindent = true,
 
     hlsearch = false, -- Toggle highlighting of search results
     incsearch = true, -- While searching show pattern matches

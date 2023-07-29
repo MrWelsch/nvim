@@ -27,6 +27,11 @@ map('n', '<leader>v', ':vs<CR>') -- vertical split
 map('n', '<leader>h', ':hs<CR>') -- horizontal split
 
 -- LSP
+map('n', '<leader>rn', ':lua vim.lsp.buf.rename()<CR>')
+map('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
+map('n', '<leader>D', ':lua vim.lsp.buf.type_definition()<CR>')
+
+
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
 map('n', 'gr', ':NiceReference<CR>')

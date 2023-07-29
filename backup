@@ -66,12 +66,24 @@ return require('packer').startup(function()
     use {'wiliamks/nice-reference.nvim', config = [[require('plugins.references')]], before = "nvim-lspconfig"}
     
     --> LINTER, COMPLETION & SNIPPETS
-    use {'williamboman/mason.nvim', config = [[require('lsp.mason-lsp-config')]], event = 'BufEnter'}
-    use {'williamboman/mason-lspconfig.nvim', config = [[require('lsp.mason-lsp-config')]], after = 'mason.nvim'}
-    -- use {'j-hui/fidget.nvim', tag = 'legacy', opts = {}} -- REVISIT ANOTHER TIME
-    use {'folke/neodev.nvim', config = [[require('lsp.neodev')]], after = 'mason-lspconfig.nvim'}
-    use {"neovim/nvim-lspconfig", after = 'neodev.nvim'}
+    use {"neovim/nvim-lspconfig", event = "BufEnter"}
+    use {'williamboman/mason.nvim', config = true}
+    use {'williamboman/mason-lspconfig.nvim', config = [[require('lsp.mason-lsp-config')]], after = 'nvim-cmp'}
+    use {'folke/neodev.nvim', config = [[require('lsp.neodev')]]}
     
+    --  requires = {
+    --     -- Automatically install LSPs to stdpath for neovim
+    --     { 'williamboman/mason.nvim', config = true },
+    --     'williamboman/mason-lspconfig.nvim',
+  
+    --     -- Useful status updates for LSP
+    --     -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
+    --     -- { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+  
+    --     -- Additional lua configuration, makes nvim stuff amazing!
+    --     'folke/neodev.nvim',
+    -- }}
+    -- use {"williamboman/nvim-lsp-installer", config = [[require('lsp.lsp-installer')]], after = "nvim-lspconfig"}
     use {"jose-elias-alvarez/null-ls.nvim", config = [[require('lsp.null-ls')]], requires = "nvim-lua/plenary.nvim", after = "nvim-lspconfig"}
     use {'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip', "rafamadriz/friendly-snippets"}
     use {"hrsh7th/nvim-cmp", config = [[require('plugins.cmp')]], after = 'LuaSnip'}
@@ -88,16 +100,19 @@ return require('packer').startup(function()
     --> EDITOR
     use {"windwp/nvim-autopairs", config = [[require('plugins.autopairs')]], event = "InsertEnter"}
     use {"windwp/nvim-ts-autotag", after = "nvim-treesitter"}
-    use {"norcalli/nvim-colorizer.lua", config = [[require('plugins.colorizer')]], event = 'BufReadPre'}
+    use {"norcalli/nvim-colorizer.lua", config = [[require('plugins.colorizer')]], event = 'BufReadPre'} -- Last Commit : 2020
+    use {"numToStr/Comment.nvim", config = [[require('plugins.comments')]], event = "BufEnter"}
+
+    --> GIT
+    use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
 
     --> GENERAL
     use {"akinsho/nvim-toggleterm.lua", config = [[require('plugins.toggleterm')]], event = "BufEnter"}
     use {"folke/which-key.nvim", config = [[require('plugins.which-key')]], event = "BufEnter"}
-    use {"lewis6991/gitsigns.nvim", config = [[require('plugins.gitsigns')]], requires = "nvim-lua/plenary.nvim", event = "BufRead"}
-    use {"numToStr/Comment.nvim", config = [[require('plugins.comments')]], event = "BufEnter"}
     use {'aspeddro/tex.nvim', config = [[require('plugins.tex')]], event = "BufEnter"}
     use {"ellisonleao/glow.nvim", ft = 'markdown'}
     use {"lewis6991/impatient.nvim"}
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

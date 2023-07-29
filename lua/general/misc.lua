@@ -21,8 +21,8 @@ local borders_result = {
 }
 
 -- SET BORDERS TO ARRAY ENTRY
-Misc.border = borders[2]
-Misc.border_telescope = borders_telescope[2]
-Misc.border_result = borders_result[2]
+Misc.border = borders[3]
+Misc.border_telescope = borders_telescope[3]
+Misc.border_result = borders_result[3]
 
 return Misc
