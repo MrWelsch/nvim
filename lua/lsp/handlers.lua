@@ -38,11 +38,11 @@ M.setup = function()
 
     -- HANDLERS
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "double",
+        border = "single", --TODO: REFACTOR THIS INTO misc.lua
     })
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "double",
+        border = "single", --TODO: REFACTOR THIS INTO misc.lua
     })
 end
 
@@ -74,17 +74,10 @@ M.on_attach = function(client, bufnr)
     lsp_highlight_document(client)
 end
 
---> CAPABILITIES
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-
 -- Protected call for cmp_nvim_lsp
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
     return
 end
-
--- Apply capabilities
--- M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M

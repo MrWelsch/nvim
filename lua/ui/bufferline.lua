@@ -16,15 +16,15 @@ bufferline.setup{
 		close_icon = '',
 		left_trunc_marker = '',
 		right_trunc_marker = '',
-		max_name_length = 20,
+		max_name_length = 25,
 		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-		tab_size = 20,
+		tab_size = 30,
 		diagnostics = 'nvim_lsp',
 		diagnostics_indicator = function(_, _, diagnostics_dict, _)
 			local s = ' '
 			for e, n in pairs(diagnostics_dict) do
 				local sym = e == 'error' and ' '
-					or (e == 'warning' and ' ' or ' ')
+					or (e == 'warning' and ' ' or ' ') -- TODO: FIX CLIPPING
 				s = s .. n .. sym
 			end
 			return s

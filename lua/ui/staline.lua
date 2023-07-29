@@ -51,7 +51,7 @@ staline.setup {
 		mid = {},
 		right = {'file_name', 'line_column' }
 	},
-	mode_colors = tokyonight_night,
+	mode_colors = gruvbox, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
 	defaults = {
 		true_colors = true,
 		line_column = " [%l/%L] :%c  ",

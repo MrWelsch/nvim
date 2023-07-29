@@ -123,9 +123,14 @@ function Theme.gruvbox(transparent)
     vim.g.gruvbox_hide_inactive_statusline = false
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
+
     cmd [[colorscheme gruvbox-flat]]
-    cmd [[hi StatusLine guibg=##32302f]]
-    cmd [[hi Staline guibg=##32302f]]
+    cmd [[hi StatusLine guibg=#32302f]]
+    cmd [[hi Staline guibg=#32302f]]
+
+    -- TODO: TESTING NEXT 2 LINES
+    -- vim.api.nvim_set_hl(0, 'Normal', {bg = 'none'})
+    -- vim.api.nvim_set_hl(0, 'NormalFloat', {bg = 'none'})
 end
 
 function Theme.monokaipro(transparent)
