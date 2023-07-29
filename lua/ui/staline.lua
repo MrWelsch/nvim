@@ -57,5 +57,11 @@ staline.setup {
 		line_column = " [%l/%L] :%c  ",
 		branch_symbol = " ",
         bg = 'none'
-	}
+	},
+    mode_icons = {
+        n = " ",
+        i = " ",
+        c = " ",
+        v = " "
+    }
 }

@@ -21,6 +21,7 @@ local options = {
     -- PERFORMANCE
     updatetime = 300,
     timeoutlen = 100,
+    laststatus= 2, -- Needed for staline
 
     -- VISUAL
     termguicolors = true, -- Toggle termgui colors

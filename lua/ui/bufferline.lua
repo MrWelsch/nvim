@@ -10,6 +10,9 @@ bufferline.setup{
             icon = '▎',
             style = 'icon',
         },
+        style_preset = {
+            bufferline.style_preset.minimal,
+        },
 		-- indicator_icon = '▎',
 		buffer_close_icon = '',
 		modified_icon = '●',
@@ -24,7 +27,7 @@ bufferline.setup{
 			local s = ' '
 			for e, n in pairs(diagnostics_dict) do
 				local sym = e == 'error' and ' '
-					or (e == 'warning' and ' ' or ' ') -- TODO: FIX CLIPPING
+					or (e == 'warning' and ' ' or ' ') -- TODO: FIX CLIPPING
 				s = s .. n .. sym
 			end
 			return s
@@ -95,12 +98,20 @@ bufferline.setup{
 		},
 	},
     -- Set the bufferline guibg to the same color as StatusLine which is defined in ui.colorschemes
+    --TODO: Doesn't work
     highlights = {
         fill = {
             bg = {
                 attribute = 'bg',
                 highlight = 'StatusLine'
             }
-        }
+            -- bg = 'NONE'
+        },
+        -- background = {
+        --     bg = '#ffffff',
+        -- },
+        -- buffer_selected = {
+        --     bg = '#282828', -- works
+        -- },
     }
 }
