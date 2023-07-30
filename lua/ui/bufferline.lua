@@ -97,21 +97,4 @@ bufferline.setup{
 			end,
 		},
 	},
-    -- Set the bufferline guibg to the same color as StatusLine which is defined in ui.colorschemes
-    --TODO: Doesn't work
-    -- highlights = {
-    --     fill = {
-    --         bg = {
-    --             attribute = 'bg',
-    --             highlight = 'StatusLine'
-    --         }
-    --         -- bg = 'NONE'
-    --     },
-    --     -- background = {
-    --     --     bg = '#ffffff',
-    --     -- },
-    --     -- buffer_selected = {
-    --     --     bg = '#282828', -- works
-    --     -- },
-    -- }
 }
