@@ -26,6 +26,13 @@ local gruvbox = {
 	v = "#e78a4e",  
 }
 
+local rose_pine = {
+    i = "#c4a7e7",
+	n = "#9ccfd8",
+	c = "#31748f",
+	v = "#f6c177",  
+}
+
 local nord = {
     i = "#B48EAD",
 	n = "#88C0D0",

@@ -30,7 +30,7 @@ local options = {
     pumblend = 30, -- Opacity of completion menu
     showmode = false, -- Hides the mode while in telescope
     ruler= false, -- Hides the ruler while in telescope
-    cursorline = true, -- Toggle cursor line
+    cursorline = false, -- Toggle cursor line
     relativenumber = true, -- Shows line numbers relative to cursor
     number = true, -- Shows current line number
     fillchars = {eob=' ', fold=' ', foldopen="", foldsep=" ", foldclose=""}, -- remove fillchars

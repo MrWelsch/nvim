@@ -51,13 +51,14 @@ return require('packer').startup(function()
     use {"kyazdani42/nvim-web-devicons", module = "nvim-web-devicons"} --TODO: DO I NEED THIS?
     use {'tamton-aquib/staline.nvim', config = [[require('ui.staline')]], event = "BufEnter"}
 	use {"akinsho/nvim-bufferline.lua", config = [[require('ui.bufferline')]], event = "BufEnter"} --TODO: DO I NEED THIS? MB CHANGE TO HARPOON.
-    use { -- PUT THEMES HERE -- TODO: ADD ROSE PINE
+    use { -- PUT THEMES HERE
         'catppuccin/nvim',
         'folke/tokyonight.nvim',
         'tiagovla/tokyodark.nvim',
         'shaunsingh/nord.nvim',
         "charlief0x/vim-dracula-pro",
         "eddyekofo94/gruvbox-flat.nvim",
+        "rose-pine/neovim",
         "https://gitlab.com/__tpb/monokai-pro.nvim",
         event = 'BufEnter'
     }
