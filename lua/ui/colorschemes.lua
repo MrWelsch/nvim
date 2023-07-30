@@ -67,6 +67,8 @@ function Theme.random()
 	local selected = themes[math.floor(nice)+1]
 	print("ColorScheme: "..selected)
 	cmd ('colorscheme '..selected)
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.tokyonight(transparent)
@@ -84,6 +86,8 @@ function Theme.tokyonight(transparent)
 	-- vim.cmd [[hi SignColumn guibg=#1a1b26]]
     cmd [[hi StatusLine guibg=#1a1b26]]
     cmd [[hi Staline guibg=#1a1b26]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.tokyodark(transparent)
@@ -95,6 +99,8 @@ function Theme.tokyodark(transparent)
 	cmd [[hi IndentBlanklineChar guifg=#555555]]
     cmd [[hi StatusLine guibg=#11121d]]
     cmd [[hi Staline guibg=#11121d]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.nord(transparent)
@@ -113,6 +119,8 @@ function Theme.nord(transparent)
 	cmd [[colorscheme nord]]
     cmd [[hi StatusLine guibg=#2E3440]]
     cmd [[hi Staline guibg=#2E3440]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.gruvbox(transparent)
@@ -127,10 +135,8 @@ function Theme.gruvbox(transparent)
     cmd [[colorscheme gruvbox-flat]]
     cmd [[hi StatusLine guibg=#32302f]]
     cmd [[hi Staline guibg=#32302f]]
-
-    -- TODO: TESTING NEXT 2 LINES
-    -- vim.api.nvim_set_hl(0, 'Normal', {bg = 'none'})
-    -- vim.api.nvim_set_hl(0, 'NormalFloat', {bg = 'none'})
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.monokaipro(transparent)
@@ -145,6 +151,8 @@ function Theme.monokaipro(transparent)
     cmd [[colorscheme monokaipro]]
     cmd [[hi StatusLine guibg=#222222]]
     cmd [[hi Staline guibg=#222222]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.draculapro(transparent)
@@ -152,10 +160,14 @@ function Theme.draculapro(transparent)
     cmd [[colorscheme dracula_pro]]
     cmd [[hi StatusLine guibg=#22212c]]
     cmd [[hi Staline guibg=#22212c]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 function Theme.catppuccin(transparent)
     cmd [[colorscheme catppuccin]]
+    -- Hide Bufferline Background
+    cmd [[hi BufferLineFill guibg=NONE ctermbg=NONE]]
 end
 
 return Theme
