@@ -33,9 +33,9 @@ end
 -- Have packer use a popup window
 packer.init {
     display = {
-    open_fn = function()
-        return require("packer.util").float()
-    end,
+        open_fn = function()
+            return require("packer.util").float({ border = require"general.misc".border })
+        end,
     },
 }
 

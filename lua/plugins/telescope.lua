@@ -46,18 +46,45 @@ telescope.setup{
 
 Telescope = {}
 
---> CUSTOM THEME
+--> CUSTOM THEME (Floating)
+-- Telescope.custom_theme = {
+-- 	results_title = false,
+-- 	layout_strategy = "center",
+-- 	previewer = false,
+-- 	winblend = 0,
+-- 	layout_config = { width = 0.6, height = 0.6 },
+-- 	borderchars = {
+-- 		preview = require"general.misc".border_telescope,
+-- 		prompt = require"general.misc".border_telescope,
+-- 		results = require"general.misc".border_result,
+-- 	},
+-- }
+
+--> CUSTOM THEME (Focused)
 Telescope.custom_theme = {
 	results_title = false,
-	layout_strategy = "center",
-	previewer = false,
-	winblend = 3,
-	layout_config = { width = 0.6, height = 0.6 },
+	layout_strategy = "horizontal",
+    layout_config = {
+        horizontal = {
+            prompt_position = "top",
+            preview_width = 0.55,
+            results_width = 0.8,
+        },
+        vertical = {
+            mirror = false,
+        },
+        width = 0.87,
+        height = 0.80,
+        preview_cutoff = 120,
+        },
+	previewer = true,
+	winblend = 0,
 	borderchars = {
 		preview = require"general.misc".border_telescope,
 		prompt = require"general.misc".border_telescope,
 		results = require"general.misc".border_result,
 	},
+    path_display = { "truncate" },
 }
 
 return Telescope

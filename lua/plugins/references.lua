@@ -8,7 +8,7 @@ reference.setup({
     relative = "cursor", -- Popup relative position
     row = 1, -- Popup x position
     col = 0, -- Popup y position
-    border = "double", -- Popup borderstyle
+    border = require"general.misc".border, -- Popup borderstyle
     winblend = 0, -- Popup transaparency 0-100, where 100 is transparent
     max_width = 120, -- Max width of the popup
     max_height = 10, -- Max height of the popup

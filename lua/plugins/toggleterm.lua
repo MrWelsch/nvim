@@ -20,7 +20,7 @@ toggleterm.setup{
       -- see :h nvim_win_open for details on borders however
       -- the 'curved' border is a custom border type
       -- not natively supported but implemented in this plugin.
-      border = 'double',
+      border = require"general.misc".border,
       winblend = 3,
       highlights = {
         border = "Normal",
@@ -40,7 +40,7 @@ local lazygit = Terminal:new({
         -- see :h nvim_win_open for details on borders however
         -- the 'curved' border is a custom border type
         -- not natively supported but implemented in this plugin.
-        border = 'double',
+        border = require"general.misc".border,
         winblend = 3,
         highlights = {
           border = "Normal",

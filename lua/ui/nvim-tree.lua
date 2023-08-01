@@ -18,8 +18,8 @@ local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 tree.setup {
     disable_netrw       = true,
     hijack_netrw        = true,
-    open_on_setup       = false,
-    ignore_ft_on_setup  = {'alpha'},
+    -- open_on_setup       = false, -- TODO: Deprecated?
+    -- ignore_ft_on_setup  = {'alpha'}, -- TODO: Deprecated?
     -- auto_close          = true,
     open_on_tab         = false,
     hijack_cursor       = false,

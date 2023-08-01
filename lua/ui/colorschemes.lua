@@ -17,10 +17,14 @@ local themes = {
 function setColors(name, color)
     cmd("colorscheme"..(' ')..(name))
     cmd("hi BufferLineFill ctermbg="..("NONE"))
+    cmd("hi NvimTreeNormal ctermbg="..("NONE"))
     if(color ~= nil) then
         cmd("hi StatusLine guibg="..(color))
         cmd("hi Staline guibg="..(color))
         cmd("hi BufferLineFill guibg="..( color))
+        cmd("hi NvimTreeNormal guibg="..( color)) 
+        cmd("hi NormalFloat guibg="..( color))
+        cmd("hi WhichKeyFloat guibg="..( color)) 
     end
 end
 
@@ -76,12 +80,18 @@ end
 
 function Theme.gruvbox(transparent)
     vim.g.gruvbox_italic_functions = false
-    vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
+    -- Set a darker background on sidebar-like windows. For example: ["qf", "vista_kind", "terminal", "packer"]
+    -- vim.g.gruvbox_sidebars = { "qf", "vista_kind", "terminal", "packer" }
     -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead.
     -- Should work with the standard StatusLine and LuaLine.
     vim.g.gruvbox_hide_inactive_statusline = false
     -- Change the "hint" color to the "orange" color, and make the "error" color bright red
     vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
+    gruvbox_transparent = false
+    -- Sidebar like windows like NvimTree get a darker background
+    gruvbox_dark_sidebar = false
+    -- Float windows like the lsp diagnostics windows get a darker background.
+    gruvbox_dark_float = false 
 
     -- cmd [[colorscheme gruvbox-flat]]
     -- cmd [[hi StatusLine guibg=#32302f]]
