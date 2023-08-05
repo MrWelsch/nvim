@@ -58,6 +58,7 @@ return require('packer').startup(function()
         'shaunsingh/nord.nvim',
         "charlief0x/vim-dracula-pro",
         "eddyekofo94/gruvbox-flat.nvim",
+        "neanias/everforest-nvim",
         "rose-pine/neovim",
         "https://gitlab.com/__tpb/monokai-pro.nvim",
         event = 'BufEnter'

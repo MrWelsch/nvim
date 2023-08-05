@@ -12,9 +12,15 @@ gruvbox_dark_sidebar = false
 -- Float windows like the lsp diagnostics windows get a darker background.
 gruvbox_dark_float = false
 
---> SET THEME-SPECIFIC COLORS
+-> SET THEME-SPECIFIC COLORS
 Color = {}
 
 Color.background = '#32302f'
+Colors.staline = {
+    i = "#7daea3",
+	n = "#a9b665",
+	c = "#89b482",
+	v = "#e78a4e",  
+} 
 
 return Color

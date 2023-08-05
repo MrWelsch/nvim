@@ -7,3 +7,16 @@ rose_pine.setup({
 	disable_background = true,
 	disable_float_background = true,
 })
+
+--> SET THEME-SPECIFIC COLORS
+Color = {}
+
+Color.background = nil
+Colors.staline = {
+    i = "#c4a7e7",
+	n = "#9ccfd8",
+	c = "#31748f",
+	v = "#f6c177",  
+}
+
+return Color

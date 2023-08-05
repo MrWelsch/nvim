@@ -7,6 +7,7 @@ local themes = {
     'tokyodark',
     'rose-pine',
     'gruvbox-flat',
+    'everforest',
     'monokaipro',
     'dracula_pro',
     'nord',
@@ -18,13 +19,20 @@ function setColors(name, color)
     cmd("colorscheme"..(' ')..(name))
     cmd("hi BufferLineFill ctermbg="..("NONE"))
     cmd("hi NvimTreeNormal ctermbg="..("NONE"))
+    cmd("hi FloatBorder guibg="..("NONE"))
+    --> TODO: SEE IF CLAUSE BELOW
+    cmd("hi BufferLineFill guibg="..("NONE"))
+    cmd("hi NvimTreeNormal guibg="..("NONE")) 
+    cmd("hi NormalFloat guibg="..("NONE"))
+    cmd("hi WhichKeyFloat guibg="..("NONE")) 
     if(color ~= nil) then
         cmd("hi StatusLine guibg="..(color))
         cmd("hi Staline guibg="..(color))
-        cmd("hi BufferLineFill guibg="..( color))
-        cmd("hi NvimTreeNormal guibg="..( color)) 
-        cmd("hi NormalFloat guibg="..( color))
-        cmd("hi WhichKeyFloat guibg="..( color)) 
+        --> TODO: CHECK IF THESE ARE EXPLICITLY NEEDED FOR ALL THEMES
+        -- cmd("hi BufferLineFill guibg="..(color))
+        -- cmd("hi NvimTreeNormal guibg="..(color)) 
+        -- cmd("hi NormalFloat guibg="..(color))
+        -- cmd("hi WhichKeyFloat guibg="..(color)) 
     end
 end
 
@@ -38,6 +46,7 @@ function Theme.random()
     setColors(selected, nil) --TODO: Refactor this to call the Theme."selected"
 end
 
+-- TODO: GENERALIZE BELOW FUNCTIONS AND MAKE 1 GENERIC FUNTION THAT GETS AN ARRAY AS INPUT
 function Theme.tokyonight(transparent)
     require('general.colors.tokyonight')
 
@@ -68,10 +77,18 @@ function Theme.gruvbox(transparent)
     setColors('gruvbox-flat', BACKGROUND)
 end
 
+function Theme.everforest(transparent)
+    require('general.colors.everforest')
+
+    local BACKGROUND = require"general.colors.everforest".background
+    setColors('everforest', BACKGROUND)
+end
+
 function Theme.rosepine(transparent)
     require('general.colors.rosepine')
 
-    setColors('rose-pine', nil)
+    local BACKGROUND = require"general.colors.rosepine".background
+    setColors('rose-pine', BACKGROUND)
 end
 
 function Theme.monokaipro(transparent)
