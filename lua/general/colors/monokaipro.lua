@@ -11,7 +11,7 @@ vim.g.monokaipro_colors = { hint = "orange", error = "#ff6188" }
 Color = {}
 
 Color.background = '#222222'
-Colors.staline = {
+Color.staline = {
     i = "#ab9df2",
 	n = "#7bd88f",
 	c = "#5ad4e6",

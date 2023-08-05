@@ -10,7 +10,7 @@ vim.g.tokyonight_transparent_sidebar = true
 Color = {}
 
 Color.background = '#1a1b26'
-Colors.staline = {
+Color.staline = {
     i = "#bb9af7",
 	n = "#7aa2f7",
 	c = "#9ece6a",

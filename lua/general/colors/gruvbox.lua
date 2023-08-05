@@ -16,7 +16,7 @@ gruvbox_dark_float = false
 Color = {}
 
 Color.background = '#32302f'
-Colors.staline = {
+Color.staline = {
     i = "#7daea3",
 	n = "#a9b665",
 	c = "#89b482",

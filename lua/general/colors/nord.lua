@@ -15,7 +15,7 @@ vim.g.nord_italic = false
 Color = {}
 
 Color.background = '#2E3440'
-Colors.staline = {
+Color.staline = {
     i = "#B48EAD",
 	n = "#88C0D0",
 	c = "#A3BE8C",

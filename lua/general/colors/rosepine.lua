@@ -12,7 +12,7 @@ rose_pine.setup({
 Color = {}
 
 Color.background = nil
-Colors.staline = {
+Color.staline = {
     i = "#c4a7e7",
 	n = "#9ccfd8",
 	c = "#31748f",

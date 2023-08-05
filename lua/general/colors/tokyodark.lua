@@ -5,7 +5,7 @@ vim.g.tokyodark_enable_italic = true
 Color = {}
 
 Color.background = '#11121d'
-Colors.staline = {
+Color.staline = {
     i = "#A485DD",
 	n = "#7199EE",
 	c = "#95C561",
