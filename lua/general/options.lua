@@ -19,7 +19,7 @@ local options = {
     smartcase = true,
 
     -- PERFORMANCE
-    updatetime = 300,
+    updatetime = 50,
     timeoutlen = 100,
     laststatus= 2, -- Needed for staline
 
@@ -36,6 +36,7 @@ local options = {
     fillchars = {eob=' ', fold=' ', foldopen="", foldsep=" ", foldclose=""}, -- remove fillchars
 	-- list = true, -- Enables listchars
 	-- listchars = 'tab:▏ ', -- Changes tab indicator
+    colorcolumn = "80", -- Shows Colorcolumn at x chars
 
     -- EDITOR
     splitbelow = true, -- Toggle vertical splitting
@@ -44,7 +45,7 @@ local options = {
     tabstop = 4, -- Number of spaces that a <Tab> counts for
     shiftwidth = 4, -- Number of spaces while indenting
     softtabstop = 0, -- 0 = disabled
-    expandtab = false, -- Changes the appropriate number of spaces to a <Tab>
+    expandtab = true, -- Changes the appropriate number of spaces to a <Tab>
 
     smartindent = true, -- Auto-Indenting while starting a new line
     breakindent = true,
@@ -56,7 +57,7 @@ local options = {
     textwidth = 80,
     -- colorcolumn = '80',
 
-    scrolloff = 10,
+    scrolloff = 8, -- Cap at x Line Numbers in Scroll Direction
 }
 
 -- Loop to iterate over options
