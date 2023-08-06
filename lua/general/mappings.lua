@@ -47,6 +47,12 @@ map('v', '>', '>gv')
 map('x', 'K', ':move \'<-2<CR>gv-gv')
 map('x', 'J', ':move \'>+1<CR>gv-gv')
 
+--> MAKE SCRIPT FILE EXECUTABLE
+map('n', '<Leader>x', ':!chmod +x %<CR>', { silent = true })
+
+--> REPLACE All OCCURENCES OF A WORD (VSCode Equivalent: Ctrl + Shift + L)
+map('n', '<Leader>z', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
+
 --> EXPLORER
 map('n', '<Leader>e', ':NvimTreeToggle<CR>')
 
@@ -55,4 +61,3 @@ map('n', '<Leader>t', ':ToggleTerm<CR>')
 
 --> DASHBOARD
 map('n', '<Leader>;', ':lua MiniStarter.open()<CR>')
-
