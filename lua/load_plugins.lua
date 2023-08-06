@@ -19,9 +19,8 @@ local plugins = {
     --> UI, ICONS
     { 'echasnovski/mini.starter', version = '*' },
     { 'kyazdani42/nvim-tree.lua', dependencies = 'nvim-web-devicons', cmd = {'NvimTreeToggle'} }, --TODO: DO I NEED THIS?
-    'kyazdani42/nvim-web-devicons',
+	{ 'akinsho/nvim-bufferline.lua', dependencies = { 'kyazdani42/nvim-web-devicons' } },  --TODO: DO I NEED THIS? MB CHANGE TO HARPOON.
     'tamton-aquib/staline.nvim',
-	'akinsho/nvim-bufferline.lua',  --TODO: DO I NEED THIS? MB CHANGE TO HARPOON.
 
      --> THEMES
     { 'catppuccin/nvim', lazy = true },
@@ -64,8 +63,8 @@ local plugins = {
     { 'mfussenegger/nvim-dap', dependencies = {'Pocco81/DAPInstall.nvim'} },
 
     --> EDITOR
-    'windwp/nvim-autopairs',        --TODO: DO I NEED THIS?
-    'windwp/nvim-ts-autotag',       --TODO: DO I NEED THIS?
+    {'windwp/nvim-autopairs', event = 'InsertEnter'},        --TODO: DO I NEED THIS?
+    {'windwp/nvim-ts-autotag', ft = 'html' },       --TODO: DO I NEED THIS?
     'norcalli/nvim-colorizer.lua',  --TODO: DO I NEED THIS?
     'numToStr/Comment.nvim',
 
@@ -74,9 +73,9 @@ local plugins = {
 
     --> GENERAL
     'akinsho/nvim-toggleterm.lua',   --TODO: DO I NEED THIS?
-    'folke/which-key.nvim',
+    { 'folke/which-key.nvim', event = 'VeryLazy' },
     'aspeddro/tex.nvim',
-    { 'ellisonleao/glow.nvim', ft = 'markdown' },    --TODO: DO I NEED THIS? ALTERNATIVE MARKDOWN VIEWER?
+    { 'ellisonleao/glow.nvim', ft = 'markdown', config = true, cmd = 'Glow' },    --TODO: DO I NEED THIS? ALTERNATIVE MARKDOWN VIEWER?
 }
 
 --> CONFIG
