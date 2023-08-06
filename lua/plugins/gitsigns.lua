@@ -36,7 +36,7 @@ gitsigns.setup {
     max_file_length = 40000,
     preview_config = {
         -- Options passed to nvim_open_win
-        border = "single",
+        border = require"general.misc".border,
         style = "minimal",
         relative = "cursor",
         row = 0,

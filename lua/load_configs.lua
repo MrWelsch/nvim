@@ -2,6 +2,7 @@
 require 'lsp.handlers'
 require 'lsp.mason-lsp-config'
 require 'lsp.neodev'
+require 'lsp.lspsaga'
 
 require 'plugins.autopairs'
 require 'plugins.cmp'

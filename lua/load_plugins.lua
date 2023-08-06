@@ -34,7 +34,10 @@ local plugins = {
     { 'https://gitlab.com/__tpb/monokai-pro.nvim', lazy = true },
     
     --> SYNTAX HIGHLIGHTING
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'nvimdev/lspsaga.nvim', dependencies = {
+            { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+        }, event = 'LspAttach', 
+    },
     'wiliamks/nice-reference.nvim', --TODO: DO I NEED THIS?
     
     --> LINTER, COMPLETION & SNIPPETS
@@ -72,7 +75,7 @@ local plugins = {
     { 'lewis6991/gitsigns.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 
     --> GENERAL
-    'akinsho/nvim-toggleterm.lua',   --TODO: DO I NEED THIS?
+    -- 'akinsho/nvim-toggleterm.lua',   --TODO: DO I NEED THIS? REPLACED BY LSPSAGA
     { 'folke/which-key.nvim', event = 'VeryLazy' },
     'aspeddro/tex.nvim',
     { 'ellisonleao/glow.nvim', ft = 'markdown', config = true, cmd = 'Glow' },    --TODO: DO I NEED THIS? ALTERNATIVE MARKDOWN VIEWER?

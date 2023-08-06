@@ -138,7 +138,7 @@ cmp.setup {
     --     border = require"general.misc".border,
     -- },
     window = {
-        -- completion = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
 

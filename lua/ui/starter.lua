@@ -36,7 +36,7 @@ starter.setup({
         { action = "lua require('telescope.builtin').find_files(require('plugins.telescope').custom_theme)", name = "F:  Find File", section = "Telescope" },
         { action = "lua require('telescope.builtin').live_grep(require('plugins.telescope').custom_theme)", name = "T:  Find Text", section = "Telescope" },
         -- { action = "lua require('telescope.builtin').projects(require('plugins.telescope').custom_theme)", name = "P: Find Project", section = "Telescope" },
-		{ action = "Lazy sync", name = "U: 痢 Update Plugins", section = "Plugins" },
+		{ action = "Lazy update", name = "U: 痢 Update Plugins", section = "Plugins" },
 		{ action = "enew", name = "E:  New Buffer", section = "Builtin actions" },
 		{ action = ":e ~/.config/nvim/init.lua", name = "C:  Configuration", section = "Builtin actions" },
         { action = "qall!", name = "Q:  Quit", section = "Builtin actions" },

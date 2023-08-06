@@ -36,13 +36,13 @@ M.setup = function()
 
     vim.diagnostic.config(config) -- apply options
 
-    -- HANDLERS
+    -- HANDLERS (TODO: Borders not working? TEST CASE: gh (hover), default: 'rounded')
     vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = "single", --TODO: REFACTOR THIS INTO misc.lua
+        border = require"general.misc".border, 
     })
 
     vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = "single", --TODO: REFACTOR THIS INTO misc.lua
+        border = require"general.misc".border,
     })
 end
 

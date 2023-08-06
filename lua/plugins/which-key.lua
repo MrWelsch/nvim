@@ -50,15 +50,6 @@ local leader_opts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = false -- use `nowait` when creating keymaps
 }
--- CTRL TODO: NOT WORKING
--- local ctrl_opts = {
---     mode = "n", -- NORMAL mode
---     prefix = "ctrl",
---     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
---     silent = true, -- use `silent` when creating keymaps
---     noremap = true, -- use `noremap` when creating keymaps
---     nowait = false -- use `nowait` when creating keymaps
--- }
 -- G
 local g_opts = {
     mode = "n", -- NORMAL mode
@@ -76,6 +67,7 @@ local leader_mappings = {
     [";"] =                                                                                                                 " DASHBOARD",
     ["/"] =                                                                                                                 " COMMENT",
     ["e"] =                                                                                                                 "פּ EXPLORER",
+    ["o"] =                                                                                                                 " OUTLINE",
     ["h"] =                                                                                                                 "ײַ HORIZONTAL SPLIT",
     ["q"] =                                                                                                                 " QUIT",
     ["s"] =                                                                                                                 " SAVE",
@@ -88,7 +80,7 @@ local leader_mappings = {
     -- MENUS
     l = {
         name = "ﭧ LSP",
-        a = {"<cmd>:lua vim.lsp.buf.code_action()<cr>",                                                                     " CODE ACTIONS"},
+        a = {"<cmd>:Lspsaga code_action<cr>",                                                                               " CODE ACTIONS"},
         d = {"<cmd>lua require('telescope.builtin').diagnostics_buffnr=0(require('plugins.telescope').custom_theme)<cr>",   " DOCUMENT DIAGNOSTICS"},
         D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').custom_theme)<cr>",            " WORKSPACE DIAGNOSTICS"},
 		f = {"<cmd>FormatWrite<cr>",                                                                                        " FORMAT"},
@@ -117,7 +109,7 @@ local leader_mappings = {
         name = "漣CONFIG",
         p = {"<cmd>Lazy profile<cr>",                                                                                       " PROFILE"},
         s = {"<cmd>Lazy sync<cr>",                                                                                          "痢 SYNC"},
-        s = {"<cmd>Mason<cr>",                                                                                              "ﭧ MASON"},    
+        m = {"<cmd>Mason<cr>",                                                                                              "ﭧ MASON"},    
         t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope').custom_theme)<cr>",            " THEME"},
     },
     g = {
@@ -137,29 +129,18 @@ local leader_mappings = {
         s = {"<cmd>lua require'dap'.repl.open()<cr>",                                                                       " INSPECT STATE"},
     },
 }
--- CTRL TODO: NOT WORKING
--- local ctrl_mappings = {
---     -- STANDARD MAPPINGS
---     ["h"] =                                                                                                                 " FOCUS LEFT",
---     ["j"] =                                                                                                                 " FOCUS BELOW",
---     ["k"] =                                                                                                                 " FOCUS ABOVE",
---     ["l"] =                                                                                                                 " FOCUS RIGHT",
---     ["n"] =                                                                                                                 "❯ NEXT DIAGNOSTIC",
---     ["z"] =                                                                                                                 "❮ PREV DIAGNOSTIC",
--- }
 -- G
 local g_mappings = {
     -- STANDARD MAPPINGS
-    ["d"] =                                                                                                                 " DEFINITION",
-    ["t"] =                                                                                                                 " TYPE DEFINITION",
-    ["D"] =                                                                                                                 " DECLARATION",
-    ["r"] =                                                                                                                 " REFERENCE",
-    ["l"] =                                                                                                                 " LINE DIAGNOSTICS",
-    ["i"] =                                                                                                                 " IMPLEMENTATION",
-    ["h"] =                                                                                                                 " HOVER",
+    ["d"] =                                                                                                                 "Go to definition",
+    ["t"] =                                                                                                                 "Go to type definition",
+    ["D"] =                                                                                                                 "Go to declaration",
+    ["r"] =                                                                                                                 "Show references",
+    ["l"] =                                                                                                                 "Start line diagnostics",
+    ["i"] =                                                                                                                 "Go to Implementation",
+    ["h"] =                                                                                                                 "Hover",
 }
 --> APPLY MAPPINGS AND OPTIONS
 local wk = require("which-key")
 wk.register(leader_mappings, leader_opts)
--- wk.register(ctrl_mappings, ctrl_opts)
 wk.register(g_mappings, g_opts)
