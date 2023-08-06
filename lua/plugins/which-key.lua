@@ -139,6 +139,7 @@ local g_mappings = {
     ["l"] =                                                                                                                 "Start line diagnostics",
     ["i"] =                                                                                                                 "Go to Implementation",
     ["h"] =                                                                                                                 "Hover",
+    ["f"] =                                                                                                                 "Go to References | Implementation",
 }
 --> APPLY MAPPINGS AND OPTIONS
 local wk = require("which-key")
