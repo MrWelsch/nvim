@@ -93,9 +93,8 @@ local mappings = {
     },
     c = {
         name = "漣CONFIG",
-        c = {"<cmd>PackerCompile<cr>",                                                                                      " COMPILE"},
-        p = {"<cmd>PackerProfile<cr>",                                                                                      " PROFILE"},
-        s = {"<cmd>PackerSync<cr>",                                                                                         "痢 SYNC"},    
+        p = {"<cmd>Lazy profile<cr>",                                                                                       " PROFILE"},
+        s = {"<cmd>Lazy sync<cr>",                                                                                          "痢 SYNC"},    
         t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope').custom_theme)<cr>",            " THEME"},
     },
     g = {
