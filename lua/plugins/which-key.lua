@@ -41,7 +41,8 @@ key.setup {
 }
 
 --> OPTIONS APPLIED TO EACH MAPPING
-local opts = {
+-- LEADER
+local leader_opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -49,19 +50,40 @@ local opts = {
     noremap = true, -- use `noremap` when creating keymaps
     nowait = false -- use `nowait` when creating keymaps
 }
+-- CTRL TODO: NOT WORKING
+-- local ctrl_opts = {
+--     mode = "n", -- NORMAL mode
+--     prefix = "ctrl",
+--     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+--     silent = true, -- use `silent` when creating keymaps
+--     noremap = true, -- use `noremap` when creating keymaps
+--     nowait = false -- use `nowait` when creating keymaps
+-- }
+-- G
+local g_opts = {
+    mode = "n", -- NORMAL mode
+    prefix = "g",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = false -- use `nowait` when creating keymaps
+}
 
---> SET MAPPINGS
-local mappings = {
+--> SET MAPPINGS (Icons: https://www.nerdfonts.com/cheat-sheet)
+-- LEADER
+local leader_mappings = {
     -- STANDARD MAPPINGS
     [";"] =                                                                                                                 " DASHBOARD",
     ["/"] =                                                                                                                 " COMMENT",
     ["e"] =                                                                                                                 "פּ EXPLORER",
     ["h"] =                                                                                                                 "ײַ HORIZONTAL SPLIT",
     ["q"] =                                                                                                                 " QUIT",
-    ["s"] =                                                                                                                 " SAVE",
+    ["s"] =                                                                                                                 " SAVE",
+    ["z"] =                                                                                                                 " REPLACE",
+    ["x"] =                                                                                                                 " MAKE EXECUTABLE",
     ["t"] =                                                                                                                 " TERMINAL",
     ["v"] =                                                                                                                 "ﬠ VERTICAL SPLIT",
-    ["r"] =                                                                                                                 "📝 RENAME BUFFER",
+    ["r"] =                                                                                                                 " RENAME BUFFER",
     ["w"] =                                                                                                                 " CLOSE BUFFER",
     -- MENUS
     l = {
@@ -94,7 +116,8 @@ local mappings = {
     c = {
         name = "漣CONFIG",
         p = {"<cmd>Lazy profile<cr>",                                                                                       " PROFILE"},
-        s = {"<cmd>Lazy sync<cr>",                                                                                          "痢 SYNC"},    
+        s = {"<cmd>Lazy sync<cr>",                                                                                          "痢 SYNC"},
+        s = {"<cmd>Mason<cr>",                                                                                              "ﭧ MASON"},    
         t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope').custom_theme)<cr>",            " THEME"},
     },
     g = {
@@ -114,7 +137,29 @@ local mappings = {
         s = {"<cmd>lua require'dap'.repl.open()<cr>",                                                                       " INSPECT STATE"},
     },
 }
-
+-- CTRL TODO: NOT WORKING
+-- local ctrl_mappings = {
+--     -- STANDARD MAPPINGS
+--     ["h"] =                                                                                                                 " FOCUS LEFT",
+--     ["j"] =                                                                                                                 " FOCUS BELOW",
+--     ["k"] =                                                                                                                 " FOCUS ABOVE",
+--     ["l"] =                                                                                                                 " FOCUS RIGHT",
+--     ["n"] =                                                                                                                 "❯ NEXT DIAGNOSTIC",
+--     ["z"] =                                                                                                                 "❮ PREV DIAGNOSTIC",
+-- }
+-- G
+local g_mappings = {
+    -- STANDARD MAPPINGS
+    ["d"] =                                                                                                                 " DEFINITION",
+    ["t"] =                                                                                                                 " TYPE DEFINITION",
+    ["D"] =                                                                                                                 " DECLARATION",
+    ["r"] =                                                                                                                 " REFERENCE",
+    ["l"] =                                                                                                                 " LINE DIAGNOSTICS",
+    ["i"] =                                                                                                                 " IMPLEMENTATION",
+    ["h"] =                                                                                                                 " HOVER",
+}
 --> APPLY MAPPINGS AND OPTIONS
 local wk = require("which-key")
-wk.register(mappings, opts)
+wk.register(leader_mappings, leader_opts)
+-- wk.register(ctrl_mappings, ctrl_opts)
+wk.register(g_mappings, g_opts)
