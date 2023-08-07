@@ -61,6 +61,7 @@ local plugins = {
     
     --> DEBUGGING
     { 'mfussenegger/nvim-dap', dependencies = {'Pocco81/DAPInstall.nvim'} },
+    -- 'folke/trouble.nvim', --TODO: CHECK IF NEEDED OR NOT (QUICKFIX)
 
     --> EDITOR
     {'windwp/nvim-autopairs', event = 'InsertEnter'},        --TODO: DO I NEED THIS?

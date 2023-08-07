@@ -36,6 +36,7 @@ map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
 map('n', 'gl', ':lua vim.diagnostic.open_float()<CR>')
 map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')
 map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
+map('n', 'ge', ':cope<CR>') -- TODO: QuickFix opens an empty buffer instead of showing errors
 map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
 map('n', '<C-z>', ':lua vim.diagnostic.goto_prev()<CR>')
 
