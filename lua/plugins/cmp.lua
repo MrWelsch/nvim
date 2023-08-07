@@ -140,6 +140,10 @@ cmp.setup {
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
+        winhighlight = 'Normal:Pmenu'
+        -- TODO: Not Working? How to make CmpPmenu transparent
+        -- winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+        -- winhighlight = 'NormalFloat:TelescopeNormal,FloatBorder:TelescopeBorder',
     },
 
     --> EXPERIMENTAL FEATURES
@@ -147,4 +151,16 @@ cmp.setup {
         ghost_text = false,
         native_menu = false,
     },
+
+    --> SET UP LSP CONFIG | TODO: Look into / Compare handler.lua.bak
+    -- local cmp_lsp_status_ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
+    -- if not cmp_lsp_status_ok then
+    --     return
+    -- end
+
+    -- local capabilities = cmp_lsp.default_capabilities()
+    -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+    -- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+    --     capabilities = capabilities
+    -- }
 }

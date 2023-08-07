@@ -19,12 +19,14 @@ function setColors(name, color)
     cmd("colorscheme"..(' ')..(name))
     cmd("hi BufferLineFill ctermbg="..("NONE"))
     cmd("hi NvimTreeNormal ctermbg="..("NONE"))
-    cmd("hi FloatBorder guibg="..("NONE"))
+    -- cmd("hi FloatBorder guibg="..("NONE")) -- Disabled cmp borders
     --> TODO: SEE IF CLAUSE BELOW
     cmd("hi BufferLineFill guibg="..("NONE"))
     cmd("hi NvimTreeNormal guibg="..("NONE")) 
-    cmd("hi NormalFloat guibg="..("NONE"))
-    cmd("hi WhichKeyFloat guibg="..("NONE")) 
+    cmd("hi NormalFloat guibg="..("NONE"))-- Doesn't affect cmp??
+    cmd("hi WhichKeyFloat guibg="..("NONE"))
+    -- TODO: Not Working.
+    -- cmd("hi CmpPmenu guibg="..("#111111"))
     if(color ~= nil) then
         cmd("hi StatusLine guibg="..(color))
         cmd("hi Staline guibg="..(color))
@@ -33,6 +35,16 @@ function setColors(name, color)
         -- cmd("hi NvimTreeNormal guibg="..(color)) 
         -- cmd("hi NormalFloat guibg="..(color))
         -- cmd("hi WhichKeyFloat guibg="..(color)) 
+    end
+    if(name == 'gruvbox-flat') then
+        local border = '#f2e5bc'
+        cmd("hi TelescopePromptNormal guibg="..("NONE"))
+        cmd("hi TelescopePromptBorder guibg="..("NONE"))
+        cmd("hi TelescopePromptPrefix guibg="..("NONE"))
+        cmd("hi TelescopePromptBorder guifg="..(border))
+        cmd("hi TelescopePreviewBorder guifg="..(border))
+        -- cmd("hi TelescopeResultsBorder guifg="..(border))
+        cmd("hi CmpPmenu guibg="..("#111111"))
     end
 end
 
