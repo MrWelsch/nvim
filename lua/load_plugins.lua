@@ -34,11 +34,8 @@ local plugins = {
     { 'https://gitlab.com/__tpb/monokai-pro.nvim', lazy = true },
     
     --> SYNTAX HIGHLIGHTING
-    { 'nvimdev/lspsaga.nvim', dependencies = {
-            { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-        }, event = 'LspAttach', 
-    },
-    'wiliamks/nice-reference.nvim', --TODO: DO I NEED THIS?
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    -- 'wiliamks/nice-reference.nvim', --TODO: DO I NEED THIS?
     
     --> LINTER, COMPLETION & SNIPPETS
     'williamboman/mason.nvim',

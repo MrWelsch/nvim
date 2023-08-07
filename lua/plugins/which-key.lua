@@ -80,7 +80,7 @@ local leader_mappings = {
     -- MENUS
     l = {
         name = "ﭧ LSP",
-        a = {"<cmd>:Lspsaga code_action<cr>",                                                                               " CODE ACTIONS"},
+        a = {"<cmd>lua require('telescope.builtin').code_action(require('plugins.telescope').custom_theme)<cr>",            " CODE ACTIONS"},
         d = {"<cmd>lua require('telescope.builtin').diagnostics_buffnr=0(require('plugins.telescope').custom_theme)<cr>",   " DOCUMENT DIAGNOSTICS"},
         D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').custom_theme)<cr>",            " WORKSPACE DIAGNOSTICS"},
 		f = {"<cmd>FormatWrite<cr>",                                                                                        " FORMAT"},

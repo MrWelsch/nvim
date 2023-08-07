@@ -1,8 +1,7 @@
 --> DEFINE LOCATIONS OF PLUGIN CONFIGS
-require 'lsp.handlers'
+-- require 'lsp.handlers' --> TODO: CHECK IF NEEDED.
 require 'lsp.mason-lsp-config'
 require 'lsp.neodev'
-require 'lsp.lspsaga'
 
 require 'plugins.autopairs'
 require 'plugins.cmp'
