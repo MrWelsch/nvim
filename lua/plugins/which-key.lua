@@ -67,7 +67,6 @@ local leader_mappings = {
     [";"] =                                                                                                                 " DASHBOARD",
     ["/"] =                                                                                                                 " COMMENT",
     ["e"] =                                                                                                                 "פּ EXPLORER",
-    ["o"] =                                                                                                                 " OUTLINE",
     ["h"] =                                                                                                                 "ײַ HORIZONTAL SPLIT",
     ["q"] =                                                                                                                 " QUIT",
     ["s"] =                                                                                                                 " SAVE",

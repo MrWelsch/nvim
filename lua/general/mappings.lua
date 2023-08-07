@@ -55,10 +55,9 @@ map('n', '<Leader>z', ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 --> EXPLORER
 map('n', '<Leader>e', ':NvimTreeToggle<CR>')
-map('n', '<Leader>o', ':Lspsaga outline<CR>')
 
 --> TERMINAL
-map('n', '<Leader>t', ':Lspsaga term_toggle<CR>')
+map('n', '<Leader>t', ':ToggleTerm<CR>')
 
 --> DASHBOARD
 map('n', '<Leader>;', ':lua MiniStarter.open()<CR>')

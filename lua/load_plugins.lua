@@ -72,7 +72,7 @@ local plugins = {
     { 'lewis6991/gitsigns.nvim', dependencies = 'nvim-lua/plenary.nvim' },
 
     --> GENERAL
-    -- 'akinsho/nvim-toggleterm.lua',   --TODO: DO I NEED THIS? REPLACED BY LSPSAGA
+    'akinsho/nvim-toggleterm.lua',   --TODO: DO I NEED THIS?
     { 'folke/which-key.nvim', event = 'VeryLazy' },
     'aspeddro/tex.nvim',
     { 'ellisonleao/glow.nvim', ft = 'markdown', config = true, cmd = 'Glow' },    --TODO: DO I NEED THIS? ALTERNATIVE MARKDOWN VIEWER?
