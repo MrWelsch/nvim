@@ -29,5 +29,11 @@ staline.setup {
         i = " ",
         c = " ",
         v = " "
-    }
+    },
+    lsp_symbols = {
+        Error=" ",
+        Info=" ",
+        Warn=" ",
+        Hint=" ",
+    },
 }

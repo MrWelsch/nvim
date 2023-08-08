@@ -79,9 +79,8 @@ local leader_mappings = {
     -- MENUS
     l = {
         name = "ﭧ LSP",
-        a = {"<cmd>lua require('telescope.builtin').code_action(require('plugins.telescope').custom_theme)<cr>",            " CODE ACTIONS"},
-        d = {"<cmd>lua require('telescope.builtin').diagnostics_buffnr=0(require('plugins.telescope').custom_theme)<cr>",   " DOCUMENT DIAGNOSTICS"},
-        D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').custom_theme)<cr>",            " WORKSPACE DIAGNOSTICS"},
+        d = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').document)<cr>",                " DOCUMENT DIAGNOSTICS"},
+        D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
 		f = {"<cmd>FormatWrite<cr>",                                                                                        " FORMAT"},
         i = {"<cmd>LspInfo<cr>",                                                                                            " INFO"},
         m = {
@@ -90,31 +89,29 @@ local leader_mappings = {
             l = {"<cmd>TexViewer<cr>",                                                                                      " LATEX PREVIEW"},
             p = {"<cmd>Glow<cr>",                                                                                           " MARKDOWN PREVIEW"},
         },
-        -- QUICKFIX NOT YET WORKING                                                                                    
-        q = {"<cmd>lua require('telescope.builtin').quickfix(require('plugins.telescope').custom_theme)<cr>",               " Quickfix"},
-        x = {"<cmd>cclose<cr>",                                                                                             " Close Quickfix"},
     },
     f = {
         name = " FIND",
-        f = {"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope').custom_theme)<cr>",             " FILE"},
-        m = {"<cmd>lua require('telescope.builtin').marks(require('plugins.telescope').custom_theme)<cr>",                  " MARKS"},
-        M = {"<cmd>lua require('telescope.builtin').man_pages(require('plugins.telescope').custom_theme)<cr>",              " MAN PAGES"},
-        p = {"<cmd>lua require('telescope.builtin').projects(require('plugins.telescope').custom_theme)<cr>",               " PROJECTS"},
-        r = {"<cmd>lua require('telescope.builtin').oldfiles(require('plugins.telescope').custom_theme)<cr>",               " RECENT FILES"},
-        R = {"<cmd>lua require('telescope.builtin').registers(require('plugins.telescope').custom_theme)<cr>",              " REGISTERS"},
-        t = {"<cmd>lua require('telescope.builtin').live_grep(require('plugins.telescope').custom_theme)<cr>",              " TEXT"},
+        f = {"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope'))<cr>",                          " FILE"},
+        m = {"<cmd>lua require('telescope.builtin').marks(require('plugins.telescope'))<cr>",                               " MARKS"},
+        M = {"<cmd>lua require('telescope.builtin').man_pages(require('plugins.telescope'))<cr>",                           " MAN PAGES"},
+        p = {"<cmd>lua require('telescope.builtin').projects(require('plugins.telescope'))<cr>",                            " PROJECTS"},
+        r = {"<cmd>lua require('telescope.builtin').oldfiles(require('plugins.telescope'))<cr>",                            " RECENT FILES"},
+        R = {"<cmd>lua require('telescope.builtin').registers(require('plugins.telescope'))<cr>",                           " REGISTERS"},
+        t = {"<cmd>lua require('telescope.builtin').live_grep(require('plugins.telescope'))<cr>",                           " TEXT"},
+        d = {"<cmd>:TodoTelescope<cr>",                                                                                     " TODO"}
     },
     c = {
         name = "漣CONFIG",
         p = {"<cmd>Lazy profile<cr>",                                                                                       " PROFILE"},
         s = {"<cmd>Lazy sync<cr>",                                                                                          "痢 SYNC"},
         m = {"<cmd>Mason<cr>",                                                                                              "ﭧ MASON"},    
-        t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope').custom_theme)<cr>",            " THEME"},
+        t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope'))<cr>",                         " THEME"},
     },
     g = {
         name = " GIT",
         -- BRANCHES ONLY WORK INSIDE GIT REP (Maybe catch exception?) 
-        b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope').custom_theme)<cr>",           " BRANCHES"},
+        b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope'))<cr>",                        " BRANCHES"},
         l = {"<cmd>lua_lazygit_toggle()<cr>",                                                                               " LAZYGIT"},    
     },
     d = {
@@ -131,6 +128,7 @@ local leader_mappings = {
 -- G
 local g_mappings = {
     -- STANDARD MAPPINGS
+    ["a"] =                                                                                                                 "Code Action",
     ["d"] =                                                                                                                 "Go to definition",
     ["t"] =                                                                                                                 "Go to type definition",
     ["D"] =                                                                                                                 "Go to declaration",

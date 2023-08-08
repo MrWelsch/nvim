@@ -35,7 +35,6 @@ local plugins = {
     
     --> SYNTAX HIGHLIGHTING
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-    -- 'wiliamks/nice-reference.nvim', --TODO: DO I NEED THIS?
     
     --> LINTER, COMPLETION & SNIPPETS
     'williamboman/mason.nvim',
@@ -60,8 +59,8 @@ local plugins = {
     'ahmedkhalf/project.nvim',      --TODO: DO I NEED THIS?
     
     --> DEBUGGING
-    { 'mfussenegger/nvim-dap', dependencies = {'Pocco81/DAPInstall.nvim'} },
-    -- 'folke/trouble.nvim', --TODO: CHECK IF NEEDED OR NOT (QUICKFIX)
+    {'mfussenegger/nvim-dap', dependencies = {'Pocco81/DAPInstall.nvim'} },
+    {'folke/todo-comments.nvim', dependencies = {'nvim-lua/plenary.nvim'} },
 
     --> EDITOR
     {'windwp/nvim-autopairs', event = 'InsertEnter'},        --TODO: DO I NEED THIS?
@@ -85,7 +84,7 @@ local opts = {
         lazy = true, -- should plugins be lazy-loaded?
     },
     ui = {
-        border = require"general.misc".border,
+        border = require'general.misc'.border,
     },
 }
 

@@ -23,21 +23,14 @@ bufferline.setup{
 		max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
 		tab_size = 30,
 		diagnostics = 'nvim_lsp',
-		diagnostics_indicator = function(_, _, diagnostics_dict, _)
-			local s = ' '
-			for e, n in pairs(diagnostics_dict) do
-				local sym = e == 'error' and ' '
-					or (e == 'warning' and ' ' or ' ') -- TODO: FIX CLIPPING
-				s = s .. n .. sym
-			end
-			return s
-		end,
-		-- NOTE: this will be called a lot so don't do any heavy processing here
-		custom_filter = function(buf_number)
-			if vim.bo[buf_number].filetype ~= 'dashboard' then
-				return true
-			end
-		end,
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local icon = level:match("error") and " " or " "
+                if context.buffer:current() then
+                    return ''
+                end
+            
+                return " " .. icon .. count 
+        end,
 		offsets = {
 			{
 				filetype = 'NvimTree',
@@ -64,37 +57,44 @@ bufferline.setup{
 		enforce_regular_tabs = true,
 		always_show_bufferline = false,
 		sort_by = 'directory',
-		custom_areas = {
-			right = function()
-				local result = {}
-				local error = vim.lsp.diagnostic.get_count(0, [[Error]])
-				local warning =
-					vim.lsp.diagnostic.get_count(0, [[Warning]])
-				local info =
-					vim.lsp.diagnostic.get_count(0, [[Information]])
-				local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
+        --> TODO: CHECK IF ANY OF THIS IS STILL NEEDED
+		-- custom_areas = {
+		-- 	right = function()
+		-- 		local result = {}
+		-- 		local error = vim.lsp.diagnostic.get_count(0, [[Error]])
+		-- 		local warning =
+		-- 			vim.lsp.diagnostic.get_count(0, [[Warning]])
+		-- 		local info =
+		-- 			vim.lsp.diagnostic.get_count(0, [[Information]])
+		-- 		local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
 
-				if error ~= 0 then
-					result[1] =
-						{ text = '  ' .. error, fg = '#ff6c6b' }
-				end
+		-- 		if error ~= 0 then
+		-- 			result[1] =
+		-- 				{ text = '  ' .. error, fg = '#ff6c6b' }
+		-- 		end
 
-				if warning ~= 0 then
-					result[2] =
-						{ text = '  ' .. warning, fg = '#ECBE7B' }
-				end
+		-- 		if warning ~= 0 then
+		-- 			result[2] =
+		-- 				{ text = '  ' .. warning, fg = '#ECBE7B' }
+		-- 		end
 
-				if hint ~= 0 then
-					result[3] =
-						{ text = '  ' .. hint, fg = '#98be65' }
-				end
+		-- 		if hint ~= 0 then
+		-- 			result[3] =
+		-- 				{ text = '  ' .. hint, fg = '#98be65' }
+		-- 		end
 
-				if info ~= 0 then
-					result[4] =
-						{ text = '  ' .. info, fg = '#51afef' }
-				end
-				return result
-			end,
-		},
+		-- 		if info ~= 0 then
+		-- 			result[4] =
+		-- 				{ text = '  ' .. info, fg = '#51afef' }
+		-- 		end
+		-- 		return result
+		-- 	end,
+		-- },
+        -- -- NOTE: this will be called a lot so don't do any heavy processing here
+		-- custom_filter = function(buf_number)
+		-- 	if vim.bo[buf_number].filetype ~= 'dashboard' then
+		-- 		return true
+		-- 	end
+		-- end,
 	},
 }

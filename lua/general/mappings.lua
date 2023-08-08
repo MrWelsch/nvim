@@ -29,6 +29,7 @@ map('n', '<leader>h', ':hs<CR>') -- horizontal split
 -- LSP
 map('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 --
+map('n', 'ga', ':lua vim.lsp.buf.code_action()<CR>')
 map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 map('n', 'gt', ':lua vim.lsp.buf.type_definition()<CR>')
 map('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
@@ -36,7 +37,6 @@ map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
 map('n', 'gl', ':lua vim.diagnostic.open_float()<CR>')
 map('n', 'gi', ':lua vim.lsp.buf.implementation()<CR>')
 map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
-map('n', 'ge', ':cope<CR>') -- TODO: QuickFix opens an empty buffer instead of showing errors
 map('n', '<C-n>', ':lua vim.diagnostic.goto_next()<CR>')
 map('n', '<C-z>', ':lua vim.diagnostic.goto_prev()<CR>')
 

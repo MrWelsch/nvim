@@ -31,10 +31,10 @@ tree.setup {
     diagnostics = {
         enable = true,
         icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
+        hint = "",
+        info = "",
+        warning = "",
+        error = "",
         }
     },
     update_focused_file = {

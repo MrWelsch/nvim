@@ -15,7 +15,7 @@ require 'plugins.tex'
 require 'plugins.toggleterm'
 require 'plugins.treesitter'
 require 'plugins.which-key'
--- require 'plugins.trouble'
+require 'plugins.todo'
 
 require 'ui.bufferline'
 require 'ui.staline'
