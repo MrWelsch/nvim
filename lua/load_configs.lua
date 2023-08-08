@@ -1,5 +1,5 @@
 --> DEFINE LOCATIONS OF PLUGIN CONFIGS
--- require 'lsp.handlers' --> TODO: CHECK IF NEEDED.
+require 'lsp.lsp_config'
 require 'lsp.mason-lsp-config'
 require 'lsp.neodev'
 

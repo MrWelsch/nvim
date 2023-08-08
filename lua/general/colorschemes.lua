@@ -44,6 +44,7 @@ function setColors(name, color)
         cmd("hi TelescopePromptBorder guifg="..(border))
         cmd("hi TelescopePreviewBorder guifg="..(border))
         cmd("hi TelescopeResultsBorder guifg="..(border))
+        cmd("hi LspInfoBorder guifg="..(border))
         cmd("hi StatusLine guibg="..('#111111'))
         cmd("hi StatusLine guifg="..('#111111'))
     end
