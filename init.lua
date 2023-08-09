@@ -7,4 +7,4 @@ require('general.mappings')
 require('load_plugins')
 
 --> SET COLORSCHEME
-require('general.colorschemes').gruvbox(false)
+require('plugins.colorschemes.init').gruvbox(false)

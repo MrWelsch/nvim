@@ -73,68 +73,68 @@ end
 
 -- TODO: GENERALIZE BELOW FUNCTIONS AND MAKE 1 GENERIC FUNTION THAT GETS AN ARRAY AS INPUT
 function Theme.tokyonight(transparent)
-    require('general.colors.tokyonight')
+    require('plugins.colorschemes.tokyonight')
 
-    local COLORS = require"general.colors.tokyonight"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.tokyonight"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     cmd("hi FloatBorder guibg="..(COLORS))
     setColors('tokyonight', COLORS, HIGHLIGHTS)
 end
 
 function Theme.tokyodark(transparent)
-	require('general.colors.tokyodark')
+	require('plugins.colorschemes.tokyodark')
 
-    local COLORS = require"general.colors.tokyodark"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.tokyodark"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
 	cmd("hi Normal guibg="..(transparent and "none" or COLORS))
     setColors('tokyodark', COLORS, HIGHLIGHTS)
 end
 
 function Theme.nord(transparent)
-    require('general.colors.nord')
+    require('plugins.colorschemes.nord')
 
-    local COLORS = require"general.colors.nord"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.nord"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('nord', COLORS, HIGHLIGHTS)
 end
 
 function Theme.gruvbox(transparent)
-    require('general.colors.gruvbox')
+    require('plugins.colorschemes.gruvbox')
 
-    local COLORS = require"general.colors.gruvbox"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.gruvbox"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('gruvbox-flat', COLORS, HIGHLIGHTS)
 end
 
 function Theme.everforest(transparent)
-    require('general.colors.everforest')
+    require('plugins.colorschemes.everforest')
 
-    local COLORS = require"general.colors.everforest"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.everforest"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('everforest', COLORS, HIGHLIGHTS)
 end
 
 function Theme.rosepine(transparent)
-    require('general.colors.rosepine')
+    require('plugins.colorschemes.rosepine')
 
-    local COLORS = require"general.colors.rosepine"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.rosepine"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('rose-pine', COLORS)
 end
 
 function Theme.monokaipro(transparent)
-    require('general.colors.monokaipro')
+    require('plugins.colorschemes.monokaipro')
 
-    local COLORS = require"general.colors.monokaipro"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.monokaipro"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('monokaipro', COLORS, HIGHLIGHTS)
 end
 
 function Theme.draculapro(transparent)
-    require('general.colors.draculapro')
+    require('plugins.colorschemes.draculapro')
 
-    local COLORS = require"general.colors.draculapro"
-    local HIGHLIGHTS = require"general.colors.highlights"
+    local COLORS = require"plugins.colorschemes.draculapro"
+    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
     setColors('dracula_pro', COLORS, HIGHLIGHTS)
 end
 

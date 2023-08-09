@@ -3,13 +3,6 @@ if not status_ok then
     return
 end
 
-local sl_everforest = {
-    i = "#7FBBB3",
-	n = "#83C092",
-	c = "#E69875",
-	v = "#DBBC7F",
-}
-
 staline.setup {
 	sections = {
 		left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
@@ -21,8 +14,7 @@ staline.setup {
 		mid = {'file_name'},
 		right = {}
 	},
-    -- mode_colors = sl_everforest,
-	mode_colors = require"general.colors.gruvbox".staline, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
+	mode_colors = require"plugins.colorschemes.gruvbox".staline, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
 	defaults = {
 		true_colors = true,
 		line_column = " [%l/%L] :%c  ",
