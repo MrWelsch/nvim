@@ -97,7 +97,7 @@ mason_dap.setup({
 	--   - true: All adapters set up via dap are automatically installed.
 	--   - { exclude: string[] }: All adapters set up via mason-nvim-dap, except the ones provided in the list, are automatically installed.
 	--       Example: automatic_installation = { exclude = { "python", "delve" } }
-    automatic_installation = false,
+    automatic_installation = true,
 
     -- Sets up dap in the predefined manner
     handlers = {

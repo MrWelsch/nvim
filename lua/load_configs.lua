@@ -19,6 +19,6 @@ require 'plugins.whichkey'
 require 'plugins.todo'
 
 require 'ui.bufferline'
-require 'ui.staline'
+-- require 'ui.staline'
 require 'ui.nvim-tree'
 require 'ui.starter'

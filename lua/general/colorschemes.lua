@@ -16,7 +16,7 @@ local themes = {
 
 -- Function to prevent redundant code for each theme
 function setColors(name, color)
-    cmd("colorscheme"..(' ')..(name))
+    cmd("colorscheme "..(name))
     cmd("hi BufferLineFill ctermbg="..("NONE"))
     cmd("hi NvimTreeNormal ctermbg="..("NONE"))
     -- cmd("hi FloatBorder guibg="..("NONE")) -- Disabled cmp borders
@@ -45,9 +45,46 @@ function setColors(name, color)
         cmd("hi TelescopePreviewBorder guifg="..(border))
         cmd("hi TelescopeResultsBorder guifg="..(border))
         cmd("hi LspInfoBorder guifg="..(border))
-        cmd("hi DapUIFloatBorder guifg="..(border)) -- not working
-        cmd("hi StatusLine guibg="..('#111111'))
-        cmd("hi StatusLine guifg="..('#111111'))
+        cmd("hi DapUIFloatBorder guifg="..(border))
+
+        -- Why is nothing working??
+        -- cmd("hi DapUIValue guifg="..(border))
+        -- cmd("hi DapUIFrameName guifg="..(border))
+        -- cmd("hi DapUIVariable guifg="..(border))
+        -- cmd("hi DapUICurrentFrame guifg="..(border))
+        -- cmd("hi DapUINormal guifg="..(border))
+        -- cmd("hi DapUIThread guifg="..(border))
+        -- cmd("hi DapUIDecoration guifg="..(border))
+        -- cmd("hi DapUIValue guifg="..(border))
+        -- cmd("hi DapUIType guifg="..(border))
+        -- cmd("hi DapUIScope guifg="..(border))
+        -- cmd("hi DapUISource guifg="..(border))
+        -- cmd("hi DapUIUnavailable guifg="..(border))
+        -- cmd("hi DapUINormalNC guifg="..(border))
+        -- cmd("hi DapUIUnavailableNC guifg="..(border))
+        -- cmd("hi DapUIEndofBuffer guifg="..(border))
+        cmd("hi DapUIModifiedValue guifg="..(border))
+        cmd("hi DapUIStoppedThread guifg="..(border))
+        cmd("hi DapUILineNumber guifg="..(border))
+        cmd("hi DapUIFloatNormal guifg="..(border))
+        cmd("hi DapUIWatchesEmpty guifg="..(border))
+        cmd("hi DapUIWatchesValue guifg="..(border))
+        cmd("hi DapUIWatchesError guifg="..(border))
+        cmd("hi DapUIBreakpointsPath guifg="..(border))
+        cmd("hi DapUIBreakpointsInfo guifg="..(border))
+        cmd("hi DapUIBreakpointsLine guifg="..(border))
+        cmd("hi DapUIBreakpointsDisabledLine guifg="..(border))
+        cmd("hi DapUICurrentFrameName guifg="..(border))
+        cmd("hi DapUIWinSelect guifg="..(border))
+        cmd("hi DapUIPlayPauseNC guifg="..(border))
+        cmd("hi DapUIRestartNC guifg="..(border))
+        cmd("hi DapUIStopNC guifg="..(border))
+
+        cmd("hi StatusLine guibg="..(color))
+        cmd("hi StatusLine guifg="..('#ffffff'))
+        cmd("hi StatusLineNC guibg="..(color)) -- this removes bar between nvimtree and staline
+        cmd("hi StatusLineNC guifg="..('#ffffff'))
+        cmd("hi Staline guibg="..(color))
     end
 end
 

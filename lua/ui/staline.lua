@@ -22,7 +22,10 @@ staline.setup {
 		true_colors = true,
 		line_column = " [%l/%L] :%c  ",
 		branch_symbol = " ",
-        bg = 'none'
+        bg = 'none',
+        -- Needed to see buffer descriptions in dapui NOT WORKING
+        inactive_bg = '#f2e5bc',
+        inactive_fg = '#f2e5bc',
 	},
     mode_icons = {
         n = " ",
