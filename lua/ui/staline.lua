@@ -13,8 +13,13 @@ local sl_everforest = {
 staline.setup {
 	sections = {
 		left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
-		mid = {},
-		right = {'file_name', 'line_column' }
+		mid = {'file_name'},
+		right = {'line_column' }
+	},
+    inactive_sections = {
+		left = {},
+		mid = {'file_name'},
+		right = {}
 	},
     -- mode_colors = sl_everforest,
 	mode_colors = require"general.colors.gruvbox".staline, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
@@ -23,9 +28,8 @@ staline.setup {
 		line_column = " [%l/%L] :%c  ",
 		branch_symbol = " ",
         bg = 'none',
-        -- Needed to see buffer descriptions in dapui NOT WORKING
-        inactive_bg = '#f2e5bc',
-        inactive_fg = '#f2e5bc',
+        -- Needed to see buffer descriptions in dapui
+        inactive_color  = "#f2e5bc",
 	},
     mode_icons = {
         n = " ",

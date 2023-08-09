@@ -15,77 +15,50 @@ local themes = {
 }
 
 -- Function to prevent redundant code for each theme
-function setColors(name, color)
+function setColors(name, colors, highlights)
     cmd("colorscheme "..(name))
-    cmd("hi BufferLineFill ctermbg="..("NONE"))
-    cmd("hi NvimTreeNormal ctermbg="..("NONE"))
-    -- cmd("hi FloatBorder guibg="..("NONE")) -- Disabled cmp borders
-    --> TODO: SEE IF CLAUSE BELOW
-    cmd("hi BufferLineFill guibg="..("NONE"))
-    cmd("hi NvimTreeNormal guibg="..("NONE")) 
-    cmd("hi NormalFloat guibg="..("NONE"))-- Doesn't affect cmp??
-    cmd("hi WhichKeyFloat guibg="..("NONE"))
-    -- TODO: Not Working.
-    -- cmd("hi CmpPmenu guibg="..("#111111"))
-    if(color ~= nil) then
-        cmd("hi StatusLine guibg="..(color))
-        cmd("hi Staline guibg="..(color))
-        --> TODO: CHECK IF THESE ARE EXPLICITLY NEEDED FOR ALL THEMES
-        -- cmd("hi BufferLineFill guibg="..(color))
-        -- cmd("hi NvimTreeNormal guibg="..(color)) 
-        -- cmd("hi NormalFloat guibg="..(color))
-        -- cmd("hi WhichKeyFloat guibg="..(color)) 
-    end
-    if(name == 'gruvbox-flat') then
-        local border = '#f2e5bc'
-        cmd("hi TelescopePromptNormal guibg="..("NONE"))
-        cmd("hi TelescopePromptBorder guibg="..("NONE"))
-        cmd("hi TelescopePromptPrefix guibg="..("NONE"))
-        cmd("hi TelescopePromptBorder guifg="..(border))
-        cmd("hi TelescopePreviewBorder guifg="..(border))
-        cmd("hi TelescopeResultsBorder guifg="..(border))
-        cmd("hi LspInfoBorder guifg="..(border))
-        cmd("hi DapUIFloatBorder guifg="..(border))
+    if(colors or highlights ~= nil) then
+        local bg = colors.background
+        local border = colors.border
+        local green = colors.green
+        local blue = colors.blue
+        local cyan = colors.cyan
+        local red = colors.red
 
-        -- Why is nothing working??
-        -- cmd("hi DapUIValue guifg="..(border))
-        -- cmd("hi DapUIFrameName guifg="..(border))
-        -- cmd("hi DapUIVariable guifg="..(border))
-        -- cmd("hi DapUICurrentFrame guifg="..(border))
-        -- cmd("hi DapUINormal guifg="..(border))
-        -- cmd("hi DapUIThread guifg="..(border))
-        -- cmd("hi DapUIDecoration guifg="..(border))
-        -- cmd("hi DapUIValue guifg="..(border))
-        -- cmd("hi DapUIType guifg="..(border))
-        -- cmd("hi DapUIScope guifg="..(border))
-        -- cmd("hi DapUISource guifg="..(border))
-        -- cmd("hi DapUIUnavailable guifg="..(border))
-        -- cmd("hi DapUINormalNC guifg="..(border))
-        -- cmd("hi DapUIUnavailableNC guifg="..(border))
-        -- cmd("hi DapUIEndofBuffer guifg="..(border))
-        cmd("hi DapUIModifiedValue guifg="..(border))
-        cmd("hi DapUIStoppedThread guifg="..(border))
-        cmd("hi DapUILineNumber guifg="..(border))
-        cmd("hi DapUIFloatNormal guifg="..(border))
-        cmd("hi DapUIWatchesEmpty guifg="..(border))
-        cmd("hi DapUIWatchesValue guifg="..(border))
-        cmd("hi DapUIWatchesError guifg="..(border))
-        cmd("hi DapUIBreakpointsPath guifg="..(border))
-        cmd("hi DapUIBreakpointsInfo guifg="..(border))
-        cmd("hi DapUIBreakpointsLine guifg="..(border))
-        cmd("hi DapUIBreakpointsDisabledLine guifg="..(border))
-        cmd("hi DapUICurrentFrameName guifg="..(border))
-        cmd("hi DapUIWinSelect guifg="..(border))
-        cmd("hi DapUIPlayPauseNC guifg="..(border))
-        cmd("hi DapUIRestartNC guifg="..(border))
-        cmd("hi DapUIStopNC guifg="..(border))
+        -- TODO: Not working yet
+        -- ERROR: Line 61: attempt to concatenate local 'highlight' (a nil value)
+        -- for i, c in pairs(colors) do
+        --     for j, h in pairs (highlights) do
+        --         set_highlight(h[j], c[i])
+        --     end
+        -- end
 
-        cmd("hi StatusLine guibg="..(color))
-        cmd("hi StatusLine guifg="..('#ffffff'))
-        cmd("hi StatusLineNC guibg="..(color)) -- this removes bar between nvimtree and staline
-        cmd("hi StatusLineNC guifg="..('#ffffff'))
-        cmd("hi Staline guibg="..(color))
+        for i, v in pairs(highlights.transparent) do
+            set_highlight(v, ("NONE"))
+        end
+        for i, v in pairs(highlights.bg) do
+            set_highlight(v, bg)
+        end
+        for i, v in pairs(highlights.border) do
+            set_highlight(v, border)
+        end
+        for i, v in pairs(highlights.green) do
+            set_highlight(v, green)
+        end
+        for i, v in pairs(highlights.blue) do
+            set_highlight(v, blue)
+        end
+        for i, v in pairs(highlights.cyan) do
+            set_highlight(v, cyan)
+        end
+        for i, v in pairs(highlights.red) do
+            set_highlight(v, red)
+        end
     end
+end
+
+function set_highlight(highlight, color)
+    cmd(highlight..color)
 end
 
 --> DEFINE THEME FUNCTIONS WHICH CAN BE APPLIED IN 'init.lua'
@@ -95,70 +68,78 @@ function Theme.random()
 	local selected = themes[math.floor(nice)+1]
 	print("ColorScheme: "..selected)
 
-    setColors(selected, nil) --TODO: Refactor this to call the Theme."selected"
+    setColors(selected, nil, nil) --TODO: Refactor this to call the Theme."selected"
 end
 
 -- TODO: GENERALIZE BELOW FUNCTIONS AND MAKE 1 GENERIC FUNTION THAT GETS AN ARRAY AS INPUT
 function Theme.tokyonight(transparent)
     require('general.colors.tokyonight')
 
-    local BACKGROUND = require"general.colors.tokyonight".background
-    cmd("hi FloatBorder guibg="..(BACKGROUND))
-    setColors('tokyonight', BACKGROUND)
+    local COLORS = require"general.colors.tokyonight"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    cmd("hi FloatBorder guibg="..(COLORS))
+    setColors('tokyonight', COLORS, HIGHLIGHTS)
 end
 
 function Theme.tokyodark(transparent)
 	require('general.colors.tokyodark')
 
-    local BACKGROUND = require"general.colors.tokyodark".background
-	cmd("hi Normal guibg="..(transparent and "none" or BACKGROUND))
-    setColors('tokyodark', BACKGROUND)
+    local COLORS = require"general.colors.tokyodark"
+    local HIGHLIGHTS = require"general.colors.highlights"
+	cmd("hi Normal guibg="..(transparent and "none" or COLORS))
+    setColors('tokyodark', COLORS, HIGHLIGHTS)
 end
 
 function Theme.nord(transparent)
     require('general.colors.nord')
 
-    local BACKGROUND = require"general.colors.nord".background
-    setColors('nord', BACKGROUND)
+    local COLORS = require"general.colors.nord"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('nord', COLORS, HIGHLIGHTS)
 end
 
 function Theme.gruvbox(transparent)
     require('general.colors.gruvbox')
 
-    local BACKGROUND = require"general.colors.gruvbox".background
-    setColors('gruvbox-flat', BACKGROUND)
+    local COLORS = require"general.colors.gruvbox"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('gruvbox-flat', COLORS, HIGHLIGHTS)
 end
 
 function Theme.everforest(transparent)
     require('general.colors.everforest')
 
-    local BACKGROUND = require"general.colors.everforest".background
-    setColors('everforest', BACKGROUND)
+    local COLORS = require"general.colors.everforest"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('everforest', COLORS, HIGHLIGHTS)
 end
 
 function Theme.rosepine(transparent)
     require('general.colors.rosepine')
 
-    local BACKGROUND = require"general.colors.rosepine".background
-    setColors('rose-pine', BACKGROUND)
+    local COLORS = require"general.colors.rosepine"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('rose-pine', COLORS)
 end
 
 function Theme.monokaipro(transparent)
     require('general.colors.monokaipro')
 
-    local BACKGROUND = require"general.colors.monokaipro".background
-    setColors('monokaipro', BACKGROUND)
+    local COLORS = require"general.colors.monokaipro"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('monokaipro', COLORS, HIGHLIGHTS)
 end
 
 function Theme.draculapro(transparent)
     require('general.colors.draculapro')
 
-    local BACKGROUND = require"general.colors.draculapro".background
-    setColors('dracula_pro', BACKGROUND)
+    local COLORS = require"general.colors.draculapro"
+    local HIGHLIGHTS = require"general.colors.highlights"
+    setColors('dracula_pro', COLORS, HIGHLIGHTS)
 end
 
 function Theme.catppuccin(transparent)
-    setColors('catppuccin', nil)
+    setColors('catppuccin', nil, nil)
 end
 
 return Theme

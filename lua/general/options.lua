@@ -36,7 +36,6 @@ local options = {
     fillchars = {eob=' ', fold=' ', foldopen="", foldsep=" ", foldclose=""}, -- remove fillchars
 	-- list = true, -- Enables listchars
 	-- listchars = 'tab:▏ ', -- Changes tab indicator
-    colorcolumn = "80", -- Shows Colorcolumn at x chars
 
     -- EDITOR
     splitbelow = true, -- Toggle vertical splitting
@@ -55,7 +54,7 @@ local options = {
 
     wrap = false,
     textwidth = 80,
-    -- colorcolumn = '80',
+    -- colorcolumn = "80", -- Shows Colorcolumn at x chars
 
     scrolloff = 8, -- Cap at x Line Numbers in Scroll Direction
 }

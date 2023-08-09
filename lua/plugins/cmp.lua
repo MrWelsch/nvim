@@ -146,11 +146,9 @@ cmp.setup {
         -- winhighlight = 'NormalFloat:TelescopeNormal,FloatBorder:TelescopeBorder',
     },
 
-    --> EXPERIMENTAL FEATURES
-    experimental = {
-        ghost_text = false,
-        native_menu = false,
-    },
+    -- view = {            
+    --     entries = "native" -- can be "custom", "wildmenu" or "native"
+    --  } 
 
     --> SET UP LSP CONFIG | TODO: Look into / Compare handler.lua.bak
     -- local cmp_lsp_status_ok, cmp_lsp = pcall(require, "cmp_nvim_lsp")
