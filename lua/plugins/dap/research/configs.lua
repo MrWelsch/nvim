@@ -34,13 +34,6 @@ local jsOrTs = {
     },
   }
   
-  local chrome_debugger = {
-    type = "pwa-chrome",
-    request = "launch",
-    name = "Chrome",
-    webRoot = "${workspaceFolder}",
-  }
-  
   local function get_arguments()
     local co = coroutine.running()
     if co then
@@ -60,59 +53,11 @@ local jsOrTs = {
     end
   end
   
-  local go = {
-    {
-      type = "go",
-      name = "Debug",
-      request = "launch",
-      program = "${file}",
-    },
-    {
-      type = "go",
-      name = "Debug (Arguments)",
-      request = "launch",
-      program = "${file}",
-      args = get_arguments,
-    },
-    {
-      type = "go",
-      name = "Debug Test (main)",
-      request = "launch",
-      mode = "test",
-      program = "${file}",
-    },
-    {
-      type = "go",
-      name = "Debug Test (package)",
-      request = "launch",
-      mode = "test",
-      program = "./${relativeFileDirname}",
-    },
-    -- Build the binary (go build -gcflags=all="-N -l") and run it + pick it
-    {
-      type = "go",
-      name = "Attach To PID",
-      mode = "local",
-      request = "attach",
-      processId = require('plugins.dap.utils').pick_process,
-    },
-    {
-      type = "go",
-      name = "Attach To Port (:9080)",
-      mode = "remote",
-      request = "attach",
-      port = "9080"
-    },
-  }
-  
   return {
     setup = function(dap)
       dap.configurations = {
         javascript = jsOrTs,
         typescript = jsOrTs,
-        javascriptreact = chrome_debugger,
-        vue = chrome_debugger,
-        go = go,
       }
     end
   }
