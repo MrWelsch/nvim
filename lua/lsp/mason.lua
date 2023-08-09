@@ -80,6 +80,11 @@ mason_null_ls.setup({
 })
 
 mason_dap.setup({
+    --> COMMANDS
+    -- :DapInstall [<adapter>...] - installs the provided adapter
+    -- :DapUninstall <adapter> ... - uninstalls the provided adapter
+
+    --> CONFIG
     -- A list of adapters to install if they're not already installed.
     -- This setting has no relation with the `automatic_installation` setting.
     ensure_installed = {'stylua', 'jq'},
@@ -96,22 +101,11 @@ mason_dap.setup({
 
     -- Sets up dap in the predefined manner
     handlers = {
-        -- function(config)
-        --     -- all sources with no handler get passed here
+        function(config)
+            -- all sources with no handler get passed here
   
-        --     -- Keep original functionality
-        --     require('mason-nvim-dap').default_setup(config)
-        --   end,
-        --   python = function(config)
-        --       config.adapters = {
-        --           type = "executable",
-        --           command = "/usr/bin/python3",
-        --           args = {
-        --               "-m",
-        --               "debugpy.adapter",
-        --           },
-        --       }
-        --       require('mason-nvim-dap').default_setup(config) -- don't forget this!
-        --   end,
+            -- Keep original functionality
+            require('mason-nvim-dap').default_setup(config)
+        end,
     }, 
 })

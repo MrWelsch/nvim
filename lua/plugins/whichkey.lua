@@ -116,6 +116,10 @@ local leader_mappings = {
     },
     d = {
 		name = " DEBUG",
+        t = {"<cmd>lua require('dapui').toggle('sidebar')<cr>",                                                             " TOGGLE"},
+        e = {"<cmd>lua require('dapui').eval()<cr>",                                                                        " EVAL"},
+        f = {"<cmd>lua require('dapui').float_element()<cr>",                                                               " FLOAT"},
+
     	b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>",                                                               " BREAKPOINT"},
 		c = {"<cmd>lua require'dap'.continue()<cr>",                                                                        " CONTINUE"},
         h = {"<cmd>help dap-api<cr>",                                                                                       " HELP"},

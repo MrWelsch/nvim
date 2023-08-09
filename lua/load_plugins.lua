@@ -69,13 +69,13 @@ local plugins = {
     'ahmedkhalf/project.nvim',      --TODO: DO I NEED THIS?
     
     --> DEBUGGING
-    {'mfussenegger/nvim-dap', dependencies = {'Pocco81/DAPInstall.nvim'} },
-    {'folke/todo-comments.nvim', dependencies = {'nvim-lua/plenary.nvim'} },
-
+    { 'rcarriga/nvim-dap-ui', dependencies = {'mfussenegger/nvim-dap'} },
+    
     --> EDITOR
     {'windwp/nvim-autopairs', event = 'InsertEnter'},        --TODO: DO I NEED THIS?
     {'windwp/nvim-ts-autotag', ft = 'html' },       --TODO: DO I NEED THIS?
     'norcalli/nvim-colorizer.lua',  --TODO: DO I NEED THIS?
+    {'folke/todo-comments.nvim', dependencies = {'nvim-lua/plenary.nvim'} },
     'numToStr/Comment.nvim',
 
     --> GIT
