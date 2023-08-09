@@ -26,6 +26,9 @@ local warn = " "
 local hint = " "
 local info = " "
 
+-- DEBUG SIGNS
+-- vim.fn.sign_define('DapBreakpoint', { text = '🐞' })
+
 --> SET
 -- BORDERS (Default options: single, double,rounded, solid, shadow, none)
 Misc.border = borders[3]

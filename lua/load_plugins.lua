@@ -48,7 +48,6 @@ local plugins = {
     {'jay-babu/mason-null-ls.nvim', event = { 'BufReadPre', 'BufNewFile' }, 
         dependencies = {'williamboman/mason.nvim', 'jose-elias-alvarez/null-ls.nvim'}
     },
-    'jay-babu/mason-nvim-dap.nvim',
     'williamboman/mason-lspconfig.nvim',
     -- LSP
     'folke/neodev.nvim',
@@ -70,6 +69,7 @@ local plugins = {
     
     --> DEBUGGING
     { 'rcarriga/nvim-dap-ui', dependencies = {'mfussenegger/nvim-dap'} },
+    'jay-babu/mason-nvim-dap.nvim',
     
     --> EDITOR
     {'windwp/nvim-autopairs', event = 'InsertEnter'},        --TODO: DO I NEED THIS?
