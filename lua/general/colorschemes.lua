@@ -25,14 +25,6 @@ function setColors(name, colors, highlights)
         local cyan = colors.cyan
         local red = colors.red
 
-        -- TODO: Not working yet
-        -- ERROR: Line 61: attempt to concatenate local 'highlight' (a nil value)
-        -- for i, c in pairs(colors) do
-        --     for j, h in pairs (highlights) do
-        --         set_highlight(h[j], c[i])
-        --     end
-        -- end
-
         for i, v in pairs(highlights.transparent) do
             set_highlight(v, ("NONE"))
         end
@@ -54,6 +46,14 @@ function setColors(name, colors, highlights)
         for i, v in pairs(highlights.red) do
             set_highlight(v, red)
         end
+
+        -- TODO: Not working yet (Above (under if) can be commented out to test)
+        -- ERROR: Line 61: attempt to concatenate local 'highlight' (a nil value)
+        -- for i, c in ipairs(colors) do --NOTE: Limit this to Max-1 cause staline colors
+        --     for j, h in ipairs (highlights) do
+        --         set_highlight(h[j], c[i])
+        --     end
+        -- end
     end
 end
 

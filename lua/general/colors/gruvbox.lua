@@ -15,6 +15,7 @@ vim.g.gruvbox_colors = { hint = "orange", error = "#ff0000" }
 --> SET THEME-SPECIFIC COLORS
 Color = {}
 
+Color.transparent = 'NONE'
 Color.background = '#32302f'
 Color.border = '#f2e5bc'
 Color.green = '#a9b665'
