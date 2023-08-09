@@ -24,7 +24,9 @@ bufferline.setup{
 		tab_size = 30,
 		diagnostics = 'nvim_lsp',
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local icon = level:match("error") and " " or " "
+            local error = require"general.misc".error
+            local warn = require"general.misc".warn
+            local icon = level:match("error") and error or warn
                 if context.buffer:current() then
                     return ''
                 end

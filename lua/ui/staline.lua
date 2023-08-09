@@ -31,9 +31,9 @@ staline.setup {
         v = " "
     },
     lsp_symbols = {
-        Error=" ",
-        Info=" ",
-        Warn=" ",
-        Hint=" ",
+        Error= require"general.misc".error,
+        Info= require"general.misc".info,
+        Warn= require"general.misc".warn,
+        Hint= require"general.misc".hint,
     },
 }

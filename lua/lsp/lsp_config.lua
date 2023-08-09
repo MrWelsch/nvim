@@ -21,10 +21,10 @@ vim.diagnostic.config(config)
 
 --> DIAGNOSTIC GUTTER SIGNS
 local signs = {
-    Error = " ",
-    Warn = " ",
-    Hint = " ",
-    Info = " "
+    Error = require"general.misc".error,
+    Warn = require"general.misc".warn,
+    Hint = require"general.misc".hint,
+    Info = require"general.misc".info
 }
 
 for type, icon in pairs(signs) do

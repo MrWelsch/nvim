@@ -1,6 +1,7 @@
 --> DEFINE LOCATIONS OF PLUGIN CONFIGS
 require 'lsp.lsp_config'
-require 'lsp.mason-lsp-config'
+require 'lsp.mason'
+require 'lsp.null_ls'
 require 'lsp.neodev'
 
 require 'plugins.autopairs'
@@ -14,7 +15,7 @@ require 'plugins.telescope'
 require 'plugins.tex'
 require 'plugins.toggleterm'
 require 'plugins.treesitter'
-require 'plugins.which-key'
+require 'plugins.whichkey'
 require 'plugins.todo'
 
 require 'ui.bufferline'

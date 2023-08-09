@@ -81,7 +81,7 @@ local leader_mappings = {
         name = "ﭧ LSP",
         d = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').document)<cr>",                " DOCUMENT DIAGNOSTICS"},
         D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
-		f = {"<cmd>FormatWrite<cr>",                                                                                        " FORMAT"},
+		f = {"<cmd>lua vim.lsp.buf.format({ async = false })<cr>",                                                                                        " FORMAT"},
         i = {"<cmd>LspInfo<cr>",                                                                                            " INFO"},
         m = {
             name = " MARKDOWN",

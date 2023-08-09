@@ -14,6 +14,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- LOAD CONFIGS DIRECTLY, INSTEAD OF PUTTING THEM IN 'load_configs'
+-- function load_config(...)
+--     for i, config_file in ipairs(arg) do
+--         require(config_file)
+--     end
+-- end
+
 --> PLUGINS
 local plugins = {
     --> UI, ICONS
@@ -37,19 +44,22 @@ local plugins = {
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     
     --> LINTER, COMPLETION & SNIPPETS
-    'williamboman/mason.nvim',
+    -- MASON
+    {'jay-babu/mason-null-ls.nvim', event = { 'BufReadPre', 'BufNewFile' }, 
+        dependencies = {'williamboman/mason.nvim', 'jose-elias-alvarez/null-ls.nvim'}
+    },
+    'jay-babu/mason-nvim-dap.nvim',
     'williamboman/mason-lspconfig.nvim',
+    -- LSP
     'folke/neodev.nvim',
     'neovim/nvim-lspconfig',
+    -- CMP
     'hrsh7th/cmp-nvim-lsp', -- required by 'neovim/nvim-lspconfig' -> don't set as a dependency of 'hrsh7th/nvim-cmp'
     { 'hrsh7th/nvim-cmp', dependencies = { 
         'hrsh7th/cmp-buffer', 
         'hrsh7th/cmp-path', 
         'hrsh7th/cmp-cmdline',
-        { 'L3MON4D3/LuaSnip', dependencies = {
-            'rafamadriz/friendly-snippets',
-            }
-        },
+        { 'L3MON4D3/LuaSnip', dependencies = {'rafamadriz/friendly-snippets',} },
         'saadparwaiz1/cmp_luasnip', 
         },
     },
