@@ -33,7 +33,9 @@ local opts = {
 
 require('lazy').setup('plugins', opts)
 
-require('general.lsp')
+require('plugins.ui')
+require('plugins.lsp')
+require('plugins.dap')
 
 --> SET COLORSCHEME
 -- require('plugins.colorschemes.init').gruvbox(false)
