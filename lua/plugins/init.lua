@@ -1,15 +1,10 @@
 return{
-     --> THEMES
-    -- { 'catppuccin/nvim', lazy = true },
-    -- { 'folke/tokyonight.nvim', lazy = true },
-    -- { 'tiagovla/tokyodark.nvim', lazy = true },
-    -- { 'shaunsingh/nord.nvim', lazy = true },
-    -- { 'charlief0x/vim-dracula-pro', lazy = true },
-    { 'eddyekofo94/gruvbox-flat.nvim', lazy = true },
-    -- { 'neanias/everforest-nvim', lazy = true },
-    -- { 'rose-pine/neovim', lazy = true },
-    -- { 'https://gitlab.com/__tpb/monokai-pro.nvim', lazy = true },
-    
+    --> IMPORT SUBFOLDERS AS MODULES
+    -- {import = 'plugins.colorschemes'},
+    {import = 'plugins.debug'},
+    {import = 'plugins.lsp'},
+    {import = 'plugins.ui'},
+
     -- LSP
     'williamboman/mason-lspconfig.nvim',
     'neovim/nvim-lspconfig',
@@ -23,4 +18,15 @@ return{
 
     --> GENERAL
     { 'ellisonleao/glow.nvim', ft = 'markdown', config = true, cmd = 'Glow' },
+
+    --> THEMES
+    { 'catppuccin/nvim', lazy = true },
+    { 'folke/tokyonight.nvim', lazy = true },
+    { 'tiagovla/tokyodark.nvim', lazy = true },
+    { 'shaunsingh/nord.nvim', lazy = true },
+    { 'charlief0x/vim-dracula-pro', lazy = true },
+    { 'eddyekofo94/gruvbox-flat.nvim', lazy = true },
+    { 'neanias/everforest-nvim', lazy = true },
+    { 'rose-pine/neovim', lazy = true },
+    { 'https://gitlab.com/__tpb/monokai-pro.nvim', lazy = true },
 }

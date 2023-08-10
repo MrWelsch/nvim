@@ -5,8 +5,6 @@ vim.g.start_time = vim.fn.reltime()
 require('general.options')
 require('general.mappings')
 
--- require('load_plugins')
-
 --> PLUGIN MANAGER
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -33,10 +31,9 @@ local opts = {
 
 require('lazy').setup('plugins', opts)
 
-require('plugins.ui')
-require('plugins.lsp')
-require('plugins.dap')
+--TODO: Refactor this into 'plugins.lsp'
+require('general.lsp_config')
 
 --> SET COLORSCHEME
--- require('plugins.colorschemes.init').gruvbox(false)
-vim.cmd("colorscheme "..('gruvbox-flat'))
+require('plugins.colorschemes.interface').gruvbox(false)
+-- vim.cmd("colorscheme "..('gruvbox-flat'))

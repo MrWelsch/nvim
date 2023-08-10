@@ -1,6 +1,7 @@
 return { 
     'echasnovski/mini.starter', 
     version = '*',
+    lazy = false,
     config = function()
         local status_ok, starter = pcall(require, "mini.starter")
         if not status_ok then
@@ -10,7 +11,9 @@ return {
         -- Function to return a customized footer
         local function footer()
             local date = os.date("  %m-%d-%Y")
-            local plugins_count = "     " .. vim.fn.len(vim.fn.globpath("~/.local/share/nvim/site/pack/packer/start", "*", 0, 1))
+            -- TODO: This also counts nvim and neovim itself inside the directory. How to * without folder 'nvim' & 'neovim'
+            -- Why is '!(nvim|neovim)' not working? (https://www.digitalocean.com/community/tools/glob)
+            local plugins_count = "     " .. vim.fn.len(vim.fn.globpath("~/.local/share/nvim/lazy", "*", 0, 1))
             local string = "     " .. vim.fn.printf(
                 "%.3f",
                 vim.fn.reltimefloat(vim.fn.reltime(vim.g.start_time))
