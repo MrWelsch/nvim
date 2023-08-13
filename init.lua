@@ -31,9 +31,6 @@ local opts = {
 
 require('lazy').setup('plugins', opts)
 
---TODO: Refactor this into 'plugins.lsp'
-require('general.lsp_config')
-
 --> SET COLORSCHEME
 -- require('plugins.colorschemes.interface').gruvbox(false)
 vim.cmd("colorscheme "..('dracula'))

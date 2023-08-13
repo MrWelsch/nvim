@@ -75,8 +75,6 @@ return{
             -- soft = false,
             transparent = true,
             -- saturation = { enabled = false, amount = 10 }
-            -- enabled = false,
-            -- amount = 10,
             -- override = custom,
         }
         

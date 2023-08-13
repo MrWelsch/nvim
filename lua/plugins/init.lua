@@ -7,8 +7,6 @@ return{
 
     -- LSP
     'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
-    'hrsh7th/cmp-nvim-lsp', -- required by 'neovim/nvim-lspconfig' -> don't set as a dependency of 'hrsh7th/nvim-cmp'
     
     --> DEBUGGING
     'jay-babu/mason-nvim-dap.nvim',

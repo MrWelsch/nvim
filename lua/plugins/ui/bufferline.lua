@@ -1,12 +1,21 @@
 return { 
     'akinsho/nvim-bufferline.lua', 
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    event = 'BufEnter',
+    event = 'BufRead',
     config = function()
         local status_ok, bufferline = pcall(require, "bufferline")
         if not status_ok then
             return
         end
+
+        -- CHANGE HIGHLIGHTING IF NORD THEME IS SET
+        -- TODO: if clause not yet working / not triggered
+        -- if(vim.g.colors_name == 'nord') then
+        --     local highlights = require("nord").bufferline.highlights({
+        --         italic = true,
+        --         bold = true,
+        --     })
+        -- end
 
         bufferline.setup{
             options = {
@@ -64,46 +73,9 @@ return {
                 enforce_regular_tabs = true,
                 always_show_bufferline = false,
                 sort_by = 'directory',
-                --> TODO: CHECK IF ANY OF THIS IS STILL NEEDED
-                -- custom_areas = {
-                -- 	right = function()
-                -- 		local result = {}
-                -- 		local error = vim.lsp.diagnostic.get_count(0, [[Error]])
-                -- 		local warning =
-                -- 			vim.lsp.diagnostic.get_count(0, [[Warning]])
-                -- 		local info =
-                -- 			vim.lsp.diagnostic.get_count(0, [[Information]])
-                -- 		local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
-
-                -- 		if error ~= 0 then
-                -- 			result[1] =
-                -- 				{ text = '  ' .. error, fg = '#ff6c6b' }
-                -- 		end
-
-                -- 		if warning ~= 0 then
-                -- 			result[2] =
-                -- 				{ text = '  ' .. warning, fg = '#ECBE7B' }
-                -- 		end
-
-                -- 		if hint ~= 0 then
-                -- 			result[3] =
-                -- 				{ text = '  ' .. hint, fg = '#98be65' }
-                -- 		end
-
-                -- 		if info ~= 0 then
-                -- 			result[4] =
-                -- 				{ text = '  ' .. info, fg = '#51afef' }
-                -- 		end
-                -- 		return result
-                -- 	end,
-                -- },
-                -- -- NOTE: this will be called a lot so don't do any heavy processing here
-                -- custom_filter = function(buf_number)
-                -- 	if vim.bo[buf_number].filetype ~= 'dashboard' then
-                -- 		return true
-                -- 	end
-                -- end,
+                
             },
+            highlights = highlights,
         }
     end
 }
