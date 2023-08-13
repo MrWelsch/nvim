@@ -33,4 +33,4 @@ require('lazy').setup('plugins', opts)
 
 --> SET COLORSCHEME
 -- require('plugins.colorschemes.interface').gruvbox(false)
-vim.cmd("colorscheme "..('dracula'))
+vim.cmd("colorscheme "..('kanagawa'))

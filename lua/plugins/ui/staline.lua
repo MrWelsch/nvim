@@ -72,6 +72,14 @@ return {
             v = "#ff9e64",  
         }
 
+        -- KANAGAWA
+        local kanagawa = {
+            i = "#7E9CD8",
+            n = "#6A9589",
+            c = "#76946A",
+            v = "#FF9E3B",  
+        }
+
         staline.setup {
             sections = {
                 left = { '  ', 'mode', ' ', 'branch', ' ', 'lsp' },
@@ -83,7 +91,7 @@ return {
                 mid = {'file_name'},
                 right = {}
             },
-            mode_colors = draculapro, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
+            mode_colors = kanagawa, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
             defaults = {
                 true_colors = true,
                 line_column = " [%l/%L] :%c  ",
