@@ -75,9 +75,9 @@ return {
         -- KANAGAWA
         local kanagawa = {
             i = "#7E9CD8",
-            n = "#6A9589",
+            n = "#957FB8",
             c = "#76946A",
-            v = "#FF9E3B",  
+            v = "#FFA066",  
         }
 
         staline.setup {

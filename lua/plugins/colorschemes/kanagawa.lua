@@ -87,6 +87,9 @@ return {
                     TelescopePreviewBorder = { bg = "none" },
                     TelescopeResultsBorder = { bg = "none" },
 
+                    --> UNUSED OBJECTS/VARIABLES/CONSTANTS/IMPORTS/...
+                    DiagnosticUnnecessary = { fg = "#717C7C" } -- Katana Grey (Deprecated)
+
                 }
             end,
             theme = "wave",              -- Load "wave" theme when 'background' option is not set
