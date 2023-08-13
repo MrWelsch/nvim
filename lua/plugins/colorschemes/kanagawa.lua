@@ -15,7 +15,7 @@ return {
             keywordStyle = { italic = true},
             statementStyle = { bold = true },
             typeStyle = {},
-            transparent = true,         -- do not set background color
+            transparent = false,         -- do not set background color
             dimInactive = false,         -- dim inactive window `:h hl-NormalNC`
             terminalColors = true,       -- define vim.g.terminal_color_{0,17}
             colors = {                   -- add/modify highlights
@@ -46,6 +46,7 @@ return {
                 }
             },
             overrides = function(colors) -- add/modify highlights
+                -- local palette = colors.palette
                 local theme = colors.theme
                 return {
                     --> TRANSPARENT FLOATING WINDOWS
@@ -77,6 +78,15 @@ return {
                     -- PmenuSel = { fg = "NONE", bg = theme.ui.bg_p2 },
                     -- PmenuSbar = { bg = theme.ui.bg_m1 },
                     -- PmenuThumb = { bg = theme.ui.bg_p2 },
+
+                    --> STATUSLINE DIVIDER
+                    StatusLineNC = { bg = "none" },
+
+                    --> TELESCOPE BORDER BACKGROUNDS
+                    TelescopePromptBorder = { bg = "none" },
+                    TelescopePreviewBorder = { bg = "none" },
+                    TelescopeResultsBorder = { bg = "none" },
+
                 }
             end,
             theme = "wave",              -- Load "wave" theme when 'background' option is not set
@@ -86,19 +96,27 @@ return {
             },
         }
 
-        --> Terminal Integration
+        --> Terminal Integration NOTE: Not working
         -- The following example provides a snippet to automatically 
         -- change the theme for the Kitty terminal emulator
-        vim.api.nvim_create_autocmd("ColorScheme", {
-            pattern = "kanagawa",
-            callback = function()
-                if vim.o.background == "light" then
-                    vim.fn.system("kitty +kitten themes Kanagawa_light")
-                elseif vim.o.background == "dark" then
-                    vim.fn.system("kitty +kitten themes Kanagawa_dragon")
-                else
-                    vim.fn.system("kitty +kitten themes Kanagawa")
-                end
+        -- vim.api.nvim_create_autocmd("ColorScheme", {
+        --     pattern = "kanagawa",
+        --     callback = function()
+        --         if vim.o.background == "light" then
+        --             vim.fn.system("kitty +kitten themes Kanagawa_light")
+        --         elseif vim.o.background == "dark" then
+        --             vim.fn.system("kitty +kitten themes Kanagawa_dragon")
+        --         else
+        --             vim.fn.system("kitty +kitten themes Kanagawa")
+        --         end
+        --     end,
+        -- })
+
+        -- Turns of LSP Semantic Tokens (NVIM 0.9.0+)
+        vim.api.nvim_create_autocmd("LspAttach", {
+            callback = function(args)
+            local client = vim.lsp.get_client_by_id(args.data.client_id)
+            client.server_capabilities.semanticTokensProvider = nil
             end,
         })
     end
