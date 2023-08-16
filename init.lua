@@ -22,7 +22,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local opts = {
     defaults = {
-        lazy = true, -- should plugins be lazy-loaded?
+        lazy = true,
+        -- false = always use the latest git commit (default)
+        -- "*" = latest stable version for plugins that support semver
+        -- version = "*",
     },
     ui = {
         border = require'general.misc'.border,
@@ -32,5 +35,4 @@ local opts = {
 require('lazy').setup('plugins', opts)
 
 --> SET COLORSCHEME
--- require('plugins.colorschemes.interface').gruvbox(false)
 vim.cmd("colorscheme "..('kanagawa'))
