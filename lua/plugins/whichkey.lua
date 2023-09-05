@@ -118,20 +118,20 @@ return {
                 b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope'))<cr>",                        " BRANCHES"},
                 l = {"<cmd>lua_lazygit_toggle()<cr>",                                                                               " LAZYGIT"},    
             },
-            d = {
-                name = " DEBUG",
-                t = {"<cmd>lua require('dapui').toggle('sidebar')<cr>",                                                             " TOGGLE"},
-                e = {"<cmd>lua require('dapui').eval()<cr>",                                                                        " EVAL"},
-                f = {"<cmd>lua require('dapui').float_element()<cr>",                                                               " FLOAT"},
-
-                b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>",                                                               " BREAKPOINT"},
-                c = {"<cmd>lua require'dap'.continue()<cr>",                                                                        " CONTINUE"},
-                h = {"<cmd>help dap-api<cr>",                                                                                       " HELP"},
-                i = {"<cmd>lua require'dap'.step_into()<cr>",                                                                       " STEP INTO"},
-                k = {"<cmd>help dap-mapping<cr>",                                                                                   " KEYBINDS"},
-                o = {"<cmd>lua require'dap'.step_over()<cr>",                                                                       " STEP OVER"},
-                s = {"<cmd>lua require'dap'.repl.open()<cr>",                                                                       " INSPECT STATE"},
-            },
+--             d = {
+--                 name = " DEBUG",
+--                 t = {"<cmd>lua require('dapui').toggle('sidebar')<cr>",                                                             " TOGGLE"},
+--                 e = {"<cmd>lua require('dapui').eval()<cr>",                                                                        " EVAL"},
+--                 f = {"<cmd>lua require('dapui').float_element()<cr>",                                                               " FLOAT"},
+--
+--                 b = {"<cmd>lua require'dap'.toggle_breakpoint()<cr>",                                                               " BREAKPOINT"},
+--                 c = {"<cmd>lua require'dap'.continue()<cr>",                                                                        " CONTINUE"},
+--                 h = {"<cmd>help dap-api<cr>",                                                                                       " HELP"},
+--                 i = {"<cmd>lua require'dap'.step_into()<cr>",                                                                       " STEP INTO"},
+--                 k = {"<cmd>help dap-mapping<cr>",                                                                                   " KEYBINDS"},
+--                 o = {"<cmd>lua require'dap'.step_over()<cr>",                                                                       " STEP OVER"},
+--                 s = {"<cmd>lua require'dap'.repl.open()<cr>",                                                                       " INSPECT STATE"},
+--             },
         }
         -- G
         local g_mappings = {

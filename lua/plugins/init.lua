@@ -1,7 +1,6 @@
 return{
     --> IMPORT SUBFOLDERS AS MODULES
     {import = 'plugins.colorschemes'},
-    {import = 'plugins.debug'},
     {import = 'plugins.lsp'},
     {import = 'plugins.ui'},
 
