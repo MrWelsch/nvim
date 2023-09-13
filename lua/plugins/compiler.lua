@@ -1,0 +1,17 @@
+-- TODO: Why is this not working but the implementation in init.lua is?
+-- return {
+--     "Zeioth/compiler.nvim",
+--     lazy = false,
+--     cmd = {"CompilerOpen", "CompilerToggleResults", "CompilerRedo"},
+--     dependencies = { "stevearc/overseer.nvim" },
+--     config = function()
+--         local status_ok, compiler = pcall(require, "compiler.nvim")
+--         if not status_ok then
+--             return
+--         end
+--         
+--         compiler.setup{
+--             
+--         }
+--     end
+-- }

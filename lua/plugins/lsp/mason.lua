@@ -27,10 +27,10 @@ return {
             return
         end
 
-        local mason_dap_status_ok, mason_dap = pcall(require, "mason-nvim-dap")
-        if not mason_dap_status_ok then
-            return
-        end
+--         local mason_dap_status_ok, mason_dap = pcall(require, "mason-nvim-dap")
+--         if not mason_dap_status_ok then
+--             return
+--         end
 
         -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -117,35 +117,35 @@ return {
             },
         })
 
-        mason_dap.setup({
-            --> COMMANDS
-            -- :DapInstall [<adapter>...] - installs the provided adapter
-            -- :DapUninstall <adapter> ... - uninstalls the provided adapter
-
-            --> CONFIG
-            -- A list of adapters to install if they're not already installed.
-            -- This setting has no relation with the `automatic_installation` setting.
-            ensure_installed = {'stylua', 'jq'},
-
-            -- NOTE: this is left here for future porting in case needed
-            -- Whether adapters that are set up (via dap) should be automatically installed if they're not already installed.
-            -- This setting has no relation with the `ensure_installed` setting.
-            -- Can either be:
-            --   - false: Daps are not automatically installed.
-            --   - true: All adapters set up via dap are automatically installed.
-            --   - { exclude: string[] }: All adapters set up via mason-nvim-dap, except the ones provided in the list, are automatically installed.
-            --       Example: automatic_installation = { exclude = { "python", "delve" } }
-            automatic_installation = true,
-
-            -- Sets up dap in the predefined manner
-            handlers = {
-                function(config)
-                    -- all sources with no handler get passed here
-        
-                    -- Keep original functionality
-                    require('mason-nvim-dap').default_setup(config)
-                end,
-            }, 
-        })
+--         mason_dap.setup({
+--             --> COMMANDS
+--             -- :DapInstall [<adapter>...] - installs the provided adapter
+--             -- :DapUninstall <adapter> ... - uninstalls the provided adapter
+--
+--             --> CONFIG
+--             -- A list of adapters to install if they're not already installed.
+--             -- This setting has no relation with the `automatic_installation` setting.
+--             ensure_installed = {'stylua', 'jq'},
+--
+--             -- NOTE: this is left here for future porting in case needed
+--             -- Whether adapters that are set up (via dap) should be automatically installed if they're not already installed.
+--             -- This setting has no relation with the `ensure_installed` setting.
+--             -- Can either be:
+--             --   - false: Daps are not automatically installed.
+--             --   - true: All adapters set up via dap are automatically installed.
+--             --   - { exclude: string[] }: All adapters set up via mason-nvim-dap, except the ones provided in the list, are automatically installed.
+--             --       Example: automatic_installation = { exclude = { "python", "delve" } }
+--             automatic_installation = true,
+--
+--             -- Sets up dap in the predefined manner
+--             handlers = {
+--                 function(config)
+--                     -- all sources with no handler get passed here
+--
+--                     -- Keep original functionality
+--                     require('mason-nvim-dap').default_setup(config)
+--                 end,
+--             },
+--         })
     end
 }

@@ -1,0 +1,23 @@
+-- -- TODO: Why is this not working but the implementation in init.lua is?
+-- return {
+--     "stevearc/overseer.nvim",
+--     lazy = false,
+--     commit = "19aac0426710c8fc0510e54b7a6466a03a1a7377",
+--     cmd = { "CompilerOpen", "CompilerToggleResults", "CompilerRedo" },
+--     config = function()
+--         local overseer_status_ok, overseer = pcall(require, "overseer.nvim")
+--         if not overseer_status_ok then
+--             return
+--         end
+--         
+--         overseer.setup{
+--             task_list = {
+--                 direction = "bottom",
+--                 min_height = 25,
+--                 max_height = 25,
+--                 default_detail = 1,
+--                 bindings = { ["q"] = function() vim.cmd("OverseerClose") end },
+--             },
+--         }
+--     end
+-- }

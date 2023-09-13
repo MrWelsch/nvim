@@ -91,7 +91,7 @@ return {
                 mid = {'file_name'},
                 right = {}
             },
-            mode_colors = kanagawa, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
+            mode_colors = rosepine, -- TODO: REFACTOR THIS SO THAT IT IS SET WITH COLOSCHEME
             defaults = {
                 true_colors = true,
                 line_column = " [%l/%L] :%c  ",

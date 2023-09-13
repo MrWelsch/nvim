@@ -81,11 +81,18 @@ return {
             ["r"] =                                                                                                                 " RENAME BUFFER",
             ["w"] =                                                                                                                 " CLOSE BUFFER",
             -- MENUS
+            b = {
+                name = "ﭧ BUILD",
+                c = {"<cmd>CompilerOpen<cr>",                                                                                       " COMPILE"},
+                d = {"<cmd>CompilerToggleResults<cr>",                                                                              " RESULTS"},
+                r = {"<cmd>CompilerRedo<cr>",                                                                                       " REDO"},
+                q = {"<cmd>CompilerStop<cr>",                                                                                       " STOP"},
+            },
             l = {
                 name = "ﭧ LSP",
                 d = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').document)<cr>",                " DOCUMENT DIAGNOSTICS"},
                 D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
-                f = {"<cmd>lua vim.lsp.buf.format({ async = false })<cr>",                                                                                        " FORMAT"},
+                f = {"<cmd>lua vim.lsp.buf.format({ async = false })<cr>",                                                          " FORMAT"},
                 i = {"<cmd>LspInfo<cr>",                                                                                            " INFO"},
                 m = {
                     name = " MARKDOWN",
