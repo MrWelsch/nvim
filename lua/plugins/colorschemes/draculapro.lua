@@ -81,7 +81,7 @@ return{
         vim.cmd.colorscheme 'dracula'
       end,
     dependencies = {
-    'MrWelsch/draculapro',
+        'MrWelsch/draculapro',
     },
 
 }

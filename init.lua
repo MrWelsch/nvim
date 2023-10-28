@@ -35,4 +35,6 @@ local opts = {
 require("lazy").setup("plugins", opts)
 
 --> SET COLORSCHEME
-vim.cmd("colorscheme " .. "dracula")
+vim.cmd("colorscheme " .. "catppuccin")
+-- vim.cmd("colorscheme " .. "rose-pine")
+
