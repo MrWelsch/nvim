@@ -133,9 +133,10 @@ end
 function Theme.draculapro(transparent)
     require('plugins.colorschemes.draculapro')
 
-    local COLORS = require"plugins.colorschemes.draculapro"
-    local HIGHLIGHTS = require"plugins.colorschemes.highlights"
-    setColors('dracula_pro', COLORS, HIGHLIGHTS)
+    -- local COLORS = require"plugins.colorschemes.draculapro"
+    -- local HIGHLIGHTS = require"plugins.colorschemes.highlights"
+    -- setColors('dracula_pro', COLORS, HIGHLIGHTS)
+    -- cmd("colorscheme "..(dracula))
 end
 
 function Theme.catppuccin(transparent)
@@ -143,3 +144,7 @@ function Theme.catppuccin(transparent)
 end
 
 return Theme
+
+-- return {
+    
+-- }

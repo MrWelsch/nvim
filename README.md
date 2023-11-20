@@ -52,6 +52,12 @@ There will probably some things you need to setup in order to get healhy:
 -   Python: `pip install pynvim`
 -   Node: `npm i -g neovim`
 
+### 🩺 Other Requirements
+
+#### C# Compiling
+-   Mac: `brew install mono`
+-   Linux (Debian Based): `sudo apt install mono-complete`
+
 ## 🃏 Features
 
 ### 🗂 File Explorer
