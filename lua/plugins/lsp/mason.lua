@@ -38,27 +38,23 @@ return {
 
         -- SET UP SERVERS THAT SHOULD AUTOMATICALLY INSTALLED
         local servers = {
-            -- clangd = {},
-            -- gopls = {},
-            -- pyright = {},
-            -- rust_analyzer = {},
-            -- tsserver = {},
-            'terraformls', 
-            'tflint', 
-            'ansiblels', 
-            'bashls', 
-            'dockerls', 
-            'docker_compose_language_service',
-            'gopls',
-            'helm_ls',
-            'jsonls',
-            'lua_ls',
-            'marksman',
-            'pyright',
-            'taplo', --toml
-            'yamlls',
-            -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-        
+            terraformls = {
+                filetypes = { 'terraform', 'tf', 'hcl'}
+            }, 
+            tflint = {
+                filetypes = { 'terraform', 'tf', 'hcl'}
+            }, 
+            ansiblels = {}, 
+            bashls = {}, 
+            dockerls = {}, 
+            docker_compose_language_service = {},
+            gopls = {},
+            helm_ls = {},
+            jsonls = {},
+            marksman = {},
+            pyright = {},
+            taplo = {}, --toml
+            yamlls = {}, 
             lua_ls = {
             Lua = {
                 workspace = { checkThirdParty = false },
