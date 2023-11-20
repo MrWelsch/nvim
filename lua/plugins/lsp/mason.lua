@@ -3,7 +3,8 @@ return {
     'jay-babu/mason-null-ls.nvim', 
     event = { 'BufReadPre', 'BufNewFile' }, 
     dependencies = {
-        'williamboman/mason.nvim', 
+        'williamboman/mason.nvim',
+        'williamboman/mason-lspconfig.nvim',
         'jose-elias-alvarez/null-ls.nvim'
     },
     config = function()
@@ -42,7 +43,21 @@ return {
             -- pyright = {},
             -- rust_analyzer = {},
             -- tsserver = {},
-            html = { filetypes = { 'html', 'twig', 'hbs'} },
+            'terraformls', 
+            'tflint', 
+            'ansiblels', 
+            'bashls', 
+            'dockerls', 
+            'docker_compose_language_service',
+            'gopls',
+            'helm_ls',
+            'jsonls',
+            'lua_ls',
+            'marksman',
+            'pyright',
+            'taplo', --toml
+            'yamlls',
+            -- html = { filetypes = { 'html', 'twig', 'hbs'} },
         
             lua_ls = {
             Lua = {
