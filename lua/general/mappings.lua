@@ -74,6 +74,9 @@ map('n', '<Leader>t',   ':ToggleTerm<CR>')
 
 --> DASHBOARD
 map('n', '<Leader>;',   ':lua MiniStarter.open()<CR>')
+
+--> VTOP
+map('n', '<Leader>p',   ':lua _vtop_toggle()<CR>')
  
 --------------------------------------------------
 --> Colemak

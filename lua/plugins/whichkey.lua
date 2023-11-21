@@ -73,6 +73,7 @@ return {
             ["e"] =                                                                                                                 "פּ EXPLORER",
             ["h"] =                                                                                                                 "ײַ HORIZONTAL SPLIT",
             ["q"] =                                                                                                                 " QUIT",
+            ["p"] =                                                                                                                 " PERFORMANCE",
             ["s"] =                                                                                                                 " SAVE",
             ["z"] =                                                                                                                 " REPLACE",
             ["x"] =                                                                                                                 " MAKE EXECUTABLE",
@@ -116,7 +117,7 @@ return {
                 name = " GIT",
                 -- BRANCHES ONLY WORK INSIDE GIT REP (Maybe catch exception?) 
                 b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope'))<cr>",                        " BRANCHES"},
-                l = {"<cmd>lua_lazygit_toggle()<cr>",                                                                               " LAZYGIT"},    
+                l = {"<cmd>lua _lazygit_toggle()<cr>",                                                                               " LAZYGIT"},    
             },
         }
         -- G

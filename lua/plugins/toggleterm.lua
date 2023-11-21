@@ -1,5 +1,6 @@
 return {
     'akinsho/nvim-toggleterm.lua',
+    lazy = false,
     config = function()
         local status_ok, toggleterm = pcall(require, "toggleterm")
         if not status_ok then
@@ -34,6 +35,7 @@ return {
 
         --> SEPERATE INSTANCE EXCLUSIVELY FOR LAZYGIT
         local Terminal = require('toggleterm.terminal').Terminal
+
         local lazygit = Terminal:new({
             cmd = "lazygit",
             hidden = true,
@@ -54,6 +56,28 @@ return {
 
         function _lazygit_toggle()
             lazygit:toggle()
+        end
+
+        local vtop = Terminal:new({
+            cmd = "vtop",
+            hidden = true,
+            direction = 'float',
+            float_opts = {
+                -- The border key is *almost* the same as 'nvim_win_open'
+                -- see :h nvim_win_open for details on borders however
+                -- the 'curved' border is a custom border type
+                -- not natively supported but implemented in this plugin.
+                border = require"general.misc".border,
+                winblend = 3,
+                highlights = {
+                border = "Normal",
+                background = "Normal",
+                }
+            }
+        })
+
+        function _vtop_toggle()
+            vtop:toggle()
         end
     end
 }
