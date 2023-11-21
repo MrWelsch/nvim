@@ -38,13 +38,13 @@ return {
         end
 
         --> BORDERS ON DIAGNOSTIC WINDOWS (e.g. Hover)
-        vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-            border = require"general.misc".border, 
-        })
+        -- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+        --     border = require"general.misc".border, 
+        -- })
 
-        vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-            border = require"general.misc".border,
-        })
+        -- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+        --     border = require"general.misc".border,
+        -- })
         -- ':LspInfo' BORDER
         local lsp_info = require('lspconfig.ui.windows').default_options
         lsp_info.border = require"general.misc".border

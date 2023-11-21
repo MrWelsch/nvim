@@ -83,7 +83,7 @@ return {
             ["w"] =                                                                                                                 " CLOSE BUFFER",
             -- MENUS
             l = {
-                name = "ﭧ LSP",
+                name = " LSP",
                 d = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').document)<cr>",                "󱪚 DOCUMENT DIAGNOSTICS"},
                 D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
                 f = {"<cmd>lua vim.lsp.buf.format({ async = false })<cr>",                                                          "󱐀 FORMAT"},

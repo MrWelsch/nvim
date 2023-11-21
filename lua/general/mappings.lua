@@ -65,9 +65,9 @@ map('n', '<Leader>x',   ':!chmod +x %<CR>', { silent = true })
 map('n', '<Leader>z',   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 --> EXPLORER
--- map('n', '<Leader>e',   ':NvimTreeToggle<CR>')
+map('n', '<Leader>e',   ':NvimTreeToggle<CR>')
 -- Get to paren dir by using '-'.
-map('n', '<Leader>e', ':Oil --float<CR>')
+-- map('n', '<Leader>e', ':Oil --float<CR>')
 
 --> TERMINAL
 map('n', '<Leader>t',   ':ToggleTerm<CR>')

@@ -54,7 +54,7 @@ return {
               tabline = {},
               winbar = {},
               inactive_winbar = {},
-              extensions = {}
+              extensions = { 'nvim-tree', 'lazy', 'mason', 'toggleterm' }
         }
     end
 }
