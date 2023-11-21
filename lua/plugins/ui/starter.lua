@@ -40,13 +40,13 @@ return {
             -- items = nil,
             items = {
                 starter.sections.recent_files(10, false),
-                { action = "lua require('telescope.builtin').find_files(require('plugins.telescope'))", name = "F:  Find File", section = "Telescope" },
-                { action = "lua require('telescope.builtin').live_grep(require('plugins.telescope'))", name = "T:  Find Text", section = "Telescope" },
+                { action = "lua require('telescope.builtin').find_files(require('plugins.telescope'))", name = "F: 󰈞 Find File", section = "Telescope" },
+                { action = "lua require('telescope.builtin').live_grep(require('plugins.telescope'))", name = "T: 󱘢 Find Text", section = "Telescope" },
                 -- { action = "lua require('telescope.builtin').projects(require('plugins.telescope'))", name = "P: Find Project", section = "Telescope" },
-                { action = "Lazy update", name = "U: 痢 Update Plugins", section = "Plugins" },
+                { action = "Lazy update", name = "U:  Update Plugins", section = "Plugins" },
                 { action = "enew", name = "E:  New Buffer", section = "Builtin actions" },
                 { action = ":e ~/.config/nvim/init.lua", name = "C:  Configuration", section = "Builtin actions" },
-                { action = "qall!", name = "Q:  Quit", section = "Builtin actions" },
+                { action = "qall!", name = "Q:  Quit", section = "Builtin actions" },
             },
         
             -- Header to be displayed before items. Converted to single string via
