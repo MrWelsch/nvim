@@ -48,10 +48,13 @@ return {
             integrations = {
                 cmp = true,
                 gitsigns = true,
-                nvimtree = true,
-                telescope = true,
-                notify = false,
-                mini = false,
+                telescope = {
+                    enabled = true
+                },
+                mason = true,
+                which_key = true,
+                noice = true,
+                notify = true
             },
         })
     end

@@ -1,6 +1,6 @@
 return { 
     'akinsho/nvim-bufferline.lua', 
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'kyazdani42/nvim-web-devicons', 'catppuccin/nvim' },
     event = 'BufRead',
     config = function()
         local status_ok, bufferline = pcall(require, "bufferline")
@@ -75,7 +75,7 @@ return {
                 sort_by = 'directory',
                 
             },
-            highlights = highlights,
+            highlights = require("catppuccin.groups.integrations.bufferline").get(),
         }
     end
 }
