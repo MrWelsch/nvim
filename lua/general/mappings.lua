@@ -27,7 +27,7 @@ map('n', "<leader>w",   ':bd<CR>') -- close buffer
 map('n', "<leader>s",   ':w<CR>') -- save buffer
 map('n', "<leader>q",   ':q<CR>') -- quit buffer/split
 map('n', '<leader>v',   ':vs<CR>') -- vertical split
-map('n', '<leader>h',   ':hs<CR>') -- horizontal split
+map('n', '<leader>h',   ':split<CR>') -- horizontal split
 
 -- LSP
 map('n', '<leader>r',   ':lua vim.lsp.buf.rename()<CR>')
