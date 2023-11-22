@@ -92,6 +92,13 @@ return {
                     name = " MARKDOWN",
                     p = {"<cmd>Glow<cr>",                                                                                           " MARKDOWN PREVIEW"},
                 },
+                t = {
+                    name = "󱁢 TERRAFORM",
+                    i = {"<cmd>:!terraform init<cr>",                                                                               " INIT"},
+                    v = {"<cmd>:!terraform validate<cr>",                                                                           " VALIDATE"},
+                    p = {"<cmd>:!terraform plan<cr>",                                                                               " PLAN"},
+                    a = {"<cmd>:!terraform apply -auto-approve<cr>",                                                                " APPLY"},
+                },
             },
             f = {
                 name = " FIND",
