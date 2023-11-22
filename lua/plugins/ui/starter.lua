@@ -46,7 +46,7 @@ return {
                 { action = "Lazy update", name = "U:  Update Plugins", section = "Plugins" },
                 { action = "enew", name = "E:  New Buffer", section = "Builtin actions" },
                 { action = ":e ~/.config/nvim/init.lua", name = "C:  Configuration", section = "Builtin actions" },
-                { action = "qall!", name = "Q:  Quit", section = "Builtin actions" },
+                { action = "qall!", name = "Q:  Quit", section = "Builtin actions" },
             },
         
             -- Header to be displayed before items. Converted to single string via

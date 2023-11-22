@@ -72,10 +72,10 @@ return {
             ["/"] =                                                                                                                 " COMMENT",
             ["e"] =                                                                                                                 " EXPLORER",
             ["h"] =                                                                                                                 "󰞒 HORIZONTAL SPLIT",
-            ["q"] =                                                                                                                 " QUIT",
+            ["q"] =                                                                                                                 " QUIT",
             ["p"] =                                                                                                                 " PERFORMANCE",
             ["s"] =                                                                                                                 " SAVE",
-            ["z"] =                                                                                                                 " REPLACE",
+            ["z"] =                                                                                                                 " REPLACE",
             ["x"] =                                                                                                                 " MAKE EXECUTABLE",
             ["t"] =                                                                                                                 " TERMINAL",
             ["v"] =                                                                                                                 "󰞔 VERTICAL SPLIT",
@@ -111,14 +111,14 @@ return {
                 name = " CONFIG",
                 p = {"<cmd>Lazy profile<cr>",                                                                                       " PROFILE"},
                 s = {"<cmd>Lazy sync<cr>",                                                                                          " SYNC"},
-                m = {"<cmd>Mason<cr>",                                                                                              "ﭧ MASON"},    
+                m = {"<cmd>Mason<cr>",                                                                                              "󰰑 MASON"},    
                 t = {"<cmd>lua require('telescope.builtin').colorscheme(require('plugins.telescope'))<cr>",                         " THEME"},
             },
             g = {
                 name = "󰊢 GIT",
                 -- BRANCHES ONLY WORK INSIDE GIT REP (Maybe catch exception?) 
                 b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope'))<cr>",                        " BRANCHES"},
-                l = {"<cmd>lua _lazygit_toggle()<cr>",                                                                               " LAZYGIT"},    
+                l = {"<cmd>lua _lazygit_toggle()<cr>",                                                                              " LAZYGIT"},    
             },
         }
         -- G
