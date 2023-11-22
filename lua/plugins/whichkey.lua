@@ -102,7 +102,10 @@ return {
                 r = {"<cmd>lua require('telescope.builtin').oldfiles(require('plugins.telescope'))<cr>",                            "󰡦 RECENT FILES"},
                 R = {"<cmd>lua require('telescope.builtin').registers(require('plugins.telescope'))<cr>",                           "󱝩 REGISTERS"},
                 t = {"<cmd>lua require('telescope.builtin').live_grep(require('plugins.telescope'))<cr>",                           "󱘢 TEXT"},
-                d = {"<cmd>:TodoTelescope<cr>",                                                                                     " TODO"}
+                d = {"<cmd>:TodoTelescope<cr>",                                                                                     " TODO"},
+                H = {"<cmd>:Telescope harpoon marks<cr>",                                                                           " HARPOON MARKS"},
+                a = {"<cmd>lua require('harpoon.mark').add_file()<cr>",                                                             "󱝁 HARPOON ADD"},
+                h = {"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",                                                      " HARPOON MENU"},
             },
             c = {
                 name = " CONFIG",

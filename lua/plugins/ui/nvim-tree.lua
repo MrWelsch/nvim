@@ -18,23 +18,6 @@ return {
             return
         end
 
-        local function custom_mappings(bufnr)
-            local api = require "nvim-tree.api"
-          
-            local function opts(desc)
-              return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-            end
-          
-            -- default mappings
-            api.config.mappings.default_on_attach(bufnr)
-          
-            -- custom mappings
-            vim.keymap.set("n", "t", edit_or_open,          opts("Edit Or Open"))
-            vim.keymap.set("n", "T", vsplit_preview,        opts("Vsplit Preview"))
-            vim.keymap.set("n", "s", api.tree.close,        opts("Close"))
-            vim.keymap.set("n", "S", api.tree.collapse_all, opts("Collapse All"))
-        end
-
         -- local tree_cb = require'nvim-tree.config'.nvim_tree_callback
 
         tree.setup {
