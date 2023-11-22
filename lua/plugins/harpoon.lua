@@ -7,9 +7,6 @@ return {
             return
         end
 
-        -- REGISTER AS TELESCOPE EXTENSION (:Telescope harpoon marks)
-        require("telescope").load_extension('harpoon')
-
         harpoon.setup {
             global_settings = {
                 -- sets the marks upon calling `toggle` on the ui, instead of require `:w`.
@@ -36,5 +33,13 @@ return {
                 tabline_suffix = "   ",
             }
         }
+
+        --> TELESCOPE INTEGRATION
+        local tele_status_ok, telescope = pcall(require, "telescope")
+        if not tele_status_ok then
+            return
+        end
+
+        telescope.load_extension('harpoon')
     end
 }

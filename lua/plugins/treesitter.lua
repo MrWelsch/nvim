@@ -1,6 +1,7 @@
 return { 
     'nvim-treesitter/nvim-treesitter', 
     build = ':TSUpdate',
+    lazy = false,
     config = function()
         local status_ok, treesitter = pcall(require, "nvim-treesitter.configs")
         if not status_ok then
@@ -10,6 +11,7 @@ return {
         treesitter.setup {
             -- Add languages to be installed here that you want installed for treesitter
             ensure_installed = { 
+                'c',
                 'lua', 
                 'vimdoc', 
                 'vim', 
@@ -22,7 +24,8 @@ return {
                 'json',
                 'terraform',
                 'toml',
-                'regex'
+                'regex',
+                'query'
             },
 
             -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
