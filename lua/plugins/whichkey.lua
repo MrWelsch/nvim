@@ -85,7 +85,9 @@ return {
             l = {
                 name = " LSP",
                 d = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope').document)<cr>",                "󱪚 DOCUMENT DIAGNOSTICS"},
-                D = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
+                -- D = {"<cmd>lua require('trouble').toggle('document_diagnostics')<cr>",                         "󱪚 TROUBLE DOCUMENT"},
+                w = {"<cmd>lua require('telescope.builtin').diagnostics(require('plugins.telescope'))<cr>",                         " WORKSPACE DIAGNOSTICS"},
+                -- W = {"<cmd>lua require('trouble').toggle('workspace_diagnostics')<cr>",                         " TROUBLE WORKSPACE"},
                 f = {"<cmd>lua vim.lsp.buf.format({ async = false })<cr>",                                                          "󱐀 FORMAT"},
                 i = {"<cmd>LspInfo<cr>",                                                                                            " INFO"},
                 m = {
@@ -124,6 +126,7 @@ return {
             g = {
                 name = "󰊢 GIT",
                 -- BRANCHES ONLY WORK INSIDE GIT REP (Maybe catch exception?) 
+                f = {"<cmd>:GitBlameToggle<cr>",                                                                                    " BLAME"},
                 b = {"<cmd>lua require('telescope.builtin').git_branches(require('plugins.telescope'))<cr>",                        " BRANCHES"},
                 l = {"<cmd>lua _lazygit_toggle()<cr>",                                                                              " LAZYGIT"},    
             },

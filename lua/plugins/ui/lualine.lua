@@ -9,6 +9,11 @@ return {
             return
         end
 
+        local status_ok, blame = pcall(require, "gitblame")
+        if not status_ok then
+            return
+        end
+
         local catppuccin_oled = require'lualine.themes.catppuccin'
         catppuccin_oled.bg = '#000000'
 
@@ -18,6 +23,7 @@ return {
                 theme = 'catppuccin',
                 component_separators = '|',
                 section_separators = { left = '', right = '' },
+                -- section_separators = '',
                 disabled_filetypes = {
                   statusline = {},
                   winbar = {},
@@ -34,13 +40,15 @@ return {
               sections = {
                 lualine_a = {
                   { 'mode', separator = { left = '' }, right_padding = 2 },
+                --   { 'mode', separator = { left = '' }, right_padding = 2 },
                 },
-                lualine_b = { 'filename', 'branch' },
+                lualine_b = { 'filename', 'branch', { blame.get_current_blame_text, cond = blame.is_blame_text_available } },
                 lualine_c = { 'fileformat' },
                 lualine_x = {},
                 lualine_y = { 'filetype', 'progress' },
                 lualine_z = {
                   { 'location', separator = { right = '' }, left_padding = 2 },
+                -- { 'location', separator = { right = '' }, left_padding = 2 },
                 },
               },
               inactive_sections = {
