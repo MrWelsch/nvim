@@ -1,6 +1,6 @@
 return { 
     'stevearc/oil.nvim', 
-    dependencies = 'nvim-web-devicons',
+    dependencies = 'kyazdani42/nvim-web-devicons',
     lazy = false, 
     -- cmd = {'NvimTreeToggle'},
     config = function()
