@@ -59,7 +59,7 @@ map('n', '<Leader>z',   ':%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>')
 
 --> SHORTCUT FOR QUITTING AND SAVING
 map("", "Q", ":q<cr>", {})
-map("", "S", ":w<cr>", {})
+map("", "W", ":w<cr>", {})
 
 --> EXPLORER
 -- map('n', '<Leader>e',   ':NvimTreeToggle<CR>')

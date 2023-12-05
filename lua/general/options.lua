@@ -5,7 +5,7 @@ local cmd = vim.cmd
 local options = {
     -- GENERAL
     undofile = true,
-    undodir = "/Users/nico/.cache/nvim/undodir",
+    undodir = "$HOME/.cache/nvim/undodir",
     swapfile = false,
     backup = false,
     writebackup = false,
