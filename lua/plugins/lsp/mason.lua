@@ -5,7 +5,7 @@ return {
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-        'jose-elias-alvarez/null-ls.nvim'
+        'nvimtools/none-ls.nvim'
     },
     config = function()
         local mason_status_ok, mason = pcall(require, "mason")
@@ -108,6 +108,7 @@ return {
         null_ls.setup {
             sources = {
                 -- Anything not supported by mason.
+                null_ls.builtins.formatting.terraform_fmt,
             },
         
             -- AUTO FORMATTING ON SAVE
@@ -134,7 +135,8 @@ return {
                 -- Opt to list sources here, when available in mason.
                 'stylua', 
                 'jq', 
-                'prettierd'
+                'prettierd',
+                'gofumpt'
             },
             handlers = {
                 -- Providing an empty handlers will cause all sources to be automatically registered in null-ls. 
