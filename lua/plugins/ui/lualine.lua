@@ -28,10 +28,10 @@ return {
         lualine.setup {
             options = {
                 icons_enabled = true,
-                theme = catppuccin,
+                theme = dracula,
                 component_separators = '|',
-                section_separators = { left = '', right = '' },
-                -- section_separators = '',
+                -- section_separators = { left = '', right = '' },
+                section_separators = '',
                 disabled_filetypes = {
                   statusline = {'starter'},
                   winbar = {'starter'},
@@ -47,16 +47,16 @@ return {
               },
               sections = {
                 lualine_a = {
-                  { 'mode', separator = { left = '' }, right_padding = 2 },
-                --   { 'mode', separator = { left = '' }, right_padding = 2 },
+                  -- { 'mode', separator = { left = '' }, right_padding = 2 },
+                  { 'mode', separator = { left = '' }, right_padding = 2 },
                 },
                 lualine_b = { 'filename', 'branch', { blame.get_current_blame_text, cond = blame.is_blame_text_available } },
                 lualine_c = { 'fileformat' },
                 lualine_x = {},
                 lualine_y = { 'filetype', 'progress' },
                 lualine_z = {
-                  { 'location', separator = { right = '' }, left_padding = 2 },
-                -- { 'location', separator = { right = '' }, left_padding = 2 },
+                  -- { 'location', separator = { right = '' }, left_padding = 2 },
+                { 'location', separator = { right = '' }, left_padding = 2 },
                 },
               },
               inactive_sections = {

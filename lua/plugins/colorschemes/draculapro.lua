@@ -62,7 +62,7 @@ return{
         -- end
   
         draculapro.setup({
-            theme = 'van_helsing'
+            -- theme = 'van_helsing'
         })
   
         dracula.setup {
