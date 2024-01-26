@@ -16,9 +16,7 @@
 
 ## 🥂 Introduction
 
-`minvim` was created to serve as a good entry point for people who are new to neovim.
-
-It has a sane amount of features/plugins for day-to-day programming.
+This config has a sane amount of features/plugins for day-to-day programming.
 
 ## ⚙️ Installation
 
@@ -44,19 +42,20 @@ There will probably some things you need to setup in order to get healhy:
 
 #### Copy/Paste
 
--   Mac: `pbcopy` should be builtin
--   Linux (Debian Based): `sudo apt install xsel`
+- Mac: `pbcopy` should be builtin
+- Linux (Debian Based): `sudo apt install xsel`
 
 #### Python & Node Support
 
--   Python: `pip install pynvim`
--   Node: `npm i -g neovim`
+- Python: `pip install pynvim`
+- Node: `npm i -g neovim`
 
 ### 🩺 Other Requirements
 
 #### C# Compiling
--   Mac: `brew install mono`
--   Linux (Debian Based): `sudo apt install mono-complete`
+
+- Mac: `brew install mono`
+- Linux (Debian Based): `sudo apt install mono-complete`
 
 ## 🃏 Features
 
