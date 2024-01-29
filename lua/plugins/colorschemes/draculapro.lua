@@ -76,6 +76,11 @@ return{
             transparent = true,
             -- saturation = { enabled = false, amount = 10 }
             -- override = custom,
+            -- override = {
+            --     Normal = {bg = '#ffffff'},
+            --     NormalFloat = {bg = '#ffffff'},
+            --     ToggleTerm1NormalFloat = {bg = '#ffffff'},
+            -- }
         }
         
         vim.cmd.colorscheme 'dracula'

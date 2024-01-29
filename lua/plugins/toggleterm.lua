@@ -24,12 +24,14 @@ return {
             -- see :h nvim_win_open for details on borders however
             -- the 'curved' border is a custom border type
             -- not natively supported but implemented in this plugin.
-            border = require"general.misc".border,
-            winblend = 3,
-            highlights = {
-                border = "Normal",
-                background = "Normal",
-            }
+                border = require"general.misc".border,
+                -- winblend turns bg black if used with dracula
+                -- https://github.com/neovim/neovim/issues/18576
+                -- winblend = 3, 
+                highlights = {
+                    border = "Normal",
+                    background = "Normal",
+                }
             }
         }
 
@@ -41,15 +43,11 @@ return {
             hidden = true,
             direction = 'float',
             float_opts = {
-                -- The border key is *almost* the same as 'nvim_win_open'
-                -- see :h nvim_win_open for details on borders however
-                -- the 'curved' border is a custom border type
-                -- not natively supported but implemented in this plugin.
                 border = require"general.misc".border,
-                winblend = 3,
+                -- winblend = 3,
                 highlights = {
-                border = "Normal",
-                background = "Normal",
+                    border = "Normal",
+                    background = "Normal",
                 }
             }
         })
@@ -63,15 +61,11 @@ return {
             hidden = true,
             direction = 'float',
             float_opts = {
-                -- The border key is *almost* the same as 'nvim_win_open'
-                -- see :h nvim_win_open for details on borders however
-                -- the 'curved' border is a custom border type
-                -- not natively supported but implemented in this plugin.
                 border = require"general.misc".border,
-                winblend = 3,
+                -- winblend = 3,
                 highlights = {
-                border = "Normal",
-                background = "Normal",
+                    border = "Normal",
+                    background = "Normal",
                 }
             }
         })

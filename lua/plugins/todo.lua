@@ -1,6 +1,7 @@
 return {
     'folke/todo-comments.nvim', 
     dependencies = {'nvim-lua/plenary.nvim'},
+    lazy = false,
     config = function()
         local status_ok, todo = pcall(require, "todo-comments")
         if not status_ok then
@@ -8,7 +9,7 @@ return {
         end
 
         todo.setup {
-            signs = false, -- show icons in the signs column
+            signs = true, -- show icons in the signs column
             sign_priority = 8, -- sign priority
             -- keywords recognized as todo comments
             keywords = {
@@ -21,7 +22,7 @@ return {
                 TODO = { icon = " ", color = "info" },
                 HACK = { icon = " ", color = "warning" },
                 WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
-                PERF = { icon = "  ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+                -- PERF = { icon = "  ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
                 NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
                 TEST = { icon = "󰙨 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
             },
