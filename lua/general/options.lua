@@ -4,8 +4,10 @@ local cmd = vim.cmd
 
 local options = {
     -- GENERAL
-    undofile = true,
-    undodir = "vim.fn.stdpath('config') .. '/undodir'",
+    -- TODO: MAKE undodir work
+    undofile = false,
+    -- undofile = true,
+    -- undodir = "vim.fn.stdpath('config') .. '/undodir'",
     swapfile = false,
     backup = false,
     writebackup = false,
