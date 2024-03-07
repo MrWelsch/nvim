@@ -28,7 +28,8 @@ return {
         lualine.setup {
             options = {
                 icons_enabled = true,
-                theme = dracula,
+                -- theme = dracula,
+                theme = auto,
                 component_separators = '|',
                 -- section_separators = { left = '', right = '' },
                 section_separators = '',
