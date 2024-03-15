@@ -71,17 +71,35 @@ return {
 			[";"] = " DASHBOARD",
 			["/"] = " COMMENT",
 			["e"] = " EXPLORER",
-			["h"] = "󰞒 HORIZONTAL SPLIT",
+			-- ["h"] = "󰞒 HORIZONTAL SPLIT",
 			["q"] = " QUIT",
 			["p"] = " PERFORMANCE",
+			-- ["a"] = "󱝁 HARPOON ADD",
+			-- ["m"] = " HARPOON MENU",
+			-- ["M"] = " HARPOON MARKS",
 			["s"] = " SAVE",
 			["z"] = " REPLACE",
 			["x"] = " MAKE EXECUTABLE",
 			["t"] = " TERMINAL",
-			["v"] = "󰞔 VERTICAL SPLIT",
+			-- ["v"] = "󰞔 VERTICAL SPLIT",
 			["r"] = " RENAME BUFFER",
 			["w"] = " CLOSE BUFFER",
 			-- MENUS
+			-- h = {
+			-- 	name = "HARPOON",
+			-- 	H = {
+			-- 		"<cmd>:Telescope harpoon marks<cr>",
+			-- 		" HARPOON MARKS",
+			-- 	},
+			-- 	a = {
+			-- 		"<cmd>lua require('harpoon.mark').add_file()<cr>",
+			-- 		"󱝁 HARPOON ADD",
+			-- 	},
+			-- 	h = {
+			-- 		"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+			-- 		" HARPOON MENU",
+			-- 	},
+			-- }
 			l = {
 				name = " LSP",
 				d = {
@@ -135,10 +153,10 @@ return {
 					"<cmd>lua require('telescope.builtin').find_files(require('plugins.telescope'))<cr>",
 					"󰈞 FILE",
 				},
-				m = {
-					"<cmd>lua require('telescope.builtin').marks(require('plugins.telescope'))<cr>",
-					" MARKS",
-				},
+				-- m = {
+				-- 	"<cmd>lua require('telescope.builtin').marks(require('plugins.telescope'))<cr>",
+				-- 	" MARKS",
+				-- },
 				M = {
 					"<cmd>lua require('telescope.builtin').man_pages(require('plugins.telescope'))<cr>",
 					" MAN PAGES",
@@ -163,7 +181,7 @@ return {
 					"<cmd>:TodoTelescope<cr>",
 					" TODO",
 				},
-				H = {
+				m = {
 					"<cmd>:Telescope harpoon marks<cr>",
 					" HARPOON MARKS",
 				},
@@ -171,10 +189,10 @@ return {
 					"<cmd>lua require('harpoon.mark').add_file()<cr>",
 					"󱝁 HARPOON ADD",
 				},
-				h = {
-					"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
-					" HARPOON MENU",
-				},
+				-- h = {
+				-- 	"<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+				-- 	" HARPOON MENU",
+				-- },
 			},
 			c = {
 				name = " CONFIG",

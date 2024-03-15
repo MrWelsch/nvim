@@ -8,81 +8,60 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map("", "m", "h", {})   -- LEFT
-map("", "n", "j", {})   -- UP
-map("", "e", "k", {})   -- DOWN
-map("", "i", "l", {})   -- RIGHT
-map("", "j", "e", {})   -- END WORD
-map("", "J", "E", {})   -- END WORD
+--> CURSOR MOVEMENT (alternatively 'ueni' instead of 'nemi')
+map("n", "n", "k", {})   -- UP
+map("n", "e", "j", {})   -- DOWN
+map("n", "m", "h", {})   -- LEFT
+map("n", "i", "l", {})   -- RIGHT
 
-map("", "k", "n", {})   -- FIND NEXT
-map("", "K", "N", {})   -- FIND PREVIOUS
+map("n", "N", "5k", {})  -- 5 UP
+map("n", "E", "5j", {})  -- 5 DOWN
+map("n", "M", "0", {})   -- START OF LINE
+map("n", "I", "$", {})   -- END OF LINE
+
+map("", "<C-n>", "<C-y>", {})   -- MOVE VIEW PORT 5 LINES UP WITHOUT CURSOR
+map("", "<C-e>", "<C-e>", {})   -- MOVE VIEW PORT 5 LINES DOWN WITHOUT CURSOR
+
+map("", "h", "e", {})   -- END OF WORD
+map("", "W", "5w", {})  -- 5 WORDS FORWARD
+map("", "B", "5b", {})  -- 5 WORDS BACKWARD
+
+--> INSERT MODE
+-- map("", "l", "i", {})   -- INSERT MODE
+-- map("", "L", "I", {})   -- INSERT (BEGIN OF LINE)
 map("", "l", "i", {})   -- INSERT MODE
 map("", "L", "I", {})   -- INSERT (BEGIN OF LINE)
-map("", "N", "5j", {})  -- 5 UP
-map("", "E", "5k", {})  -- 5 DOWN
 
-map("", "H", "0", {})   -- BEGIN OF LINE
-map("", "I", "$", {})   -- END OF LINE
+--> UNDO
+-- map("", "l", "u", {})   -- UNDO
 
--- -- NVIM-TREE (EXPLORER)
--- local function attach(bufnr)
---     local api = require("nvim-tree.api")
---     local function opts(desc)
---       return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
---     end
-  
---     api.config.mappings.default_on_attach(bufnr)
-  
---     vim.keymap.set("n", "e", "", { buffer = bufnr })
---     vim.keymap.del("n", "e", { buffer = bufnr })
---     vim.keymap.set("n", "F", "", { buffer = bufnr })
---     vim.keymap.del("n", "F", { buffer = bufnr })
---     vim.keymap.set("n", "f", "", { buffer = bufnr })
---     vim.keymap.del("n", "f", { buffer = bufnr })
--- end
--- return attach
+--> WINDOW MANAGEMENT
+map("", "<nop>", "s", {})   -- UNBIND 's' KEY
 
--- local cdh_map = vim.keymap.set
+map("", "sn", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})   -- HORIZONTAL SPLIT UPWARD PLACEMENT
+map("", "se", ":set splitbelow<CR>:split<CR>", {})   -- HORIZONTAL SPLIT DOWNWARD PLACEMENT
+map("", "sm", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", {})   -- HORIZONTAL SPLIT LEFTWARD PLACEMENT
+map("", "si", ":set splitright<CR>:vsplit<CR>", {})   -- HORIZONTAL SPLIT RIGHTWARD PLACEMENT
 
--- local function swap_map(lhs, rhs, mode)
---     map(mode or "", lhs, rhs, {})
---     map(mode or "", rhs, lhs, {})
--- end
+-- Resize Splits With Arrow Keys
+map("", "<up>", ":res +5<CR>", {})
+map("", "<down>", ":res -5<CR>", {})
+map("", "<left>", ":vertical resize-5<CR>", {})
+map("", "<right>", ":vertical resize+5<CR>", {})
 
---------------------------------------------------
---> Colemak
---------------------------------------------------
--- -- This swaps the maps defined in the colemak_maps table with each other.
--- local colemak_maps = {
--- { "n", "j" }, -- down
--- { "e", "k" }, -- up
--- { "s", "h" }, -- left
--- { "t", "l" }, -- right
--- }
+-- Move Windows
+map("", "sh", "<C-w>t<C-w>K", {})   -- PLACE TWO SPLITS HORIZONTALLY
+map("", "sv", "<C-w>t<C-w>H", {})   -- PLACE TWO SPLITS VERTICALLY
+map("", "srh", "<C-w>b<C-w>K", {})  -- ROTATE & PLACE TWO SPLITS HORIZONTALLY
+map("", "srv", "<C-w>b<C-w>H", {})  -- ROTATE & PLACE TWO SPLITS VERTICALLY
 
--- -- Takes these key mappings and then swaps them for lowercase, uppercase, and <C-w><C- mappings, so you can navigate splits.
--- local mvmnt_prefix = "<C-w><C-"
+-- Move Cursor Between Windows
+-- map("", "<LEADER>w", "<C-w>w", {})   -- MOVE CURSOR UP WINDOW
+-- map("", "<LEADER>n", "<C-w>k", {})   -- MOVE CURSOR UP WINDOW
+-- map("", "<LEADER>e", "<C-w>j", {})   -- MOVE CURSOR DOWN WINDOW
+-- map("", "<LEADER>m", "<C-w>h", {})   -- MOVE CURSOR LEFT WINDOW
+-- map("", "<LEADER>i", "<C-w>l", {})   -- MOVE CURSOR RIGHT WINDOW
 
--- for _, pairs in ipairs(colemak_maps) do
---     local lhs = pairs[1]
---     local rhs = pairs[2]
-
---     local mvmnt_lhs = table.concat({ mvmnt_prefix, lhs, ">" })
---     local mvmnt_rhs = table.concat({ mvmnt_prefix, rhs, ">" })
-
---     -- lowercase
---     swap_map(lhs, rhs)
-
---     -- uppercase
---     swap_map(string.upper(lhs), string.upper(rhs))
-
---     -- window movement
---     swap_map(mvmnt_lhs, mvmnt_rhs)
--- end
-
--- Sets up navigating visual lines as opposed to the real lines, for example in the case of wrapped text.
--- for _, mode in pairs({ "n", "v" }) do
---     map(mode, "e", "v:count == 0 ? 'gk' : 'k'", expr)
---     map(mode, "n", "v:count == 0 ? 'gj' : 'j'", expr)
--- end 
+--> SEARCHING
+map("", "k", "n", {})   -- FIND NEXT
+map("", "K", "N", {})   -- FIND PREVIOUS
