@@ -14,6 +14,9 @@ return {
             return
         end
 
+        local monokaipro_octagon = require'lualine.themes.monokai-pro'
+        monokaipro_octagon.normal.c.bg = '#282A3A'
+
         local catppuccin_oled = require'lualine.themes.catppuccin'
         catppuccin_oled.bg = '#000000'
 
@@ -29,7 +32,8 @@ return {
             options = {
                 icons_enabled = true,
                 -- theme = dracula,
-                theme = auto,
+                theme = monokaipro_octagon,
+                -- theme = auto,
                 component_separators = '|',
                 -- section_separators = { left = '', right = '' },
                 section_separators = '',
