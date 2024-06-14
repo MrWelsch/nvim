@@ -23,8 +23,6 @@ map("n", "<M-Right>", ":vertical resize +2<CR>")
 --> BUFFER
 map("n", "<TAB>", ":BufferLineCycleNext<CR>") -- focus next tab
 map("n", "<S-TAB>", ":BufferLineCyclePrev<CR>") -- focus prev tab
-map("n", "<leader>w", ":bd<CR>") -- close buffer
-map("n", "<leader>s", ":w<CR>") -- save buffer
 -- map("n", "<leader>q", ":q<CR>") -- quit buffer/split
 -- map("n", "<leader>v", ":vs<CR>") -- vertical split
 map("n", "<leader>h", ":split<CR>") -- horizontal split
@@ -62,9 +60,9 @@ map("", "Q", ":q<cr>", {})
 map("", "W", ":w<cr>", {})
 
 --> EXPLORER
--- map('n', '<Leader>e',   ':NvimTreeToggle<CR>')
+map('n', '<Leader>e',   ':NvimTreeToggle<CR>')
 -- Get to paren dir by using '-'.
-map("n", "<Leader>e", ":Oil --float<CR>")
+-- map("n", "<Leader>e", ":Oil --float<CR>")
 
 --> TERMINAL
 map("n", "<Leader>t", ":ToggleTerm<CR>")

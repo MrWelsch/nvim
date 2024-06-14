@@ -11,14 +11,14 @@ return {
 			flavour = "latte", -- latte, frappe, macchiato, mocha
 			background = { -- :h background
 				light = "latte",
-				dark = "mocha",
+				dark = "frappe",
 			},
-			transparent_background = false,
+			transparent_background = true,
 			show_end_of_buffer = false, -- show the '~' characters after the end of buffers
 			term_colors = false,
 			dim_inactive = {
 				enabled = false,
-				shade = "dark",
+				shade = "light",
 				percentage = 0.15,
 			},
 			no_italic = false, -- Force no italic

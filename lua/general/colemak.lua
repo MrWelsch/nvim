@@ -9,22 +9,26 @@ local function map(mode, lhs, rhs, opts)
 end
 
 --> CURSOR MOVEMENT (alternatively 'ueni' instead of 'nemi')
-map("n", "n", "k", {})   -- UP
-map("n", "e", "j", {})   -- DOWN
-map("n", "m", "h", {})   -- LEFT
-map("n", "i", "l", {})   -- RIGHT
+map("n", "e", "k", {})   -- UP
+map("n", "i", "j", {})   -- DOWN
+map("n", "n", "h", {})   -- LEFT
+map("n", "o", "l", {})   -- RIGHT
 
-map("n", "N", "5k", {})  -- 5 UP
-map("n", "E", "5j", {})  -- 5 DOWN
-map("n", "M", "0", {})   -- START OF LINE
-map("n", "I", "$", {})   -- END OF LINE
+map("n", "E", "5k", {})  -- 5 UP
+map("n", "I", "5j", {})  -- 5 DOWN
+map("n", "N", "0", {})   -- START OF LINE
+map("n", "O", "$", {})   -- END OF LINE
 
-map("", "<C-n>", "<C-y>", {})   -- MOVE VIEW PORT 5 LINES UP WITHOUT CURSOR
-map("", "<C-e>", "<C-e>", {})   -- MOVE VIEW PORT 5 LINES DOWN WITHOUT CURSOR
+map("", "<C-e>", "<C-y>", {})   -- MOVE VIEW PORT 5 LINES UP WITHOUT CURSOR
+map("", "<C-i>", "<C-e>", {})   -- MOVE VIEW PORT 5 LINES DOWN WITHOUT CURSOR
 
 map("", "h", "e", {})   -- END OF WORD
 map("", "W", "5w", {})  -- 5 WORDS FORWARD
 map("", "B", "5b", {})  -- 5 WORDS BACKWARD
+
+--> Remap o to m
+map("", "m", "o", {})   -- INSERT MODE
+map("", "M", "O", {})   -- INSERT (BEGIN OF LINE)
 
 --> INSERT MODE
 -- map("", "l", "i", {})   -- INSERT MODE
@@ -38,10 +42,16 @@ map("", "L", "I", {})   -- INSERT (BEGIN OF LINE)
 --> WINDOW MANAGEMENT
 map("", "<nop>", "s", {})   -- UNBIND 's' KEY
 
-map("", "sn", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})   -- HORIZONTAL SPLIT UPWARD PLACEMENT
-map("", "se", ":set splitbelow<CR>:split<CR>", {})   -- HORIZONTAL SPLIT DOWNWARD PLACEMENT
-map("", "sm", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", {})   -- HORIZONTAL SPLIT LEFTWARD PLACEMENT
-map("", "si", ":set splitright<CR>:vsplit<CR>", {})   -- HORIZONTAL SPLIT RIGHTWARD PLACEMENT
+map("", "se", ":set nosplitbelow<CR>:split<CR>:set splitbelow<CR>", {})   -- HORIZONTAL SPLIT UPWARD PLACEMENT
+map("", "si", ":set splitbelow<CR>:split<CR>", {})   -- HORIZONTAL SPLIT DOWNWARD PLACEMENT
+map("", "sn", ":set nosplitright<CR>:vsplit<CR>:set splitright<CR>", {})   -- HORIZONTAL SPLIT LEFTWARD PLACEMENT
+map("", "so", ":set splitright<CR>:vsplit<CR>", {})   -- HORIZONTAL SPLIT RIGHTWARD PLACEMENT
+
+-- Move Between Panes
+map("", "<c-e>", ":wincmd k<CR>", {})
+map("", "<c-i>", ":wincmd j<CR>", {})
+map("", "<c-n>", ":wincmd h<CR>", {})
+map("", "<c-o>", ":wincmd l<CR>", {})
 
 -- Resize Splits With Arrow Keys
 map("", "<up>", ":res +5<CR>", {})
