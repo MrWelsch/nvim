@@ -14,27 +14,12 @@ return {
 			return
 		end
 
-		local monokaipro_octagon = require("lualine.themes.monokai-pro")
-		monokaipro_octagon.normal.c.bg = "#282A3A"
-
-		local monokaipro = require("lualine.themes.monokai-pro")
-		monokaipro.normal.c.bg = "#2D2A2E"
-
 		local catppuccin_oled = require("lualine.themes.catppuccin")
 		catppuccin_oled.normal.c.bg = "#000000"
-
-		local rosepine_oled = require("lualine.themes.rose-pine")
-		rosepine_oled.normal.c.bg = "#000000"
-		rosepine_oled.insert.c.bg = "#000000"
-		rosepine_oled.visual.c.bg = "#000000"
-		rosepine_oled.replace.c.bg = "#000000"
-		rosepine_oled.command.c.bg = "#000000"
-		rosepine_oled.inactive.c.bg = "#000000"
 
 		lualine.setup({
 			options = {
 				icons_enabled = true,
-				-- theme = dracula,
 				theme = catppuccin,
 				-- theme = auto,
 				component_separators = "|",
